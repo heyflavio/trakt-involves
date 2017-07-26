@@ -8,11 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		883E13971F29214300EDB1E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13961F29214300EDB1E7 /* AppDelegate.swift */; };
-		883E13991F29214300EDB1E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13981F29214300EDB1E7 /* ViewController.swift */; };
-		883E139C1F29214300EDB1E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 883E139A1F29214300EDB1E7 /* Main.storyboard */; };
-		883E139E1F29214300EDB1E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 883E139D1F29214300EDB1E7 /* Assets.xcassets */; };
-		883E13A11F29214300EDB1E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 883E139F1F29214300EDB1E7 /* LaunchScreen.storyboard */; };
 		883E13AC1F29214300EDB1E7 /* trakt_involvesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13AB1F29214300EDB1E7 /* trakt_involvesTests.swift */; };
+		883E13C81F2928DB00EDB1E7 /* UIApplication+TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13BA1F2928DA00EDB1E7 /* UIApplication+TopViewController.swift */; };
+		883E13CA1F2928DB00EDB1E7 /* UIViewController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13BC1F2928DA00EDB1E7 /* UIViewController+Additions.swift */; };
+		883E13CB1F2928DB00EDB1E7 /* URLRequest+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13BD1F2928DA00EDB1E7 /* URLRequest+Additions.swift */; };
+		883E13CC1F2928DB00EDB1E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 883E13BF1F2928DA00EDB1E7 /* Main.storyboard */; };
+		883E13CD1F2928DB00EDB1E7 /* ViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13C11F2928DA00EDB1E7 /* ViewProtocols.swift */; };
+		883E13CE1F2928DB00EDB1E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 883E13C31F2928DA00EDB1E7 /* Assets.xcassets */; };
+		883E13CF1F2928DB00EDB1E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 883E13C41F2928DA00EDB1E7 /* LaunchScreen.storyboard */; };
+		883E13D01F2928DB00EDB1E7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 883E13C61F2928DA00EDB1E7 /* Info.plist */; };
 		B6C6133B0873A7C470958499 /* Pods_trakt_involvesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 687886927EF946ADAF6DE8FC /* Pods_trakt_involvesTests.framework */; };
 		E90FFB0DEEC0168D4FB59CE2 /* Pods_trakt_involves.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3796057FC8C8B94ED0A189E /* Pods_trakt_involves.framework */; };
 /* End PBXBuildFile section */
@@ -34,14 +38,17 @@
 		77DA78CA39210FEA18142E57 /* Pods-trakt-involves.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trakt-involves.debug.xcconfig"; path = "Pods/Target Support Files/Pods-trakt-involves/Pods-trakt-involves.debug.xcconfig"; sourceTree = "<group>"; };
 		883E13931F29214300EDB1E7 /* trakt-involves.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "trakt-involves.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		883E13961F29214300EDB1E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		883E13981F29214300EDB1E7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		883E139B1F29214300EDB1E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		883E139D1F29214300EDB1E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		883E13A01F29214300EDB1E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		883E13A21F29214300EDB1E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		883E13A71F29214300EDB1E7 /* trakt-involvesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "trakt-involvesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		883E13AB1F29214300EDB1E7 /* trakt_involvesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = trakt_involvesTests.swift; sourceTree = "<group>"; };
 		883E13AD1F29214300EDB1E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		883E13BA1F2928DA00EDB1E7 /* UIApplication+TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+TopViewController.swift"; sourceTree = "<group>"; };
+		883E13BC1F2928DA00EDB1E7 /* UIViewController+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Additions.swift"; sourceTree = "<group>"; };
+		883E13BD1F2928DA00EDB1E7 /* URLRequest+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLRequest+Additions.swift"; sourceTree = "<group>"; };
+		883E13BF1F2928DA00EDB1E7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		883E13C11F2928DA00EDB1E7 /* ViewProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewProtocols.swift; sourceTree = "<group>"; };
+		883E13C31F2928DA00EDB1E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		883E13C51F2928DA00EDB1E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		883E13C61F2928DA00EDB1E7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3796057FC8C8B94ED0A189E /* Pods_trakt_involves.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_trakt_involves.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B50B222126AD33C89E9AF560 /* Pods-trakt-involvesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trakt-involvesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-trakt-involvesTests/Pods-trakt-involvesTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,12 +116,13 @@
 		883E13951F29214300EDB1E7 /* trakt-involves */ = {
 			isa = PBXGroup;
 			children = (
+				883E13B71F2928A100EDB1E7 /* Modules */,
 				883E13961F29214300EDB1E7 /* AppDelegate.swift */,
-				883E13981F29214300EDB1E7 /* ViewController.swift */,
-				883E139A1F29214300EDB1E7 /* Main.storyboard */,
-				883E139D1F29214300EDB1E7 /* Assets.xcassets */,
-				883E139F1F29214300EDB1E7 /* LaunchScreen.storyboard */,
-				883E13A21F29214300EDB1E7 /* Info.plist */,
+				883E13BE1F2928DA00EDB1E7 /* Modules */,
+				883E13B81F2928DA00EDB1E7 /* Enums */,
+				883E13B91F2928DA00EDB1E7 /* Extensions */,
+				883E13C01F2928DA00EDB1E7 /* Protocols */,
+				883E13C21F2928DA00EDB1E7 /* Resources */,
 			);
 			path = "trakt-involves";
 			sourceTree = "<group>";
@@ -126,6 +134,64 @@
 				883E13AD1F29214300EDB1E7 /* Info.plist */,
 			);
 			path = "trakt-involvesTests";
+			sourceTree = "<group>";
+		};
+		883E13B71F2928A100EDB1E7 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Modules;
+			sourceTree = "<group>";
+		};
+		883E13B81F2928DA00EDB1E7 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		883E13B91F2928DA00EDB1E7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				883E13BA1F2928DA00EDB1E7 /* UIApplication+TopViewController.swift */,
+				883E13BC1F2928DA00EDB1E7 /* UIViewController+Additions.swift */,
+				883E13BD1F2928DA00EDB1E7 /* URLRequest+Additions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		883E13BE1F2928DA00EDB1E7 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				883E13BF1F2928DA00EDB1E7 /* Main.storyboard */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		883E13C01F2928DA00EDB1E7 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				883E13C11F2928DA00EDB1E7 /* ViewProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		883E13C21F2928DA00EDB1E7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				883E13C31F2928DA00EDB1E7 /* Assets.xcassets */,
+				883E13C41F2928DA00EDB1E7 /* LaunchScreen.storyboard */,
+				883E13C61F2928DA00EDB1E7 /* Info.plist */,
+				883E13C71F2928DB00EDB1E7 /* Localization */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		883E13C71F2928DB00EDB1E7 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,9 +283,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				883E13A11F29214300EDB1E7 /* LaunchScreen.storyboard in Resources */,
-				883E139E1F29214300EDB1E7 /* Assets.xcassets in Resources */,
-				883E139C1F29214300EDB1E7 /* Main.storyboard in Resources */,
+				883E13CC1F2928DB00EDB1E7 /* Main.storyboard in Resources */,
+				883E13D01F2928DB00EDB1E7 /* Info.plist in Resources */,
+				883E13CE1F2928DB00EDB1E7 /* Assets.xcassets in Resources */,
+				883E13CF1F2928DB00EDB1E7 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,8 +397,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				883E13991F29214300EDB1E7 /* ViewController.swift in Sources */,
+				883E13CB1F2928DB00EDB1E7 /* URLRequest+Additions.swift in Sources */,
+				883E13CA1F2928DB00EDB1E7 /* UIViewController+Additions.swift in Sources */,
 				883E13971F29214300EDB1E7 /* AppDelegate.swift in Sources */,
+				883E13C81F2928DB00EDB1E7 /* UIApplication+TopViewController.swift in Sources */,
+				883E13CD1F2928DB00EDB1E7 /* ViewProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,18 +424,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		883E139A1F29214300EDB1E7 /* Main.storyboard */ = {
+		883E13C41F2928DA00EDB1E7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				883E139B1F29214300EDB1E7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		883E139F1F29214300EDB1E7 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				883E13A01F29214300EDB1E7 /* Base */,
+				883E13C51F2928DA00EDB1E7 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -471,7 +533,7 @@
 			baseConfigurationReference = 77DA78CA39210FEA18142E57 /* Pods-trakt-involves.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "trakt-involves/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/trakt-involves/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tv.trakt.trakt-involves";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -484,7 +546,7 @@
 			baseConfigurationReference = 189C15D7935EB00B70DB2E7E /* Pods-trakt-involves.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "trakt-involves/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/trakt-involves/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tv.trakt.trakt-involves";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -541,6 +603,7 @@
 				883E13B21F29214300EDB1E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		883E13B31F29214300EDB1E7 /* Build configuration list for PBXNativeTarget "trakt-involvesTests" */ = {
 			isa = XCConfigurationList;
@@ -549,6 +612,7 @@
 				883E13B51F29214300EDB1E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
