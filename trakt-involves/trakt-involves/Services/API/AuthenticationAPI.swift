@@ -14,11 +14,11 @@ import AlamofireActivityLogger
 import RxSwift
 import RxCocoa
 
-class AuthenticationAPI {
+struct AuthenticationAPI {
     
-    static func getToken(from code: String) -> Observable<Any>  {
+    static func getToken(from code: String) -> Observable<AuthenticationModel>  {
         
-        return Observable.create { observer -> Disposable in
+        return Observable<AuthenticationModel>.create { observer -> Disposable in
             
             let body = ["code": code,
                         "client_id": API.clientId,
@@ -34,9 +34,10 @@ class AuthenticationAPI {
                 .request(urlRequest)
                 .validate()
                 .log()
-                .responseJSON { response in
+                .responseObject { (response: DataResponse<AuthenticationModel>) in
                     switch response.result {
-                    case .success:
+                    case .success(let authentication):
+                        observer.onNext(authentication)
                         observer.onCompleted()
                     case .failure(let error):
                         observer.onError(error)

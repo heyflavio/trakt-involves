@@ -31,8 +31,16 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 0 images.
+  /// This `R.image` struct is generated, and contains static references to 1 images.
   struct image {
+    /// Image `involvesIcon`.
+    static let involvesIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "involvesIcon")
+    
+    /// `UIImage(named: "involvesIcon", bundle: ..., traitCollection: ...)`
+    static func involvesIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.involvesIcon, compatibleWith: traitCollection)
+    }
+    
     fileprivate init() {}
   }
   
@@ -51,16 +59,23 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 2 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 3 storyboards.
   struct storyboard {
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
+    /// Storyboard `Login`.
+    static let login = _R.storyboard.login()
     /// Storyboard `MyTvSeries`.
     static let myTvSeries = _R.storyboard.myTvSeries()
     
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
+    }
+    
+    /// `UIStoryboard(name: "Login", bundle: ...)`
+    static func login(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.login)
     }
     
     /// `UIStoryboard(name: "MyTvSeries", bundle: ...)`
@@ -100,6 +115,7 @@ struct _R: Rswift.Validatable {
   
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
+      try login.validate()
       try myTvSeries.validate()
     }
     
@@ -108,6 +124,23 @@ struct _R: Rswift.Validatable {
       
       let bundle = R.hostingBundle
       let name = "LaunchScreen"
+      
+      fileprivate init() {}
+    }
+    
+    struct login: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let loginViewController = StoryboardViewControllerResource<LoginViewController>(identifier: "LoginViewController")
+      let name = "Login"
+      
+      func loginViewController(_: Void = ()) -> LoginViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: loginViewController)
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "involvesIcon") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'involvesIcon' is used in storyboard 'Login', but couldn't be loaded.") }
+        if _R.storyboard.login().loginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'Login' as 'LoginViewController'.") }
+      }
       
       fileprivate init() {}
     }

@@ -22,7 +22,7 @@ extension URLRequest {
     static let traktApiKey = "trakt-api-key"
     static let traktApiVersion = "trakt-api-version"
     static let authorization = "Authorization"
-    static let tokenHeader = "Bearer \(Authentication.token ?? "")"
+    static let tokenHeader = "Bearer \(AuthenticationManager.accessToken ?? "")"
     
     static func getURLRequest(with url: URL, body: [String: Any]? = nil, andMethod method: URLRequestMethod) -> URLRequest {
         var urlRequest = URLRequest(url: url)
@@ -30,7 +30,7 @@ extension URLRequest {
         urlRequest.setValue(jsonHeader, forHTTPHeaderField: contentType)
         urlRequest.setValue(API.clientId, forHTTPHeaderField: traktApiKey)
         urlRequest.setValue("2", forHTTPHeaderField: traktApiVersion)
-        if Authentication.token != nil {
+        if AuthenticationManager.accessToken != nil {
             urlRequest.setValue(tokenHeader, forHTTPHeaderField: authorization)
         }
         if let httpBody = body {

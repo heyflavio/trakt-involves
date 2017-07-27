@@ -10,7 +10,7 @@ import UIKit
 
 class MainRouter: MainRouterProtocol {
     weak var view: UIViewController?
-
+    
     static func assembleModule() -> UIViewController {
         let tabBarController = MainTabBarController()
         let router = MainRouter()
@@ -27,11 +27,27 @@ class MainRouter: MainRouterProtocol {
         interactor.interactorOutput = presenter
         
         let myTvSeriesViewController = MyTvSeriesRouter.assembleModule()
-        myTvSeriesViewController.tabBarItem = UITabBarItem(title: "teste", image: nil, selectedImage: nil)
-    
+        myTvSeriesViewController.tabBarItem = UITabBarItem(title: "One", image: nil, selectedImage: nil)
+        
+        let myTvSeriesViewController2 = MyTvSeriesRouter.assembleModule()
+        myTvSeriesViewController2.tabBarItem = UITabBarItem(title: "Two", image: nil, selectedImage: nil)
+        
+        let myTvSeriesViewController3 = MyTvSeriesRouter.assembleModule()
+        myTvSeriesViewController3.tabBarItem = UITabBarItem(title: "Three", image: nil, selectedImage: nil)
+        
+        let myTvSeriesViewController4 = MyTvSeriesRouter.assembleModule()
+        myTvSeriesViewController4.tabBarItem = UITabBarItem(title: "Four", image: nil, selectedImage: nil)
+        
+        let myTvSeriesViewController5 = MyTvSeriesRouter.assembleModule()
+        myTvSeriesViewController5.tabBarItem = UITabBarItem(title: "Five", image: nil, selectedImage: nil)
+        
         tabBarController.viewControllers = [
-            myTvSeriesViewController]
-    
+            myTvSeriesViewController,
+            myTvSeriesViewController2,
+            myTvSeriesViewController3,
+            myTvSeriesViewController4,
+            myTvSeriesViewController5]
+        
         return tabBarController
     }
     

@@ -7,15 +7,10 @@
 //
 
 import UIKit
-import RxSwift
-import SafariServices
 
 class MyTvSeriesViewController: UIViewController {
     
-    var presenter: MyTvSeriesPresenterInputProtocol?
-
-    fileprivate var disposeBag = DisposeBag()
-    
+    var presenter: MyTvSeriesPresenterInputProtocol?    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,20 +24,8 @@ class MyTvSeriesViewController: UIViewController {
         presenter?.viewWillAppear()
 
     }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    
-        let traktAuth = SFSafariViewController(url: URL(string: Endpoints.Authentication.authorize.url(authContext: true))!)
-        traktAuth.delegate = self
-        UIApplication.topViewController(includingSupportingControllers: true)!.present(traktAuth, animated: true, completion: nil)
-    }
 }
 
 extension MyTvSeriesViewController: MyTvSeriesPresenterOutputProtocol {
-    
-}
-
-extension MyTvSeriesViewController: SFSafariViewControllerDelegate {
     
 }

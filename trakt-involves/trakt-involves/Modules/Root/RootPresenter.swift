@@ -15,7 +15,7 @@ class RootPresenter: RootPresenterInput {
     
     func presentRootScreen(in window: UIWindow) {
         
-        if AuthManager.isLoggedIn {
+        if AuthenticationManager.isLoggedIn {
             router.presentMainScreen(in: window)
         } else {
             router.presentLoginScreen(in: window)

@@ -12,16 +12,8 @@ import UIKit
 class RootRouter: RootWireframe {
     
     func presentLoginScreen(in window: UIWindow) {
-        //    let viewController = R.storyboard.tutorial.tutorialViewController()
-        //    let presenter = TutorialPresenter()
-        //    let router = TutorialRouter()
-        //
-        //    router.view = viewController
-        //    viewController?.presenter = presenter
-        //    presenter.output = viewController
-        //    presenter.router = router
-        //    window.makeKeyAndVisible()
-        //    window.rootViewController = viewController
+        window.makeKeyAndVisible()
+        window.rootViewController = LoginRouter.assembleModule()
     }
     
     func presentMainScreen(in window: UIWindow) {

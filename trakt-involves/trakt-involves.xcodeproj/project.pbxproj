@@ -23,9 +23,8 @@
 		883E13E21F293CA100EDB1E7 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13DD1F293CA100EDB1E7 /* MainPresenter.swift */; };
 		883E13E31F293CA100EDB1E7 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13DE1F293CA100EDB1E7 /* MainRouter.swift */; };
 		883E13E41F293CA100EDB1E7 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13DF1F293CA100EDB1E7 /* MainTabBarController.swift */; };
-		883E13E71F29400E00EDB1E7 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13E61F29400E00EDB1E7 /* AuthManager.swift */; };
+		883E13E71F29400E00EDB1E7 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13E61F29400E00EDB1E7 /* AuthenticationManager.swift */; };
 		883E13F21F2941D500EDB1E7 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13ED1F2941D500EDB1E7 /* API.swift */; };
-		883E13F31F2941D500EDB1E7 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13EE1F2941D500EDB1E7 /* Authentication.swift */; };
 		883E13F41F2941D500EDB1E7 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13F01F2941D500EDB1E7 /* Endpoint.swift */; };
 		883E13F51F2941D500EDB1E7 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13F11F2941D500EDB1E7 /* Endpoints.swift */; };
 		883E13FC1F294A3700EDB1E7 /* MyTvSeriesContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13F71F294A3700EDB1E7 /* MyTvSeriesContract.swift */; };
@@ -36,6 +35,12 @@
 		883E14031F294B9D00EDB1E7 /* MyTvSeries.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 883E14021F294B9D00EDB1E7 /* MyTvSeries.storyboard */; };
 		883E14061F294DCD00EDB1E7 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E14051F294DCD00EDB1E7 /* R.generated.swift */; };
 		883E14091F29506F00EDB1E7 /* AuthenticationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E14081F29506F00EDB1E7 /* AuthenticationAPI.swift */; };
+		883E140F1F297E3600EDB1E7 /* AuthenticationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E140E1F297E3600EDB1E7 /* AuthenticationModel.swift */; };
+		883E14191F29838800EDB1E7 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 883E14181F29838800EDB1E7 /* Login.storyboard */; };
+		883E14291F29883D00EDB1E7 /* LoginContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E14241F29883D00EDB1E7 /* LoginContract.swift */; };
+		883E142B1F29883D00EDB1E7 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E14261F29883D00EDB1E7 /* LoginPresenter.swift */; };
+		883E142C1F29883D00EDB1E7 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E14271F29883D00EDB1E7 /* LoginRouter.swift */; };
+		883E142D1F29883D00EDB1E7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E14281F29883D00EDB1E7 /* LoginViewController.swift */; };
 		B6C6133B0873A7C470958499 /* Pods_trakt_involvesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 687886927EF946ADAF6DE8FC /* Pods_trakt_involvesTests.framework */; };
 		E90FFB0DEEC0168D4FB59CE2 /* Pods_trakt_involves.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3796057FC8C8B94ED0A189E /* Pods_trakt_involves.framework */; };
 /* End PBXBuildFile section */
@@ -76,9 +81,8 @@
 		883E13DD1F293CA100EDB1E7 /* MainPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		883E13DE1F293CA100EDB1E7 /* MainRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		883E13DF1F293CA100EDB1E7 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		883E13E61F29400E00EDB1E7 /* AuthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthManager.swift; path = "trakt-involves/Managers/AuthManager.swift"; sourceTree = SOURCE_ROOT; };
+		883E13E61F29400E00EDB1E7 /* AuthenticationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthenticationManager.swift; path = "trakt-involves/Managers/AuthenticationManager.swift"; sourceTree = SOURCE_ROOT; };
 		883E13ED1F2941D500EDB1E7 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		883E13EE1F2941D500EDB1E7 /* Authentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		883E13F01F2941D500EDB1E7 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		883E13F11F2941D500EDB1E7 /* Endpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		883E13F71F294A3700EDB1E7 /* MyTvSeriesContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyTvSeriesContract.swift; path = MyTvSeries/MyTvSeriesContract.swift; sourceTree = "<group>"; };
@@ -89,6 +93,12 @@
 		883E14021F294B9D00EDB1E7 /* MyTvSeries.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MyTvSeries.storyboard; path = MyTvSeries/View/MyTvSeries.storyboard; sourceTree = "<group>"; };
 		883E14051F294DCD00EDB1E7 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		883E14081F29506F00EDB1E7 /* AuthenticationAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationAPI.swift; sourceTree = "<group>"; };
+		883E140E1F297E3600EDB1E7 /* AuthenticationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthenticationModel.swift; path = Models/Network/AuthenticationModel.swift; sourceTree = "<group>"; };
+		883E14181F29838800EDB1E7 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Login.storyboard; path = Login/View/Login.storyboard; sourceTree = "<group>"; };
+		883E14241F29883D00EDB1E7 /* LoginContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginContract.swift; path = Login/LoginContract.swift; sourceTree = "<group>"; };
+		883E14261F29883D00EDB1E7 /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginPresenter.swift; path = Login/LoginPresenter.swift; sourceTree = "<group>"; };
+		883E14271F29883D00EDB1E7 /* LoginRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginRouter.swift; path = Login/LoginRouter.swift; sourceTree = "<group>"; };
+		883E14281F29883D00EDB1E7 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Login/LoginViewController.swift; sourceTree = "<group>"; };
 		B3796057FC8C8B94ED0A189E /* Pods_trakt_involves.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_trakt_involves.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B50B222126AD33C89E9AF560 /* Pods-trakt-involvesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trakt-involvesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-trakt-involvesTests/Pods-trakt-involvesTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -159,6 +169,7 @@
 			children = (
 				883E13961F29214300EDB1E7 /* AppDelegate.swift */,
 				883E13BE1F2928DA00EDB1E7 /* Modules */,
+				883E140C1F297C1B00EDB1E7 /* Models */,
 				883E13E51F293FDA00EDB1E7 /* Managers */,
 				883E13B81F2928DA00EDB1E7 /* Enums */,
 				883E13B91F2928DA00EDB1E7 /* Extensions */,
@@ -198,6 +209,7 @@
 		883E13BE1F2928DA00EDB1E7 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				883E14171F29835A00EDB1E7 /* Login */,
 				883E13F61F29490200EDB1E7 /* MyTvSeries */,
 				883E13DA1F293CA100EDB1E7 /* Main */,
 				883E13D11F2938DC00EDB1E7 /* Root */,
@@ -257,7 +269,7 @@
 		883E13E51F293FDA00EDB1E7 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				883E13E61F29400E00EDB1E7 /* AuthManager.swift */,
+				883E13E61F29400E00EDB1E7 /* AuthenticationManager.swift */,
 			);
 			name = Managers;
 			path = Modules;
@@ -276,7 +288,6 @@
 			isa = PBXGroup;
 			children = (
 				883E13ED1F2941D500EDB1E7 /* API.swift */,
-				883E13EE1F2941D500EDB1E7 /* Authentication.swift */,
 				883E14081F29506F00EDB1E7 /* AuthenticationAPI.swift */,
 			);
 			path = API;
@@ -310,6 +321,34 @@
 				883E14021F294B9D00EDB1E7 /* MyTvSeries.storyboard */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		883E140C1F297C1B00EDB1E7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				883E140D1F297CBE00EDB1E7 /* Network */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		883E140D1F297CBE00EDB1E7 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				883E140E1F297E3600EDB1E7 /* AuthenticationModel.swift */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		883E14171F29835A00EDB1E7 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				883E14241F29883D00EDB1E7 /* LoginContract.swift */,
+				883E14261F29883D00EDB1E7 /* LoginPresenter.swift */,
+				883E14271F29883D00EDB1E7 /* LoginRouter.swift */,
+				883E14281F29883D00EDB1E7 /* LoginViewController.swift */,
+				883E14181F29838800EDB1E7 /* Login.storyboard */,
+			);
+			name = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -402,6 +441,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				883E14191F29838800EDB1E7 /* Login.storyboard in Resources */,
 				883E13CE1F2928DB00EDB1E7 /* Assets.xcassets in Resources */,
 				883E13CF1F2928DB00EDB1E7 /* LaunchScreen.storyboard in Resources */,
 				883E14031F294B9D00EDB1E7 /* MyTvSeries.storyboard in Resources */,
@@ -530,7 +570,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				883E13E01F293CA100EDB1E7 /* MainContract.swift in Sources */,
-				883E13E71F29400E00EDB1E7 /* AuthManager.swift in Sources */,
+				883E13E71F29400E00EDB1E7 /* AuthenticationManager.swift in Sources */,
 				883E13E31F293CA100EDB1E7 /* MainRouter.swift in Sources */,
 				883E13D71F2938DC00EDB1E7 /* RootRouter.swift in Sources */,
 				883E13F21F2941D500EDB1E7 /* API.swift in Sources */,
@@ -544,16 +584,20 @@
 				883E13971F29214300EDB1E7 /* AppDelegate.swift in Sources */,
 				883E14001F294A3700EDB1E7 /* MyTvSeriesViewController.swift in Sources */,
 				883E13C81F2928DB00EDB1E7 /* UIApplication+TopViewController.swift in Sources */,
+				883E14291F29883D00EDB1E7 /* LoginContract.swift in Sources */,
+				883E142B1F29883D00EDB1E7 /* LoginPresenter.swift in Sources */,
 				883E13CD1F2928DB00EDB1E7 /* ViewProtocols.swift in Sources */,
+				883E142D1F29883D00EDB1E7 /* LoginViewController.swift in Sources */,
 				883E13D61F2938DC00EDB1E7 /* RootPresenter.swift in Sources */,
 				883E13E21F293CA100EDB1E7 /* MainPresenter.swift in Sources */,
 				883E14091F29506F00EDB1E7 /* AuthenticationAPI.swift in Sources */,
+				883E142C1F29883D00EDB1E7 /* LoginRouter.swift in Sources */,
 				883E13F41F2941D500EDB1E7 /* Endpoint.swift in Sources */,
 				883E13F51F2941D500EDB1E7 /* Endpoints.swift in Sources */,
 				883E13FE1F294A3700EDB1E7 /* MyTvSeriesPresenter.swift in Sources */,
 				883E13FC1F294A3700EDB1E7 /* MyTvSeriesContract.swift in Sources */,
-				883E13F31F2941D500EDB1E7 /* Authentication.swift in Sources */,
 				883E13FD1F294A3700EDB1E7 /* MyTvSeriesInteractor.swift in Sources */,
+				883E140F1F297E3600EDB1E7 /* AuthenticationModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

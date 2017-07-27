@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="Qr8-YT-oFD">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="6RQ-Bu-Txu" customClass="LoginViewController" customModule="trakt_involves" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pd1-Dz-RCp"/>
+                        <viewControllerLayoutGuide type="bottom" id="Kcu-Uc-d0R"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YOv-rd-y2e">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="involvesIcon" translatesAutoresizingMaskIntoConstraints="NO" id="52t-tc-3di">
+                                <rect key="frame" x="26" y="132" width="323" height="110.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="52t-tc-3di" secondAttribute="height" multiplier="325:111" id="vxd-H9-lCS"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trakt TV Series" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I1g-Go-t7x">
+                                <rect key="frame" x="108" y="196.5" width="161" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="C4O-Cx-Uqb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YaG-Ss-wFp">
+                                <rect key="frame" x="77" y="459" width="220" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="9ST-uz-AII"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <state key="normal" title="Login with Trakt.TV">
+                                    <color key="titleColor" red="0.51565128559999995" green="0.10013300930000001" blue="0.11254956570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="22"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didPressLoginButton:" destination="6RQ-Bu-Txu" eventType="touchUpInside" id="89S-s3-d0V"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.51565128564834595" green="0.1001330092549324" blue="0.1125495657324791" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="YaG-Ss-wFp" firstAttribute="leading" secondItem="YOv-rd-y2e" secondAttribute="leading" constant="77" id="DSR-zA-rG6"/>
+                            <constraint firstAttribute="trailing" secondItem="52t-tc-3di" secondAttribute="trailing" constant="26" id="Mei-nj-LrD"/>
+                            <constraint firstAttribute="trailing" secondItem="YaG-Ss-wFp" secondAttribute="trailing" constant="78" id="RbV-oC-IeI"/>
+                            <constraint firstItem="I1g-Go-t7x" firstAttribute="leading" secondItem="52t-tc-3di" secondAttribute="leading" constant="82" id="bv0-hh-oqS"/>
+                            <constraint firstItem="I1g-Go-t7x" firstAttribute="top" secondItem="52t-tc-3di" secondAttribute="bottom" constant="-46" id="im0-8R-xkZ"/>
+                            <constraint firstItem="52t-tc-3di" firstAttribute="leading" secondItem="YOv-rd-y2e" secondAttribute="leading" constant="26" id="lSf-Mo-bsf"/>
+                            <constraint firstItem="52t-tc-3di" firstAttribute="top" secondItem="pd1-Dz-RCp" secondAttribute="bottom" constant="112" id="oiD-rn-xeV"/>
+                            <constraint firstItem="Kcu-Uc-d0R" firstAttribute="top" secondItem="YaG-Ss-wFp" secondAttribute="bottom" constant="164" id="vGN-nK-YSW"/>
+                            <constraint firstItem="I1g-Go-t7x" firstAttribute="trailing" secondItem="52t-tc-3di" secondAttribute="trailing" constant="-80" id="vSu-cY-lqo"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z7Z-b2-srK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-28" y="98.50074962518741"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="involvesIcon" width="323" height="109"/>
+    </resources>
+</document>

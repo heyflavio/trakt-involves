@@ -7,19 +7,16 @@
 //
 
 import UIKit
-import RxSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var rootPresenter: RootPresenter!
-
-    fileprivate var disposeBag = DisposeBag()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        
+
+        application.statusBarStyle = .lightContent
         window = UIWindow(frame: UIScreen.main.bounds)
         setupRootModule(in: window)
         
@@ -28,25 +25,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
         if (url.absoluteString.contains(API.redirectURI)) {
-            
-            guard let urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: true),
-                let code = urlComponents.queryItems?.first(where: { $0.name == "code" })?.value else {
-                return false
-            }
-            
-            AuthenticationAPI.getToken(from: code)
-            .subscribeOn(MainScheduler.instance)
-            .subscribe( onNext: { tags in
-
-            }, onError: { error in
-
-            }).addDisposableTo(disposeBag)
+            return AuthenticationManager.getToken(from: url)
         }
         return true
     }
 
 }
-
 
 extension AppDelegate {
 
