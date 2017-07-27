@@ -38,4 +38,18 @@ extension URLRequest {
         }
         return urlRequest
     }
+    
+    static let imageApiKey = "api-key"
+    
+    static func getImageURLRequest(with url: URL, body: [String: Any]? = nil, andMethod method: URLRequestMethod) -> URLRequest {
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = method.rawValue
+        urlRequest.setValue(jsonHeader, forHTTPHeaderField: contentType)
+        urlRequest.setValue(ImageSourceAPI.apiKey, forHTTPHeaderField: imageApiKey)
+
+        if let httpBody = body {
+            urlRequest.httpBody = try! JSONSerialization.data(withJSONObject: httpBody)
+        }
+        return urlRequest
+    }
 }

@@ -16,6 +16,8 @@ protocol WatchlistPresenterInputProtocol: class {
     
     func viewDidLoad()
     func viewWillAppear()
+    
+    func didPressSearchButton()
 }
 
 protocol WatchlistPresenterOutputProtocol: class {
@@ -33,4 +35,6 @@ protocol WatchlistInteractorOutputProtocol: class {
 protocol WatchlistRouterProtocol: class {
     weak var view: UIViewController? { get set }
     static func assembleModule() -> UIViewController
+    
+    func presentSearchScreen()
 }

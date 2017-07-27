@@ -44,8 +44,16 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 0 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
   struct nib {
+    /// Nib `SearchTableViewCell`.
+    static let searchTableViewCell = _R.nib._SearchTableViewCell()
+    
+    /// `UINib(name: "SearchTableViewCell", in: bundle)`
+    static func searchTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.searchTableViewCell)
+    }
+    
     fileprivate init() {}
   }
   
@@ -59,12 +67,16 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 3 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 5 storyboards.
   struct storyboard {
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `Login`.
     static let login = _R.storyboard.login()
+    /// Storyboard `Search`.
+    static let search = _R.storyboard.search()
+    /// Storyboard `ShowInfo`.
+    static let showInfo = _R.storyboard.showInfo()
     /// Storyboard `Watchlist`.
     static let watchlist = _R.storyboard.watchlist()
     
@@ -76,6 +88,16 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Login", bundle: ...)`
     static func login(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.login)
+    }
+    
+    /// `UIStoryboard(name: "Search", bundle: ...)`
+    static func search(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.search)
+    }
+    
+    /// `UIStoryboard(name: "ShowInfo", bundle: ...)`
+    static func showInfo(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.showInfo)
     }
     
     /// `UIStoryboard(name: "Watchlist", bundle: ...)`
@@ -110,6 +132,17 @@ struct _R: Rswift.Validatable {
   }
   
   struct nib {
+    struct _SearchTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "SearchTableViewCell"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> SearchTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SearchTableViewCell
+      }
+      
+      fileprivate init() {}
+    }
+    
     fileprivate init() {}
   }
   
@@ -117,6 +150,8 @@ struct _R: Rswift.Validatable {
     static func validate() throws {
       try watchlist.validate()
       try login.validate()
+      try search.validate()
+      try showInfo.validate()
     }
     
     struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType {
@@ -140,6 +175,45 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "involvesIcon") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'involvesIcon' is used in storyboard 'Login', but couldn't be loaded.") }
         if _R.storyboard.login().loginViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'Login' as 'LoginViewController'.") }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct search: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "Search"
+      let searchNavigationController = StoryboardViewControllerResource<UIKit.UINavigationController>(identifier: "SearchNavigationController")
+      let searchViewController = StoryboardViewControllerResource<SearchViewController>(identifier: " SearchViewController")
+      
+      func searchNavigationController(_: Void = ()) -> UIKit.UINavigationController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: searchNavigationController)
+      }
+      
+      func searchViewController(_: Void = ()) -> SearchViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: searchViewController)
+      }
+      
+      static func validate() throws {
+        if _R.storyboard.search().searchViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'searchViewController' could not be loaded from storyboard 'Search' as 'SearchViewController'.") }
+        if _R.storyboard.search().searchNavigationController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'searchNavigationController' could not be loaded from storyboard 'Search' as 'UIKit.UINavigationController'.") }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct showInfo: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "ShowInfo"
+      let showInfoViewController = StoryboardViewControllerResource<ShowInfoViewController>(identifier: "ShowInfoViewController")
+      
+      func showInfoViewController(_: Void = ()) -> ShowInfoViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: showInfoViewController)
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "involvesIcon") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'involvesIcon' is used in storyboard 'ShowInfo', but couldn't be loaded.") }
+        if _R.storyboard.showInfo().showInfoViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'showInfoViewController' could not be loaded from storyboard 'ShowInfo' as 'ShowInfoViewController'.") }
       }
       
       fileprivate init() {}

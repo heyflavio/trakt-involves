@@ -25,4 +25,25 @@ enum Endpoints {
         }
     }
     
+    enum Search: Endpoint {
+        case query(String)
+
+        public var path: String {
+            switch self {
+            case .query(let value): return "/search/show?query=\(value)"
+            }
+        }
+    }
+    
+    enum Image: Endpoint {
+        case get(String)
+        
+        public var path: String {
+            switch self {
+            case .get(let id): return "/v3/tv/\(id)"
+            }
+        }
+    }
+    
+    
 }

@@ -10,12 +10,15 @@ import Foundation
 
 protocol Endpoint {
     var path: String { get }
-    func url(authContext: Bool?) -> String
+    func url(authContext: Bool?, imageContext: Bool?) -> String
 }
 
 extension Endpoint {
     
-    func url(authContext: Bool? = false) -> String {
+    func url(authContext: Bool? = false, imageContext: Bool? = false) -> String {
+        if imageContext! {
+            return "\(ImageSourceAPI.baseUrl)\(path)"
+        }
         return "\(API.baseUrl(authContext))\(path)"
     }
 }

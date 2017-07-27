@@ -26,7 +26,7 @@ class WatchlistViewController: UIViewController {
     }
     
     @IBAction func didPressSearchButton(_ sender: UIBarButtonItem) {
-        
+        presenter?.didPressSearchButton()
     }
 }
 

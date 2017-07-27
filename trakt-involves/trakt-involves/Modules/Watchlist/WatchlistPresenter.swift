@@ -20,6 +20,11 @@ class WatchlistPresenter: WatchlistPresenterInputProtocol {
         
     }
     
+    
+    func didPressSearchButton() {
+        router?.presentSearchScreen()
+    }
+    
 }
 
 extension WatchlistPresenter: WatchlistInteractorOutputProtocol {

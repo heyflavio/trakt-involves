@@ -33,4 +33,8 @@ class WatchlistRouter: WatchlistRouterProtocol {
         return navigationController!
     }
     
+    func presentSearchScreen() {
+        view?.present(SearchRouter.assembleModule())
+    }
+    
 }
