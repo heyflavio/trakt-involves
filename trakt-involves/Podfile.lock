@@ -1,5 +1,7 @@
 PODS:
   - Alamofire (4.5.0)
+  - AlamofireActivityLogger (2.3.0):
+    - Alamofire (~> 4.2)
   - AlamofireObjectMapper (4.1.0):
     - Alamofire (~> 4.1)
     - ObjectMapper (~> 2.0)
@@ -17,6 +19,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - AlamofireActivityLogger
   - AlamofireObjectMapper
   - Kingfisher
   - Nimble
@@ -29,6 +32,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  AlamofireActivityLogger: a4a4b897a179c515e083a01f93b1a834f79d7091
   AlamofireObjectMapper: 435adc82f5b367679bd9e71c4974a54efd0b2521
   Kingfisher: a0ac82dc5bcf0388dd74b294cf2cc13730c63436
   Nimble: 657d000e11df8aebe27cdaf9d244de7f30ed87f7
@@ -40,6 +44,6 @@ SPEC CHECKSUMS:
   RxCocoa: cb865569239ebf1b1434056e5c8859d99dff103a
   RxSwift: a0925c7fb11fbe60055285f6f2062241aa37a175
 
-PODFILE CHECKSUM: f003b57b028f3aa68e42500baf2b91d182a1d2dc
+PODFILE CHECKSUM: 792a8c971eedd4afe15e128f24d9489b7912bf05
 
 COCOAPODS: 1.2.1

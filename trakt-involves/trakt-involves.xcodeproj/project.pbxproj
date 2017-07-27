@@ -12,11 +12,30 @@
 		883E13C81F2928DB00EDB1E7 /* UIApplication+TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13BA1F2928DA00EDB1E7 /* UIApplication+TopViewController.swift */; };
 		883E13CA1F2928DB00EDB1E7 /* UIViewController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13BC1F2928DA00EDB1E7 /* UIViewController+Additions.swift */; };
 		883E13CB1F2928DB00EDB1E7 /* URLRequest+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13BD1F2928DA00EDB1E7 /* URLRequest+Additions.swift */; };
-		883E13CC1F2928DB00EDB1E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 883E13BF1F2928DA00EDB1E7 /* Main.storyboard */; };
 		883E13CD1F2928DB00EDB1E7 /* ViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13C11F2928DA00EDB1E7 /* ViewProtocols.swift */; };
 		883E13CE1F2928DB00EDB1E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 883E13C31F2928DA00EDB1E7 /* Assets.xcassets */; };
 		883E13CF1F2928DB00EDB1E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 883E13C41F2928DA00EDB1E7 /* LaunchScreen.storyboard */; };
-		883E13D01F2928DB00EDB1E7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 883E13C61F2928DA00EDB1E7 /* Info.plist */; };
+		883E13D51F2938DC00EDB1E7 /* RootContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13D21F2938DC00EDB1E7 /* RootContract.swift */; };
+		883E13D61F2938DC00EDB1E7 /* RootPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13D31F2938DC00EDB1E7 /* RootPresenter.swift */; };
+		883E13D71F2938DC00EDB1E7 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13D41F2938DC00EDB1E7 /* RootRouter.swift */; };
+		883E13E01F293CA100EDB1E7 /* MainContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13DB1F293CA100EDB1E7 /* MainContract.swift */; };
+		883E13E11F293CA100EDB1E7 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13DC1F293CA100EDB1E7 /* MainInteractor.swift */; };
+		883E13E21F293CA100EDB1E7 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13DD1F293CA100EDB1E7 /* MainPresenter.swift */; };
+		883E13E31F293CA100EDB1E7 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13DE1F293CA100EDB1E7 /* MainRouter.swift */; };
+		883E13E41F293CA100EDB1E7 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13DF1F293CA100EDB1E7 /* MainTabBarController.swift */; };
+		883E13E71F29400E00EDB1E7 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13E61F29400E00EDB1E7 /* AuthManager.swift */; };
+		883E13F21F2941D500EDB1E7 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13ED1F2941D500EDB1E7 /* API.swift */; };
+		883E13F31F2941D500EDB1E7 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13EE1F2941D500EDB1E7 /* Authentication.swift */; };
+		883E13F41F2941D500EDB1E7 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13F01F2941D500EDB1E7 /* Endpoint.swift */; };
+		883E13F51F2941D500EDB1E7 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13F11F2941D500EDB1E7 /* Endpoints.swift */; };
+		883E13FC1F294A3700EDB1E7 /* MyTvSeriesContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13F71F294A3700EDB1E7 /* MyTvSeriesContract.swift */; };
+		883E13FD1F294A3700EDB1E7 /* MyTvSeriesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13F81F294A3700EDB1E7 /* MyTvSeriesInteractor.swift */; };
+		883E13FE1F294A3700EDB1E7 /* MyTvSeriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13F91F294A3700EDB1E7 /* MyTvSeriesPresenter.swift */; };
+		883E13FF1F294A3700EDB1E7 /* MyTvSeriesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13FA1F294A3700EDB1E7 /* MyTvSeriesRouter.swift */; };
+		883E14001F294A3700EDB1E7 /* MyTvSeriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13FB1F294A3700EDB1E7 /* MyTvSeriesViewController.swift */; };
+		883E14031F294B9D00EDB1E7 /* MyTvSeries.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 883E14021F294B9D00EDB1E7 /* MyTvSeries.storyboard */; };
+		883E14061F294DCD00EDB1E7 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E14051F294DCD00EDB1E7 /* R.generated.swift */; };
+		883E14091F29506F00EDB1E7 /* AuthenticationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E14081F29506F00EDB1E7 /* AuthenticationAPI.swift */; };
 		B6C6133B0873A7C470958499 /* Pods_trakt_involvesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 687886927EF946ADAF6DE8FC /* Pods_trakt_involvesTests.framework */; };
 		E90FFB0DEEC0168D4FB59CE2 /* Pods_trakt_involves.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3796057FC8C8B94ED0A189E /* Pods_trakt_involves.framework */; };
 /* End PBXBuildFile section */
@@ -44,11 +63,32 @@
 		883E13BA1F2928DA00EDB1E7 /* UIApplication+TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+TopViewController.swift"; sourceTree = "<group>"; };
 		883E13BC1F2928DA00EDB1E7 /* UIViewController+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Additions.swift"; sourceTree = "<group>"; };
 		883E13BD1F2928DA00EDB1E7 /* URLRequest+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLRequest+Additions.swift"; sourceTree = "<group>"; };
-		883E13BF1F2928DA00EDB1E7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		883E13C11F2928DA00EDB1E7 /* ViewProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewProtocols.swift; sourceTree = "<group>"; };
 		883E13C31F2928DA00EDB1E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		883E13C51F2928DA00EDB1E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		883E13C61F2928DA00EDB1E7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		883E13D21F2938DC00EDB1E7 /* RootContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootContract.swift; sourceTree = "<group>"; };
+		883E13D31F2938DC00EDB1E7 /* RootPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootPresenter.swift; sourceTree = "<group>"; };
+		883E13D41F2938DC00EDB1E7 /* RootRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
+		883E13D81F293A8F00EDB1E7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		883E13DB1F293CA100EDB1E7 /* MainContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainContract.swift; sourceTree = "<group>"; };
+		883E13DC1F293CA100EDB1E7 /* MainInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
+		883E13DD1F293CA100EDB1E7 /* MainPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		883E13DE1F293CA100EDB1E7 /* MainRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		883E13DF1F293CA100EDB1E7 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		883E13E61F29400E00EDB1E7 /* AuthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthManager.swift; path = "trakt-involves/Managers/AuthManager.swift"; sourceTree = SOURCE_ROOT; };
+		883E13ED1F2941D500EDB1E7 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		883E13EE1F2941D500EDB1E7 /* Authentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		883E13F01F2941D500EDB1E7 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		883E13F11F2941D500EDB1E7 /* Endpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		883E13F71F294A3700EDB1E7 /* MyTvSeriesContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyTvSeriesContract.swift; path = MyTvSeries/MyTvSeriesContract.swift; sourceTree = "<group>"; };
+		883E13F81F294A3700EDB1E7 /* MyTvSeriesInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyTvSeriesInteractor.swift; path = MyTvSeries/MyTvSeriesInteractor.swift; sourceTree = "<group>"; };
+		883E13F91F294A3700EDB1E7 /* MyTvSeriesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyTvSeriesPresenter.swift; path = MyTvSeries/MyTvSeriesPresenter.swift; sourceTree = "<group>"; };
+		883E13FA1F294A3700EDB1E7 /* MyTvSeriesRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyTvSeriesRouter.swift; path = MyTvSeries/MyTvSeriesRouter.swift; sourceTree = "<group>"; };
+		883E13FB1F294A3700EDB1E7 /* MyTvSeriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyTvSeriesViewController.swift; path = MyTvSeries/MyTvSeriesViewController.swift; sourceTree = "<group>"; };
+		883E14021F294B9D00EDB1E7 /* MyTvSeries.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MyTvSeries.storyboard; path = MyTvSeries/View/MyTvSeries.storyboard; sourceTree = "<group>"; };
+		883E14051F294DCD00EDB1E7 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		883E14081F29506F00EDB1E7 /* AuthenticationAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationAPI.swift; sourceTree = "<group>"; };
 		B3796057FC8C8B94ED0A189E /* Pods_trakt_involves.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_trakt_involves.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B50B222126AD33C89E9AF560 /* Pods-trakt-involvesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trakt-involvesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-trakt-involvesTests/Pods-trakt-involvesTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,6 +116,7 @@
 		4DB0F55897189E7ED756C9A0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				883E13D81F293A8F00EDB1E7 /* UIKit.framework */,
 				B3796057FC8C8B94ED0A189E /* Pods_trakt_involves.framework */,
 				687886927EF946ADAF6DE8FC /* Pods_trakt_involvesTests.framework */,
 			);
@@ -116,12 +157,13 @@
 		883E13951F29214300EDB1E7 /* trakt-involves */ = {
 			isa = PBXGroup;
 			children = (
-				883E13B71F2928A100EDB1E7 /* Modules */,
 				883E13961F29214300EDB1E7 /* AppDelegate.swift */,
 				883E13BE1F2928DA00EDB1E7 /* Modules */,
+				883E13E51F293FDA00EDB1E7 /* Managers */,
 				883E13B81F2928DA00EDB1E7 /* Enums */,
 				883E13B91F2928DA00EDB1E7 /* Extensions */,
 				883E13C01F2928DA00EDB1E7 /* Protocols */,
+				883E13EB1F2941D500EDB1E7 /* Services */,
 				883E13C21F2928DA00EDB1E7 /* Resources */,
 			);
 			path = "trakt-involves";
@@ -134,13 +176,6 @@
 				883E13AD1F29214300EDB1E7 /* Info.plist */,
 			);
 			path = "trakt-involvesTests";
-			sourceTree = "<group>";
-		};
-		883E13B71F2928A100EDB1E7 /* Modules */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Modules;
 			sourceTree = "<group>";
 		};
 		883E13B81F2928DA00EDB1E7 /* Enums */ = {
@@ -163,7 +198,9 @@
 		883E13BE1F2928DA00EDB1E7 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				883E13BF1F2928DA00EDB1E7 /* Main.storyboard */,
+				883E13F61F29490200EDB1E7 /* MyTvSeries */,
+				883E13DA1F293CA100EDB1E7 /* Main */,
+				883E13D11F2938DC00EDB1E7 /* Root */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -182,6 +219,7 @@
 				883E13C31F2928DA00EDB1E7 /* Assets.xcassets */,
 				883E13C41F2928DA00EDB1E7 /* LaunchScreen.storyboard */,
 				883E13C61F2928DA00EDB1E7 /* Info.plist */,
+				883E14051F294DCD00EDB1E7 /* R.generated.swift */,
 				883E13C71F2928DB00EDB1E7 /* Localization */,
 			);
 			path = Resources;
@@ -194,6 +232,86 @@
 			path = Localization;
 			sourceTree = "<group>";
 		};
+		883E13D11F2938DC00EDB1E7 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				883E13D21F2938DC00EDB1E7 /* RootContract.swift */,
+				883E13D31F2938DC00EDB1E7 /* RootPresenter.swift */,
+				883E13D41F2938DC00EDB1E7 /* RootRouter.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		883E13DA1F293CA100EDB1E7 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				883E13DB1F293CA100EDB1E7 /* MainContract.swift */,
+				883E13DC1F293CA100EDB1E7 /* MainInteractor.swift */,
+				883E13DD1F293CA100EDB1E7 /* MainPresenter.swift */,
+				883E13DE1F293CA100EDB1E7 /* MainRouter.swift */,
+				883E13DF1F293CA100EDB1E7 /* MainTabBarController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		883E13E51F293FDA00EDB1E7 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				883E13E61F29400E00EDB1E7 /* AuthManager.swift */,
+			);
+			name = Managers;
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		883E13EB1F2941D500EDB1E7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				883E13EC1F2941D500EDB1E7 /* API */,
+				883E13EF1F2941D500EDB1E7 /* Endpoints */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		883E13EC1F2941D500EDB1E7 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				883E13ED1F2941D500EDB1E7 /* API.swift */,
+				883E13EE1F2941D500EDB1E7 /* Authentication.swift */,
+				883E14081F29506F00EDB1E7 /* AuthenticationAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		883E13EF1F2941D500EDB1E7 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				883E13F01F2941D500EDB1E7 /* Endpoint.swift */,
+				883E13F11F2941D500EDB1E7 /* Endpoints.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		883E13F61F29490200EDB1E7 /* MyTvSeries */ = {
+			isa = PBXGroup;
+			children = (
+				883E13F71F294A3700EDB1E7 /* MyTvSeriesContract.swift */,
+				883E13F81F294A3700EDB1E7 /* MyTvSeriesInteractor.swift */,
+				883E13F91F294A3700EDB1E7 /* MyTvSeriesPresenter.swift */,
+				883E13FA1F294A3700EDB1E7 /* MyTvSeriesRouter.swift */,
+				883E13FB1F294A3700EDB1E7 /* MyTvSeriesViewController.swift */,
+				883E14011F294B7700EDB1E7 /* View */,
+			);
+			name = MyTvSeries;
+			sourceTree = "<group>";
+		};
+		883E14011F294B7700EDB1E7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				883E14021F294B9D00EDB1E7 /* MyTvSeries.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -202,6 +320,7 @@
 			buildConfigurationList = 883E13B01F29214300EDB1E7 /* Build configuration list for PBXNativeTarget "trakt-involves" */;
 			buildPhases = (
 				2971FE678A9E0ADD9BECDF39 /* [CP] Check Pods Manifest.lock */,
+				883E14041F294BB000EDB1E7 /* R Swift */,
 				883E138F1F29214300EDB1E7 /* Sources */,
 				883E13901F29214300EDB1E7 /* Frameworks */,
 				883E13911F29214300EDB1E7 /* Resources */,
@@ -283,10 +402,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				883E13CC1F2928DB00EDB1E7 /* Main.storyboard in Resources */,
-				883E13D01F2928DB00EDB1E7 /* Info.plist in Resources */,
 				883E13CE1F2928DB00EDB1E7 /* Assets.xcassets in Resources */,
 				883E13CF1F2928DB00EDB1E7 /* LaunchScreen.storyboard in Resources */,
+				883E14031F294B9D00EDB1E7 /* MyTvSeries.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +493,20 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		883E14041F294BB000EDB1E7 /* R Swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "R Swift";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" \"$SRCROOT/trakt-involves/Resources\"\n";
+		};
 		D53F17738C0F3E391F2811C3 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -397,11 +529,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				883E13E01F293CA100EDB1E7 /* MainContract.swift in Sources */,
+				883E13E71F29400E00EDB1E7 /* AuthManager.swift in Sources */,
+				883E13E31F293CA100EDB1E7 /* MainRouter.swift in Sources */,
+				883E13D71F2938DC00EDB1E7 /* RootRouter.swift in Sources */,
+				883E13F21F2941D500EDB1E7 /* API.swift in Sources */,
 				883E13CB1F2928DB00EDB1E7 /* URLRequest+Additions.swift in Sources */,
+				883E13E41F293CA100EDB1E7 /* MainTabBarController.swift in Sources */,
+				883E13FF1F294A3700EDB1E7 /* MyTvSeriesRouter.swift in Sources */,
+				883E13E11F293CA100EDB1E7 /* MainInteractor.swift in Sources */,
+				883E13D51F2938DC00EDB1E7 /* RootContract.swift in Sources */,
 				883E13CA1F2928DB00EDB1E7 /* UIViewController+Additions.swift in Sources */,
+				883E14061F294DCD00EDB1E7 /* R.generated.swift in Sources */,
 				883E13971F29214300EDB1E7 /* AppDelegate.swift in Sources */,
+				883E14001F294A3700EDB1E7 /* MyTvSeriesViewController.swift in Sources */,
 				883E13C81F2928DB00EDB1E7 /* UIApplication+TopViewController.swift in Sources */,
 				883E13CD1F2928DB00EDB1E7 /* ViewProtocols.swift in Sources */,
+				883E13D61F2938DC00EDB1E7 /* RootPresenter.swift in Sources */,
+				883E13E21F293CA100EDB1E7 /* MainPresenter.swift in Sources */,
+				883E14091F29506F00EDB1E7 /* AuthenticationAPI.swift in Sources */,
+				883E13F41F2941D500EDB1E7 /* Endpoint.swift in Sources */,
+				883E13F51F2941D500EDB1E7 /* Endpoints.swift in Sources */,
+				883E13FE1F294A3700EDB1E7 /* MyTvSeriesPresenter.swift in Sources */,
+				883E13FC1F294A3700EDB1E7 /* MyTvSeriesContract.swift in Sources */,
+				883E13F31F2941D500EDB1E7 /* Authentication.swift in Sources */,
+				883E13FD1F294A3700EDB1E7 /* MyTvSeriesInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

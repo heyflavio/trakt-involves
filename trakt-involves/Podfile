@@ -9,10 +9,11 @@ target 'trakt-involves' do
     pod 'RxCocoa'
     pod 'Alamofire'
     pod 'AlamofireObjectMapper'
+    pod 'AlamofireActivityLogger'
     pod 'ObjectMapper'
     pod 'PKHUD'
     pod 'Kingfisher'
-
+    
 
   target 'trakt-involvesTests' do
     inherit! :search_paths
