@@ -1,5 +1,5 @@
 //
-//  MyTvSeriesRouter.swift
+//  WatchlistRouter.swift
 //  trakt-involves
 //
 //  Created by iMac on 26/07/17.
@@ -8,17 +8,17 @@
 
 import UIKit
 
-class MyTvSeriesRouter: MyTvSeriesRouterProtocol {
+class WatchlistRouter: WatchlistRouterProtocol {
     weak var view: UIViewController?
     
     static func assembleModule() -> UIViewController {
-        guard let viewController = R.storyboard.myTvSeries.myTvSeriesViewController() else {
-            fatalError()
-        }
         
-        let presenter = MyTvSeriesPresenter()
-        let interactor = MyTvSeriesInteractor()
-        let router = MyTvSeriesRouter()
+        let navigationController = R.storyboard.watchlist.watchlistNavigationController()
+        let viewController = navigationController?.visibleViewController as! WatchlistViewController
+        
+        let presenter = WatchlistPresenter()
+        let interactor = WatchlistInteractor()
+        let router = WatchlistRouter()
         
         router.view = viewController
         
@@ -30,7 +30,7 @@ class MyTvSeriesRouter: MyTvSeriesRouterProtocol {
     
         interactor.interactorOutput = presenter
 
-        return viewController
+        return navigationController!
     }
     
 }

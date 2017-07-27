@@ -27,12 +27,12 @@
 		883E13F21F2941D500EDB1E7 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13ED1F2941D500EDB1E7 /* API.swift */; };
 		883E13F41F2941D500EDB1E7 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13F01F2941D500EDB1E7 /* Endpoint.swift */; };
 		883E13F51F2941D500EDB1E7 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13F11F2941D500EDB1E7 /* Endpoints.swift */; };
-		883E13FC1F294A3700EDB1E7 /* MyTvSeriesContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13F71F294A3700EDB1E7 /* MyTvSeriesContract.swift */; };
-		883E13FD1F294A3700EDB1E7 /* MyTvSeriesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13F81F294A3700EDB1E7 /* MyTvSeriesInteractor.swift */; };
-		883E13FE1F294A3700EDB1E7 /* MyTvSeriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13F91F294A3700EDB1E7 /* MyTvSeriesPresenter.swift */; };
-		883E13FF1F294A3700EDB1E7 /* MyTvSeriesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13FA1F294A3700EDB1E7 /* MyTvSeriesRouter.swift */; };
-		883E14001F294A3700EDB1E7 /* MyTvSeriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13FB1F294A3700EDB1E7 /* MyTvSeriesViewController.swift */; };
-		883E14031F294B9D00EDB1E7 /* MyTvSeries.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 883E14021F294B9D00EDB1E7 /* MyTvSeries.storyboard */; };
+		883E13FC1F294A3700EDB1E7 /* WatchlistContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13F71F294A3700EDB1E7 /* WatchlistContract.swift */; };
+		883E13FD1F294A3700EDB1E7 /* WatchlistInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13F81F294A3700EDB1E7 /* WatchlistInteractor.swift */; };
+		883E13FE1F294A3700EDB1E7 /* WatchlistPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13F91F294A3700EDB1E7 /* WatchlistPresenter.swift */; };
+		883E13FF1F294A3700EDB1E7 /* WatchlistRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13FA1F294A3700EDB1E7 /* WatchlistRouter.swift */; };
+		883E14001F294A3700EDB1E7 /* WatchlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13FB1F294A3700EDB1E7 /* WatchlistViewController.swift */; };
+		883E14031F294B9D00EDB1E7 /* Watchlist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 883E14021F294B9D00EDB1E7 /* Watchlist.storyboard */; };
 		883E14061F294DCD00EDB1E7 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E14051F294DCD00EDB1E7 /* R.generated.swift */; };
 		883E14091F29506F00EDB1E7 /* AuthenticationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E14081F29506F00EDB1E7 /* AuthenticationAPI.swift */; };
 		883E140F1F297E3600EDB1E7 /* AuthenticationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E140E1F297E3600EDB1E7 /* AuthenticationModel.swift */; };
@@ -85,12 +85,12 @@
 		883E13ED1F2941D500EDB1E7 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		883E13F01F2941D500EDB1E7 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		883E13F11F2941D500EDB1E7 /* Endpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
-		883E13F71F294A3700EDB1E7 /* MyTvSeriesContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyTvSeriesContract.swift; path = MyTvSeries/MyTvSeriesContract.swift; sourceTree = "<group>"; };
-		883E13F81F294A3700EDB1E7 /* MyTvSeriesInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyTvSeriesInteractor.swift; path = MyTvSeries/MyTvSeriesInteractor.swift; sourceTree = "<group>"; };
-		883E13F91F294A3700EDB1E7 /* MyTvSeriesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyTvSeriesPresenter.swift; path = MyTvSeries/MyTvSeriesPresenter.swift; sourceTree = "<group>"; };
-		883E13FA1F294A3700EDB1E7 /* MyTvSeriesRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyTvSeriesRouter.swift; path = MyTvSeries/MyTvSeriesRouter.swift; sourceTree = "<group>"; };
-		883E13FB1F294A3700EDB1E7 /* MyTvSeriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyTvSeriesViewController.swift; path = MyTvSeries/MyTvSeriesViewController.swift; sourceTree = "<group>"; };
-		883E14021F294B9D00EDB1E7 /* MyTvSeries.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MyTvSeries.storyboard; path = MyTvSeries/View/MyTvSeries.storyboard; sourceTree = "<group>"; };
+		883E13F71F294A3700EDB1E7 /* WatchlistContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchlistContract.swift; sourceTree = "<group>"; };
+		883E13F81F294A3700EDB1E7 /* WatchlistInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchlistInteractor.swift; sourceTree = "<group>"; };
+		883E13F91F294A3700EDB1E7 /* WatchlistPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchlistPresenter.swift; sourceTree = "<group>"; };
+		883E13FA1F294A3700EDB1E7 /* WatchlistRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchlistRouter.swift; sourceTree = "<group>"; };
+		883E13FB1F294A3700EDB1E7 /* WatchlistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchlistViewController.swift; sourceTree = "<group>"; };
+		883E14021F294B9D00EDB1E7 /* Watchlist.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Watchlist.storyboard; sourceTree = "<group>"; };
 		883E14051F294DCD00EDB1E7 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		883E14081F29506F00EDB1E7 /* AuthenticationAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationAPI.swift; sourceTree = "<group>"; };
 		883E140E1F297E3600EDB1E7 /* AuthenticationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthenticationModel.swift; path = Models/Network/AuthenticationModel.swift; sourceTree = "<group>"; };
@@ -210,7 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				883E14171F29835A00EDB1E7 /* Login */,
-				883E13F61F29490200EDB1E7 /* MyTvSeries */,
+				883E13F61F29490200EDB1E7 /* Watchlist */,
 				883E13DA1F293CA100EDB1E7 /* Main */,
 				883E13D11F2938DC00EDB1E7 /* Root */,
 			);
@@ -302,25 +302,25 @@
 			path = Endpoints;
 			sourceTree = "<group>";
 		};
-		883E13F61F29490200EDB1E7 /* MyTvSeries */ = {
+		883E13F61F29490200EDB1E7 /* Watchlist */ = {
 			isa = PBXGroup;
 			children = (
-				883E13F71F294A3700EDB1E7 /* MyTvSeriesContract.swift */,
-				883E13F81F294A3700EDB1E7 /* MyTvSeriesInteractor.swift */,
-				883E13F91F294A3700EDB1E7 /* MyTvSeriesPresenter.swift */,
-				883E13FA1F294A3700EDB1E7 /* MyTvSeriesRouter.swift */,
-				883E13FB1F294A3700EDB1E7 /* MyTvSeriesViewController.swift */,
+				883E13F71F294A3700EDB1E7 /* WatchlistContract.swift */,
+				883E13F81F294A3700EDB1E7 /* WatchlistInteractor.swift */,
+				883E13F91F294A3700EDB1E7 /* WatchlistPresenter.swift */,
+				883E13FA1F294A3700EDB1E7 /* WatchlistRouter.swift */,
+				883E13FB1F294A3700EDB1E7 /* WatchlistViewController.swift */,
 				883E14011F294B7700EDB1E7 /* View */,
 			);
-			name = MyTvSeries;
+			path = Watchlist;
 			sourceTree = "<group>";
 		};
 		883E14011F294B7700EDB1E7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				883E14021F294B9D00EDB1E7 /* MyTvSeries.storyboard */,
+				883E14021F294B9D00EDB1E7 /* Watchlist.storyboard */,
 			);
-			name = View;
+			path = View;
 			sourceTree = "<group>";
 		};
 		883E140C1F297C1B00EDB1E7 /* Models */ = {
@@ -346,9 +346,17 @@
 				883E14261F29883D00EDB1E7 /* LoginPresenter.swift */,
 				883E14271F29883D00EDB1E7 /* LoginRouter.swift */,
 				883E14281F29883D00EDB1E7 /* LoginViewController.swift */,
-				883E14181F29838800EDB1E7 /* Login.storyboard */,
+				883E142E1F2995F700EDB1E7 /* View */,
 			);
 			name = Login;
+			sourceTree = "<group>";
+		};
+		883E142E1F2995F700EDB1E7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				883E14181F29838800EDB1E7 /* Login.storyboard */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -444,7 +452,7 @@
 				883E14191F29838800EDB1E7 /* Login.storyboard in Resources */,
 				883E13CE1F2928DB00EDB1E7 /* Assets.xcassets in Resources */,
 				883E13CF1F2928DB00EDB1E7 /* LaunchScreen.storyboard in Resources */,
-				883E14031F294B9D00EDB1E7 /* MyTvSeries.storyboard in Resources */,
+				883E14031F294B9D00EDB1E7 /* Watchlist.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,13 +584,13 @@
 				883E13F21F2941D500EDB1E7 /* API.swift in Sources */,
 				883E13CB1F2928DB00EDB1E7 /* URLRequest+Additions.swift in Sources */,
 				883E13E41F293CA100EDB1E7 /* MainTabBarController.swift in Sources */,
-				883E13FF1F294A3700EDB1E7 /* MyTvSeriesRouter.swift in Sources */,
+				883E13FF1F294A3700EDB1E7 /* WatchlistRouter.swift in Sources */,
 				883E13E11F293CA100EDB1E7 /* MainInteractor.swift in Sources */,
 				883E13D51F2938DC00EDB1E7 /* RootContract.swift in Sources */,
 				883E13CA1F2928DB00EDB1E7 /* UIViewController+Additions.swift in Sources */,
 				883E14061F294DCD00EDB1E7 /* R.generated.swift in Sources */,
 				883E13971F29214300EDB1E7 /* AppDelegate.swift in Sources */,
-				883E14001F294A3700EDB1E7 /* MyTvSeriesViewController.swift in Sources */,
+				883E14001F294A3700EDB1E7 /* WatchlistViewController.swift in Sources */,
 				883E13C81F2928DB00EDB1E7 /* UIApplication+TopViewController.swift in Sources */,
 				883E14291F29883D00EDB1E7 /* LoginContract.swift in Sources */,
 				883E142B1F29883D00EDB1E7 /* LoginPresenter.swift in Sources */,
@@ -594,9 +602,9 @@
 				883E142C1F29883D00EDB1E7 /* LoginRouter.swift in Sources */,
 				883E13F41F2941D500EDB1E7 /* Endpoint.swift in Sources */,
 				883E13F51F2941D500EDB1E7 /* Endpoints.swift in Sources */,
-				883E13FE1F294A3700EDB1E7 /* MyTvSeriesPresenter.swift in Sources */,
-				883E13FC1F294A3700EDB1E7 /* MyTvSeriesContract.swift in Sources */,
-				883E13FD1F294A3700EDB1E7 /* MyTvSeriesInteractor.swift in Sources */,
+				883E13FE1F294A3700EDB1E7 /* WatchlistPresenter.swift in Sources */,
+				883E13FC1F294A3700EDB1E7 /* WatchlistContract.swift in Sources */,
+				883E13FD1F294A3700EDB1E7 /* WatchlistInteractor.swift in Sources */,
 				883E140F1F297E3600EDB1E7 /* AuthenticationModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -65,8 +65,8 @@ struct R: Rswift.Validatable {
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `Login`.
     static let login = _R.storyboard.login()
-    /// Storyboard `MyTvSeries`.
-    static let myTvSeries = _R.storyboard.myTvSeries()
+    /// Storyboard `Watchlist`.
+    static let watchlist = _R.storyboard.watchlist()
     
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
@@ -78,9 +78,9 @@ struct R: Rswift.Validatable {
       return UIKit.UIStoryboard(resource: R.storyboard.login)
     }
     
-    /// `UIStoryboard(name: "MyTvSeries", bundle: ...)`
-    static func myTvSeries(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.myTvSeries)
+    /// `UIStoryboard(name: "Watchlist", bundle: ...)`
+    static func watchlist(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.watchlist)
     }
     
     fileprivate init() {}
@@ -115,8 +115,8 @@ struct _R: Rswift.Validatable {
   
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
+      try watchlist.validate()
       try login.validate()
-      try myTvSeries.validate()
     }
     
     struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType {
@@ -145,17 +145,23 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct myTvSeries: Rswift.StoryboardResourceType, Rswift.Validatable {
+    struct watchlist: Rswift.StoryboardResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
-      let myTvSeriesViewController = StoryboardViewControllerResource<MyTvSeriesViewController>(identifier: "MyTvSeriesViewController")
-      let name = "MyTvSeries"
+      let name = "Watchlist"
+      let watchlistNavigationController = StoryboardViewControllerResource<UIKit.UINavigationController>(identifier: "WatchlistNavigationController")
+      let watchlistViewController = StoryboardViewControllerResource<WatchlistViewController>(identifier: "WatchlistViewController")
       
-      func myTvSeriesViewController(_: Void = ()) -> MyTvSeriesViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: myTvSeriesViewController)
+      func watchlistNavigationController(_: Void = ()) -> UIKit.UINavigationController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: watchlistNavigationController)
+      }
+      
+      func watchlistViewController(_: Void = ()) -> WatchlistViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: watchlistViewController)
       }
       
       static func validate() throws {
-        if _R.storyboard.myTvSeries().myTvSeriesViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'myTvSeriesViewController' could not be loaded from storyboard 'MyTvSeries' as 'MyTvSeriesViewController'.") }
+        if _R.storyboard.watchlist().watchlistViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'watchlistViewController' could not be loaded from storyboard 'Watchlist' as 'WatchlistViewController'.") }
+        if _R.storyboard.watchlist().watchlistNavigationController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'watchlistNavigationController' could not be loaded from storyboard 'Watchlist' as 'UIKit.UINavigationController'.") }
       }
       
       fileprivate init() {}

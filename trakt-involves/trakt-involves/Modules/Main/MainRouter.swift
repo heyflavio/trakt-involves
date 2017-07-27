@@ -26,27 +26,19 @@ class MainRouter: MainRouterProtocol {
         
         interactor.interactorOutput = presenter
         
-        let myTvSeriesViewController = MyTvSeriesRouter.assembleModule()
-        myTvSeriesViewController.tabBarItem = UITabBarItem(title: "One", image: nil, selectedImage: nil)
+        let myTvSeriesViewController = WatchlistRouter.assembleModule()
+        myTvSeriesViewController.tabBarItem = UITabBarItem(title: "Upcoming", image: nil, selectedImage: nil)
         
-        let myTvSeriesViewController2 = MyTvSeriesRouter.assembleModule()
-        myTvSeriesViewController2.tabBarItem = UITabBarItem(title: "Two", image: nil, selectedImage: nil)
+        let myTvSeriesViewController2 = WatchlistRouter.assembleModule()
+        myTvSeriesViewController2.tabBarItem = UITabBarItem(title: "Watchlist", image: nil, selectedImage: nil)
         
-        let myTvSeriesViewController3 = MyTvSeriesRouter.assembleModule()
-        myTvSeriesViewController3.tabBarItem = UITabBarItem(title: "Three", image: nil, selectedImage: nil)
-        
-        let myTvSeriesViewController4 = MyTvSeriesRouter.assembleModule()
-        myTvSeriesViewController4.tabBarItem = UITabBarItem(title: "Four", image: nil, selectedImage: nil)
-        
-        let myTvSeriesViewController5 = MyTvSeriesRouter.assembleModule()
-        myTvSeriesViewController5.tabBarItem = UITabBarItem(title: "Five", image: nil, selectedImage: nil)
+        let myTvSeriesViewController3 = WatchlistRouter.assembleModule()
+        myTvSeriesViewController3.tabBarItem = UITabBarItem(title: "Profile", image: nil, selectedImage: nil)
         
         tabBarController.viewControllers = [
             myTvSeriesViewController,
             myTvSeriesViewController2,
-            myTvSeriesViewController3,
-            myTvSeriesViewController4,
-            myTvSeriesViewController5]
+            myTvSeriesViewController3]
         
         return tabBarController
     }

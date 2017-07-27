@@ -1,5 +1,5 @@
 //
-//  MyTvSeriesViewController.swift
+//  WatchlistViewController.swift
 //  trakt-involves
 //
 //  Created by iMac on 26/07/17.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class MyTvSeriesViewController: UIViewController {
+class WatchlistViewController: UIViewController {
     
-    var presenter: MyTvSeriesPresenterInputProtocol?    
+    var presenter: WatchlistPresenterInputProtocol?    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +24,12 @@ class MyTvSeriesViewController: UIViewController {
         presenter?.viewWillAppear()
 
     }
+    
+    @IBAction func didPressSearchButton(_ sender: UIBarButtonItem) {
+        
+    }
 }
 
-extension MyTvSeriesViewController: MyTvSeriesPresenterOutputProtocol {
+extension WatchlistViewController: WatchlistPresenterOutputProtocol {
     
 }
