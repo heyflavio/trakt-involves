@@ -12,15 +12,21 @@ class EpisodesPresenter: EpisodesPresenterInputProtocol {
     var interactor: EpisodesInteractorInputProtocol?
     var router: EpisodesRouterProtocol?
 
-    var traktId: Int?
+    var watchlistItem: WatchlistViewData?
     var seasonNumber: Int?
     
     func viewDidLoad() {
-        interactor?.fetchAllEpisodes(for: traktId!, and: seasonNumber!)
+        interactor?.fetchAllEpisodes(for: watchlistItem!.traktId!,
+                                     and: seasonNumber!)
     }
     
     func viewWillAppear() {
         
+    }
+    
+    func didSelectRow(with viewData: EpisodeViewData){
+        router?.presentShowInfoScreen(with: watchlistItem!,
+                                      episodeViewData: viewData)
     }
     
 }

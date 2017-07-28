@@ -12,4 +12,5 @@ struct WatchlistViewData {
     var title: String?
     var year: Int?
     var traktId: Int?
+    var tvdb: Int?
 }

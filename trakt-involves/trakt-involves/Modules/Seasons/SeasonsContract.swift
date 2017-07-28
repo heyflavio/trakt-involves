@@ -14,7 +14,7 @@ protocol SeasonsPresenterInputProtocol: class {
     var interactor: SeasonsInteractorInputProtocol? { get set }
     var router: SeasonsRouterProtocol? { get set }
     
-    var traktId: Int? { get set }
+    var watchlistItem: WatchlistViewData? { get set }
     
     func viewDidLoad()
     func viewWillAppear()
@@ -25,24 +25,28 @@ protocol SeasonsPresenterInputProtocol: class {
 protocol SeasonsPresenterOutputProtocol: class {
     var presenter: SeasonsPresenterInputProtocol? { get set }
     
+    func setNavigationTitle(_ title: String)
     func presentSeasons(_ viewData: [SeasonViewData])
+    func presentNextEpisode(_ viewData: EpisodeViewData)
 }
 
 protocol SeasonsInteractorInputProtocol: class {
     weak var interactorOutput: SeasonsInteractorOutputProtocol? { get set }
     
     func fetchAllSeasons(for id: Int)
+    func fetchNextEpisode(for id: Int)
 }
 
 protocol SeasonsInteractorOutputProtocol: class {
     var interactor: SeasonsInteractorInputProtocol? { get set }
     
     func fetchedSeasons(_ viewData: [SeasonViewData])
+    func fetchedNextEpisode(_ viewData: EpisodeViewData)
 }
 
 protocol SeasonsRouterProtocol: class {
     weak var view: UIViewController? { get set }
-    static func assembleModule(with traktId: Int) -> UIViewController
+    static func assembleModule(with watchlistItem: WatchlistViewData) -> UIViewController
     
-    func presentEpisodesScreen(for traktId: Int, and seasonNumber: Int)
+    func presentEpisodesScreen(for watchlistItem: WatchlistViewData, and seasonNumber: Int)
 }

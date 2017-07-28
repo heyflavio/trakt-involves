@@ -9,15 +9,15 @@
 import Foundation
 
 struct SearchViewData {
-    var title: String
-    var year: String
-    var tracktId: String
-    var tvdb: String
+    var title: String?
+    var year: String?
+    var tracktId: Int
+    var tvdb: Int?
     
-    init(title: String = "", year: Int?, traktId: Int, tvdb: Int?) {
+    init(title: String? = "", year: Int?, traktId: Int, tvdb: Int?) {
         self.title = title
-        self.year = year != nil ? "\(year!)" : ""
-        self.tracktId = "\(traktId)"
-        self.tvdb = tvdb != nil ? "\(tvdb!)" : ""
+        self.year = year != nil ? String(year!) : ""
+        self.tracktId = traktId
+        self.tvdb = tvdb
     }
 }

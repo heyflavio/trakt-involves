@@ -10,6 +10,7 @@ import UIKit
 
 class SeasonsViewController: UIViewController {
     
+    @IBOutlet weak var nextEpisodeInfoLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     var presenter: SeasonsPresenterInputProtocol?
@@ -42,8 +43,16 @@ class SeasonsViewController: UIViewController {
 
 extension SeasonsViewController: SeasonsPresenterOutputProtocol {
     
+    func setNavigationTitle(_ title: String) {
+        self.title = title
+    }
+    
     func presentSeasons(_ viewData: [SeasonViewData]) {
         seasonsViewData = viewData
+    }
+    
+    func presentNextEpisode(_ viewData: EpisodeViewData) {
+        nextEpisodeInfoLabel.text = viewData.title ?? "There's no next episodes"
     }
 }
 
@@ -70,7 +79,7 @@ extension SeasonsViewController: UITableViewDataSource {
         let item = seasonsViewData[indexPath.row]
         
         cell.titleLabel?.text = "\(item.number!)"
-        cell.subtitleLabel?.text = item.title!
+        cell.subtitleLabel?.text = item.title ?? ""
         
         return cell
     }

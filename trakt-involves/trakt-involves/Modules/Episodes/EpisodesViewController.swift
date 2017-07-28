@@ -28,6 +28,7 @@ class EpisodesViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        navigationController?.setNavigationBarHidden(false, animated: false)
         presenter?.viewWillAppear()
     }
 
@@ -54,7 +55,7 @@ extension EpisodesViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //presenter?.didSelectRow(with: episodesViewData[indexPath.row])
+        presenter?.didSelectRow(with: episodesViewData[indexPath.row])
     }
 }
 
@@ -70,7 +71,7 @@ extension EpisodesViewController: UITableViewDataSource {
         let item = episodesViewData[indexPath.row]
         
         cell.titleLabel?.text = "\(item.number!)"
-        cell.subtitleLabel?.text = item.title!
+        cell.subtitleLabel?.text = item.title ?? ""
         
         return cell
     }

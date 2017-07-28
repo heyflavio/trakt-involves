@@ -16,6 +16,33 @@ import RxCocoa
 
 struct EpisodeAPI {
 
+    static func getEpisode(for id: Int, seasonNumber: Int, and episodeNumber: Int) -> Observable<EpisodeModel>   {
+        
+        return Observable<EpisodeModel>.create { observer -> Disposable in
+            
+            let urlRequest = URLRequest.getURLRequest(with: URL(string: Endpoints.Show.Season.Episode.get(id, seasonNumber, episodeNumber).url())!,
+                                                      andMethod: .get)
+            
+            let request = Alamofire
+                .request(urlRequest)
+                .validate()
+                .log()
+                .responseObject { (response: DataResponse<EpisodeModel>) in
+                    switch response.result {
+                    case .success(let episode):
+                        observer.onNext(episode)
+                        observer.onCompleted()
+                    case .failure(let error):
+                        observer.onError(error)
+                    }
+            }
+            
+            return Disposables.create(with: {
+                request.cancel()
+            })
+        }
+    }
+    
     static func getAllEpisodes(for id: Int, and seasonNumber: Int) -> Observable<[EpisodeModel]>   {
         
         return Observable<[EpisodeModel]>.create { observer -> Disposable in
@@ -29,8 +56,8 @@ struct EpisodeAPI {
                 .log()
                 .responseArray { (response: DataResponse<[EpisodeModel]>) in
                     switch response.result {
-                    case .success(let showInfo):
-                        observer.onNext(showInfo)
+                    case .success(let episode):
+                        observer.onNext(episode)
                         observer.onCompleted()
                     case .failure(let error):
                         observer.onError(error)

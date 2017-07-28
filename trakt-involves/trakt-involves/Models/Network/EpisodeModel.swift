@@ -14,6 +14,7 @@ class EpisodeModel {
     var number: Int?
     var ids: IdModels?
     var title: String?
+    var overview: String?
     
     required convenience init?(map: Map) {
         self.init()
@@ -27,5 +28,6 @@ extension EpisodeModel: Mappable {
         number <- map["number"]
         ids <- map["ids"]
         title <- map["title"]
+        overview <- map["overview"]
     }
 }

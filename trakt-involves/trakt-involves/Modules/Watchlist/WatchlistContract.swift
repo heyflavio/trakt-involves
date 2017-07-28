@@ -44,5 +44,5 @@ protocol WatchlistRouterProtocol: class {
     static func assembleModule() -> UIViewController
     
     func presentSearchScreen()
-    func presentSeasonsScreen(for traktId: Int)
+    func presentSeasonsScreen(for watchListItem: WatchlistViewData)
 }

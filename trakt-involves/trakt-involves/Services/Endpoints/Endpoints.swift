@@ -36,7 +36,7 @@ enum Endpoints {
     }
     
     enum Image: Endpoint {
-        case get(String)
+        case get(Int)
         
         public var path: String {
             switch self {
@@ -46,7 +46,7 @@ enum Endpoints {
     }
     
     enum Show: Endpoint {
-        case get(String)
+        case get(Int)
         case getWatchlist
         case addToWatchlist
         case removeFromWatchlist
@@ -71,6 +71,7 @@ enum Endpoints {
             }
             
             enum Episode: Endpoint {
+                case get(Int, Int,Int)
                 case getAllEpisodes(Int, Int)
                 case getNextEpisode(Int)
                 case markAsWatched
@@ -78,6 +79,7 @@ enum Endpoints {
                 
                 public var path: String {
                     switch self {
+                    case .get(let id, let seasonNumber, let episodeNumber): return "/shows/\(id)/seasons/\(seasonNumber)/episodes/\(episodeNumber)?extended=full"
                     case .getAllEpisodes(let id, let seasonNumber): return "/shows/\(id)/seasons/\(seasonNumber)"
                     case .getNextEpisode(let id): return "/shows/\(id)/next_episode"
                     case .markAsWatched: return "/sync/history"

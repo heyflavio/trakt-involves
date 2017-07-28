@@ -16,7 +16,7 @@ import RxCocoa
 
 struct ImageAPI {
     
-    static func image(for id: String) -> Observable<ImageModel>  {
+    static func image(for id: Int) -> Observable<ImageModel>  {
         
         return Observable<ImageModel>.create { observer -> Disposable in
             

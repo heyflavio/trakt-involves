@@ -16,7 +16,7 @@ import RxCocoa
 
 struct ShowAPI {
     
-    static func showInfo(for id: String) -> Observable<ShowModel>  {
+    static func showInfo(for id: Int) -> Observable<ShowModel>  {
         
         return Observable<ShowModel>.create { observer -> Disposable in
             

@@ -15,8 +15,9 @@ class ShowInfoInteractor: ShowInfoInteractorInputProtocol {
     fileprivate var disposeBag = DisposeBag()
     
     fileprivate var showModel: ShowModel?
+    fileprivate var episodeModel: EpisodeModel?
     
-    func fetchImageUrl(for tvdbId: String?) {
+    func fetchImageUrl(for tvdbId: Int?) {
         
         guard let id = tvdbId else {
             return
@@ -27,7 +28,7 @@ class ShowInfoInteractor: ShowInfoInteractorInputProtocol {
         })
     }
     
-    func fetchShowInfo(for traktId: String) {
+    func fetchShowInfo(for traktId: Int) {
         ShowAPI.showInfo(for: traktId)
             .subscribeOn(MainScheduler.instance)
             .subscribe(onNext: { showModel in
@@ -38,6 +39,17 @@ class ShowInfoInteractor: ShowInfoInteractorInputProtocol {
             }).addDisposableTo(disposeBag)
     }
     
+    func fetchEpisodeInfo(for traktId: Int, seasonNumber: Int, episodeNumber: Int) {
+        EpisodeAPI.getEpisode(for: traktId, seasonNumber: seasonNumber, and: episodeNumber)
+            .subscribeOn(MainScheduler.instance)
+            .subscribe(onNext: { episodeModel in
+                self.episodeModel = episodeModel
+                self.interactorOutput?.fetchedEpisodeInfo(self.convertEpisodeModelToViewData(episodeModel: episodeModel))
+            }, onError: {  error in
+                
+            }).addDisposableTo(disposeBag)
+    }
+
     func addShowToWatchlist() {
         ShowAPI.addToWatchlist(showModel!)
             .subscribe(onNext: { response in
@@ -52,7 +64,7 @@ class ShowInfoInteractor: ShowInfoInteractorInputProtocol {
 
 extension ShowInfoInteractor {
     
-    fileprivate func imageUrl(for tvdbId: String, completion: @escaping (String?) -> ()) {
+    fileprivate func imageUrl(for tvdbId: Int, completion: @escaping (String?) -> ()) {
         
         ImageAPI.image(for: tvdbId)
             .subscribeOn(ConcurrentDispatchQueueScheduler(queue: DispatchQueue.global(qos: .background)))
@@ -69,6 +81,15 @@ extension ShowInfoInteractor {
                                 overview: showModel.overview,
                                 year: showModel.year,
                                 network: showModel.network)
+    }
+    
+    fileprivate func convertEpisodeModelToViewData(episodeModel: EpisodeModel) -> EpisodeViewData {
+        return EpisodeViewData(title: episodeModel.title,
+                               number: episodeModel.number,
+                               season: episodeModel.season,
+                               tracktId: episodeModel.ids!.trakt!,
+                               tvdb: episodeModel.ids?.tvdb,
+                               overview: episodeModel.overview)
     }
     
 }

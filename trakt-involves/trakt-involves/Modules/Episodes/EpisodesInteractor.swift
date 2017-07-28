@@ -30,8 +30,12 @@ extension EpisodesInteractor {
     
     fileprivate func convertEpisodeModelsToViewData(episodeModels: [EpisodeModel]) -> [EpisodeViewData] {
         return episodeModels.map {
-            return EpisodeViewData(title: $0.title!,
-                                  number: $0.number)
+            return EpisodeViewData(title: $0.title,
+                                  number: $0.number,
+                                  season: $0.season,
+                                  tracktId: $0.ids!.trakt!,
+                                  tvdb: $0.ids?.tvdb,
+                                  overview: $0.overview)
         }
     }
     

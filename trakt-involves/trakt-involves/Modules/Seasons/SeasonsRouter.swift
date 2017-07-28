@@ -11,7 +11,7 @@ import UIKit
 class SeasonsRouter: SeasonsRouterProtocol {
     weak var view: UIViewController?
     
-    static func assembleModule(with traktId: Int) -> UIViewController {
+    static func assembleModule(with watchlistItem: WatchlistViewData) -> UIViewController {
         guard let viewController = R.storyboard.seasons.seasonsViewController() else {
             fatalError()
         }
@@ -28,16 +28,16 @@ class SeasonsRouter: SeasonsRouterProtocol {
         presenter.interactor = interactor
         presenter.router = router
     
-        presenter.traktId = traktId
+        presenter.watchlistItem = watchlistItem
         
         interactor.interactorOutput = presenter
 
         return viewController
     }
     
-    
-    func presentEpisodesScreen(for traktId: Int, and seasonNumber: Int){
-        view?.navigationController?.pushViewController(EpisodesRouter.assembleModule(with: traktId, and: seasonNumber), animated: true)
+    func presentEpisodesScreen(for watchlistItem: WatchlistViewData, and seasonNumber: Int) {
+        view?.navigationController?.pushViewController(EpisodesRouter.assembleModule(with: watchlistItem,
+                                                                                     and: seasonNumber), animated: true)
     }
     
 }

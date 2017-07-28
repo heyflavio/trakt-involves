@@ -24,15 +24,35 @@ class SeasonsInteractor: SeasonsInteractorInputProtocol {
                 
             }).addDisposableTo(disposeBag)
     }
+    
+    func fetchNextEpisode(for id: Int) {
+        EpisodeAPI.getNextEpisode(for: id)
+            .observeOn(MainScheduler.instance)
+            .map(convertEpisodeModelToViewData)
+            .subscribe(onNext: { episode in
+                self.interactorOutput?.fetchedNextEpisode(episode)
+            }, onError: { error in
+                
+            }).addDisposableTo(disposeBag)
+
+    }
 }
 
 extension SeasonsInteractor {
     
     fileprivate func convertSeasonModelsToViewData(seasonModels: [SeasonModel]) -> [SeasonViewData] {
         return seasonModels.map {
-            return SeasonViewData(title: $0.title!,
+            return SeasonViewData(title: $0.title,
                                   number: $0.number)
         }
     }
     
+    fileprivate func convertEpisodeModelToViewData(episodeModel: EpisodeModel) -> EpisodeViewData {
+        return EpisodeViewData(title: episodeModel.title,
+                                number: episodeModel.number,
+                                season: episodeModel.season,
+                                tracktId: episodeModel.ids!.trakt!,
+                                tvdb: episodeModel.ids?.tvdb,
+                                overview: episodeModel.overview)
+    }
 }

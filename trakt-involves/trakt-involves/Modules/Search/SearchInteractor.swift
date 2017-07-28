@@ -35,7 +35,7 @@ extension SearchInteractor {
     
     fileprivate func convertSearchModelsToViewData(searchModels: [SearchModel]) -> [SearchViewData] {
         return searchModels.map {
-            return SearchViewData(title: $0.show!.title!,
+            return SearchViewData(title: $0.show!.title,
                                   year: $0.show!.year,
                                   traktId: $0.show!.ids!.trakt!,
                                   tvdb: $0.show!.ids!.tvdb)

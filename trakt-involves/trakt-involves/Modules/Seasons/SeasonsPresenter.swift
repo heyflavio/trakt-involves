@@ -12,10 +12,12 @@ class SeasonsPresenter: SeasonsPresenterInputProtocol {
     var interactor: SeasonsInteractorInputProtocol?
     var router: SeasonsRouterProtocol?
 
-    var traktId: Int?
+    var watchlistItem: WatchlistViewData?
     
     func viewDidLoad() {
-        interactor?.fetchAllSeasons(for: traktId!)
+        presenterOutput?.setNavigationTitle(watchlistItem!.title ?? "")
+        interactor?.fetchAllSeasons(for: watchlistItem!.traktId!)
+        interactor?.fetchNextEpisode(for: watchlistItem!.traktId!)
     }
     
     func viewWillAppear() {
@@ -23,7 +25,7 @@ class SeasonsPresenter: SeasonsPresenterInputProtocol {
     }
     
     func didSelectRow(with viewData: SeasonViewData) {
-        router?.presentEpisodesScreen(for: traktId!, and: viewData.number!)
+        router?.presentEpisodesScreen(for: watchlistItem!, and: viewData.number!)
     }
     
 }
@@ -32,5 +34,9 @@ extension SeasonsPresenter: SeasonsInteractorOutputProtocol {
     
     func fetchedSeasons(_ viewData: [SeasonViewData]) {
         presenterOutput?.presentSeasons(viewData)
+    }
+    
+    func fetchedNextEpisode(_ viewData: EpisodeViewData) {
+        presenterOutput?.presentNextEpisode(viewData)
     }
 }

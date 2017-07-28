@@ -30,9 +30,10 @@ extension WatchlistInteractor {
     
     fileprivate func convertWatchlistModelsToViewData(searchModels: [WatchlistModel]) -> [WatchlistViewData] {
         return searchModels.map {
-            return WatchlistViewData(title: $0.show!.title!,
+            return WatchlistViewData(title: $0.show!.title,
                                      year: $0.show!.year,
-                                     traktId: $0.show?.ids?.trakt)
+                                     traktId: $0.show?.ids?.trakt,
+                                     tvdb: $0.show?.ids?.tvdb)
         }
     }
     

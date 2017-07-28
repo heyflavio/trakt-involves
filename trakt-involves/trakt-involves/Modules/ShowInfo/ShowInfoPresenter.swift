@@ -12,14 +12,27 @@ class ShowInfoPresenter: ShowInfoPresenterInputProtocol {
     var interactor: ShowInfoInteractorInputProtocol?
     var router: ShowInfoRouterProtocol?
     
+    var context: InfoContext?
+    
     var title: String?
-    var traktId: String?
-    var tvdb: String?
+    var traktId: Int?
+    var tvdb: Int?
+    
+    var seasonNumber: Int?
+    var episodeNumber: Int?
     
     func viewDidLoad() {
-        presenterOutput?.setupView(with: title!)
+        presenterOutput?.setupView(with: context!, title: title)
         interactor?.fetchImageUrl(for: tvdb)
-        interactor?.fetchShowInfo(for: traktId!)
+        
+        if context == .show {
+            interactor?.fetchShowInfo(for: traktId!)
+        } else {
+            interactor?.fetchEpisodeInfo(for: traktId!,
+                                         seasonNumber: seasonNumber!,
+                                         episodeNumber: episodeNumber!)
+        }
+        
     }
     
     func viewWillAppear() {
@@ -27,7 +40,11 @@ class ShowInfoPresenter: ShowInfoPresenterInputProtocol {
     }
     
     func didPressAddToWatchlistButton() {
-        interactor?.addShowToWatchlist()
+        if context == . show {
+            interactor?.addShowToWatchlist()
+        } else {
+            
+        }
     }
     
     func didPressBackButton() {
@@ -43,5 +60,9 @@ extension ShowInfoPresenter: ShowInfoInteractorOutputProtocol {
     
     func fetchedShowInfo(_ showInfo: ShowInfoViewData) {
         presenterOutput?.setupView(with: showInfo)
+    }
+    
+    func fetchedEpisodeInfo(_ episodeInfo: EpisodeViewData) {
+        presenterOutput?.setupView(with: episodeInfo)
     }
 }

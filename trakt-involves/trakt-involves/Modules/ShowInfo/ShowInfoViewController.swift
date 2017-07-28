@@ -53,7 +53,13 @@ class ShowInfoViewController: UIViewController {
 
 extension ShowInfoViewController: ShowInfoPresenterOutputProtocol {
     
-    func setupView(with title: String) {
+    func setupView(with context: InfoContext, title: String?) {
+        if context == .episode {
+            navigationController?.setNavigationBarHidden(true, animated: false)
+            watchButton.setTitle("Mark as Watched", for: .normal)
+        } else {
+            watchButton.setTitle("Add to Watchlist", for: .normal)
+        }
         showTitleLabel.text = title
     }
     
@@ -66,6 +72,11 @@ extension ShowInfoViewController: ShowInfoPresenterOutputProtocol {
     func setupView(with showInfo: ShowInfoViewData?) {
         overview = showInfo?.overview
         info = "\(showInfo!.year!), \(showInfo!.network!)"
+        tableView.reloadData()
+    }
+    
+    func setupView(with episodeInfo: EpisodeViewData?) {
+        overview = episodeInfo?.overview
         tableView.reloadData()
     }
 }

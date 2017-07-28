@@ -11,7 +11,13 @@ import UIKit
 class ShowInfoRouter: ShowInfoRouterProtocol {
     weak var view: UIViewController?
     
-    static func assembleModule(with traktId: String, tvdb: String?, title: String) -> UIViewController {
+    static func assembleModule(with context: InfoContext,
+                               traktId: Int,
+                               tvdb: Int?,
+                               title: String?,
+                               seasonNumber: Int? = nil,
+                               episodeNumber: Int? = nil) -> UIViewController{
+        
         guard let viewController = R.storyboard.showInfo.showInfoViewController() else {
             fatalError()
         }
@@ -28,9 +34,12 @@ class ShowInfoRouter: ShowInfoRouterProtocol {
         presenter.interactor = interactor
         presenter.router = router
     
+        presenter.context = context
         presenter.traktId = traktId
         presenter.title = title
         presenter.tvdb = tvdb
+        presenter.seasonNumber = seasonNumber
+        presenter.episodeNumber = episodeNumber
         
         interactor.interactorOutput = presenter
 
