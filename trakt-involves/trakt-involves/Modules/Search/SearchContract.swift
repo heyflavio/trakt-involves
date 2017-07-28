@@ -43,6 +43,6 @@ protocol SearchRouterProtocol: class {
     weak var view: UIViewController? { get set }
     static func assembleModule() -> UIViewController
     
-    func presentShowInfoScreen()
+    func presentShowInfoScreen(with searchViewData: SearchViewData)
     func dismissCurrentScreen()
 }

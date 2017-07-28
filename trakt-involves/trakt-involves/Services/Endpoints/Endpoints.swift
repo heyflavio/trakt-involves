@@ -27,7 +27,7 @@ enum Endpoints {
     
     enum Search: Endpoint {
         case query(String)
-
+        
         public var path: String {
             switch self {
             case .query(let value): return "/search/show?query=\(value)"
@@ -45,5 +45,36 @@ enum Endpoints {
         }
     }
     
+    enum Show: Endpoint {
+        case get(String)
+        case getWatchlist
+        case addToWatchlist
+        case removeFromWatchlist
+        
+        public var path: String {
+            switch self {
+            case .get(let id): return "/shows/\(id)?extended=full"
+            case .getWatchlist: return "/sync/watchlist/shows"
+            case .addToWatchlist: return "/sync/watchlist"
+            case .removeFromWatchlist: return "/sync/watchlist/remove"
+
+            }
+        }
+        
+        enum Episode: Endpoint {
+            case getAllEpisodes(String)
+            case markAsWatched
+            case unmarkAsWatched
+            
+            public var path: String {
+                switch self {
+                case .getAllEpisodes(let id): return "/shows/\(id)/seasons?extended=full"
+                case .markAsWatched: return "/sync/history"
+                case .unmarkAsWatched: return "/sync/history/remove"
+                }
+            }
+        }
+        
+    }
     
 }

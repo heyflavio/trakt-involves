@@ -44,10 +44,17 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
   struct nib {
+    /// Nib `DescriptionTableViewCell`.
+    static let descriptionTableViewCell = _R.nib._DescriptionTableViewCell()
     /// Nib `SearchTableViewCell`.
     static let searchTableViewCell = _R.nib._SearchTableViewCell()
+    
+    /// `UINib(name: "DescriptionTableViewCell", in: bundle)`
+    static func descriptionTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.descriptionTableViewCell)
+    }
     
     /// `UINib(name: "SearchTableViewCell", in: bundle)`
     static func searchTableViewCell(_: Void = ()) -> UIKit.UINib {
@@ -67,8 +74,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 5 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 6 storyboards.
   struct storyboard {
+    /// Storyboard `Episodes`.
+    static let episodes = _R.storyboard.episodes()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `Login`.
@@ -79,6 +88,11 @@ struct R: Rswift.Validatable {
     static let showInfo = _R.storyboard.showInfo()
     /// Storyboard `Watchlist`.
     static let watchlist = _R.storyboard.watchlist()
+    
+    /// `UIStoryboard(name: "Episodes", bundle: ...)`
+    static func episodes(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.episodes)
+    }
     
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
@@ -132,6 +146,17 @@ struct _R: Rswift.Validatable {
   }
   
   struct nib {
+    struct _DescriptionTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "DescriptionTableViewCell"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> DescriptionTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? DescriptionTableViewCell
+      }
+      
+      fileprivate init() {}
+    }
+    
     struct _SearchTableViewCell: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "SearchTableViewCell"
@@ -151,7 +176,24 @@ struct _R: Rswift.Validatable {
       try watchlist.validate()
       try login.validate()
       try search.validate()
+      try episodes.validate()
       try showInfo.validate()
+    }
+    
+    struct episodes: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let episodesViewController = StoryboardViewControllerResource<EpisodesViewController>(identifier: "EpisodesViewController")
+      let name = "Episodes"
+      
+      func episodesViewController(_: Void = ()) -> EpisodesViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: episodesViewController)
+      }
+      
+      static func validate() throws {
+        if _R.storyboard.episodes().episodesViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'episodesViewController' could not be loaded from storyboard 'Episodes' as 'EpisodesViewController'.") }
+      }
+      
+      fileprivate init() {}
     }
     
     struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType {
@@ -212,7 +254,6 @@ struct _R: Rswift.Validatable {
       }
       
       static func validate() throws {
-        if UIKit.UIImage(named: "involvesIcon") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'involvesIcon' is used in storyboard 'ShowInfo', but couldn't be loaded.") }
         if _R.storyboard.showInfo().showInfoViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'showInfoViewController' could not be loaded from storyboard 'ShowInfo' as 'ShowInfoViewController'.") }
       }
       

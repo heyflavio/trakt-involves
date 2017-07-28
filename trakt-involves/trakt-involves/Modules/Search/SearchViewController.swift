@@ -124,6 +124,7 @@ extension SearchViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as SearchTableViewCell
+        cell.accessoryType = .disclosureIndicator
         let searchResult = searchResults[indexPath.row]
         
         cell.titleLabel?.text = searchResult.title

@@ -17,7 +17,7 @@ class WatchlistPresenter: WatchlistPresenterInputProtocol {
     }
     
     func viewWillAppear() {
-        
+        interactor?.fetchWatchList()
     }
     
     
@@ -25,8 +25,14 @@ class WatchlistPresenter: WatchlistPresenterInputProtocol {
         router?.presentSearchScreen()
     }
     
+    func didSelectRow(with watchlistViewData: WatchlistViewData) {
+        router?.presentEpisodesScreen(for: watchlistViewData.traktId!)
+    }
 }
 
 extension WatchlistPresenter: WatchlistInteractorOutputProtocol {
     
+    func fetchedWatchList(_ viewData: [WatchlistViewData]) {
+        presenterOutput?.setWatchList(viewData)
+    }
 }

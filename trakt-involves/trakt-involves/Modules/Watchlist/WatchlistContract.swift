@@ -18,18 +18,25 @@ protocol WatchlistPresenterInputProtocol: class {
     func viewWillAppear()
     
     func didPressSearchButton()
+    func didSelectRow(with watchlistViewData: WatchlistViewData)
 }
 
 protocol WatchlistPresenterOutputProtocol: class {
     var presenter: WatchlistPresenterInputProtocol? { get set }
+    
+    func setWatchList(_ viewData: [WatchlistViewData])
 }
 
 protocol WatchlistInteractorInputProtocol: class {
     weak var interactorOutput: WatchlistInteractorOutputProtocol? { get set }
+    
+    func fetchWatchList()
 }
 
 protocol WatchlistInteractorOutputProtocol: class {
     var interactor: WatchlistInteractorInputProtocol? { get set }
+    
+    func fetchedWatchList(_ viewData: [WatchlistViewData])
 }
 
 protocol WatchlistRouterProtocol: class {
@@ -37,4 +44,5 @@ protocol WatchlistRouterProtocol: class {
     static func assembleModule() -> UIViewController
     
     func presentSearchScreen()
+    func presentEpisodesScreen(for traktId: Int)
 }

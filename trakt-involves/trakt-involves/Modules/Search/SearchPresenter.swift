@@ -21,7 +21,7 @@ class SearchPresenter: SearchPresenterInputProtocol {
     }
 
     func didSelectRow(with searchViewData: SearchViewData) {
-        router?.presentShowInfoScreen()
+        router?.presentShowInfoScreen(with: searchViewData)
     }
     
     func didPressCancelButton() {

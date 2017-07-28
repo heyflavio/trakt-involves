@@ -37,4 +37,7 @@ class WatchlistRouter: WatchlistRouterProtocol {
         view?.present(SearchRouter.assembleModule())
     }
     
+    func presentEpisodesScreen(for traktId: Int) {
+        
+    }
 }

@@ -11,7 +11,7 @@ import UIKit
 class ShowInfoRouter: ShowInfoRouterProtocol {
     weak var view: UIViewController?
     
-    static func assembleModule() -> UIViewController {
+    static func assembleModule(with traktId: String, tvdb: String?, title: String) -> UIViewController {
         guard let viewController = R.storyboard.showInfo.showInfoViewController() else {
             fatalError()
         }
@@ -28,6 +28,10 @@ class ShowInfoRouter: ShowInfoRouterProtocol {
         presenter.interactor = interactor
         presenter.router = router
     
+        presenter.traktId = traktId
+        presenter.title = title
+        presenter.tvdb = tvdb
+        
         interactor.interactorOutput = presenter
 
         return viewController

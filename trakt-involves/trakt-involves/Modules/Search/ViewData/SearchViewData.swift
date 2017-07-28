@@ -7,18 +7,17 @@
 //
 
 import Foundation
-import UIKit
 
 struct SearchViewData {
     var title: String
     var year: String
+    var tracktId: String
     var tvdb: String
-    var imageUrl: String?
     
-    init(title: String = "", year: Int?, tvdb: Int?, imageUrl: String?) {
+    init(title: String = "", year: Int?, traktId: Int, tvdb: Int?) {
         self.title = title
         self.year = year != nil ? "\(year!)" : ""
+        self.tracktId = "\(traktId)"
         self.tvdb = tvdb != nil ? "\(tvdb!)" : ""
-        self.imageUrl = imageUrl
     }
 }

@@ -12,7 +12,7 @@ import ObjectMapper
 class ImageModel {
     var name: String?
     var thetvdbId: Int?
-    var clearlogo: [ClearLogoModel]?
+    var clearlogo: [TVThumbModel]?
 
     required convenience init?(map: Map) {
         self.init()
@@ -24,11 +24,11 @@ extension ImageModel: Mappable {
     func mapping(map: Map) {
         name <- map["name"]
         thetvdbId <- map["thetvdb_id"]
-        clearlogo <- map["clearlogo"]
+        clearlogo <- map["showbackground"]
     }
 }
 
-class ClearLogoModel {
+class TVThumbModel {
     var id: Int?
     var url: String?
     
@@ -37,7 +37,7 @@ class ClearLogoModel {
     }
 }
 
-extension ClearLogoModel: Mappable {
+extension TVThumbModel: Mappable {
     
     func mapping(map: Map) {
         id <- map["id"]

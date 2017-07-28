@@ -24,52 +24,21 @@ class SearchInteractor: SearchInteractorInputProtocol {
                 
                 self.interactorOutput?.searchedResults(searchResults)
                 
-//                var searchResultsViewData = searchResults
-//                
-//                let myGroup = DispatchGroup()
-//                
-//                searchResultsViewData.forEach { searchResult in
-//                    myGroup.enter()
-//                    
-//                    self.imageUrl(for: searchResult, completion: { url in
-//                        var result = searchResult
-//                        result.imageUrl = url
-//                        searchResultsViewData.append(result)
-// 
-//                        myGroup.leave()
-//                    })
-//                }
-//                myGroup.notify(queue: .main) {
-//                    
-//                }
-                
+
             }, onError: {  error in
                 
             }).addDisposableTo(disposeBag)
     }
 }
 
-
 extension SearchInteractor {
-    
-    fileprivate func imageUrl(for searchViewData: SearchViewData, completion: @escaping (String?) -> ()) {
-        
-        ImageAPI.image(for: searchViewData.tvdb)
-            .subscribeOn(ConcurrentDispatchQueueScheduler(queue: DispatchQueue.global(qos: .background)))
-            .subscribe(onNext: { imageResults in
-                
-                completion(imageResults.clearlogo?[0].url)
-            }, onError: {  error in
-                
-            }).addDisposableTo(disposeBag)
-    }
     
     fileprivate func convertSearchModelsToViewData(searchModels: [SearchModel]) -> [SearchViewData] {
         return searchModels.map {
             return SearchViewData(title: $0.show!.title!,
                                   year: $0.show!.year,
-                                  tvdb: $0.show!.ids!.tvdb,
-                                  imageUrl: nil)
+                                  traktId: $0.show!.ids!.trakt!,
+                                  tvdb: $0.show!.ids!.tvdb)
         }
     }
     

@@ -20,7 +20,29 @@
                     <view key="view" contentMode="scaleToFill" id="8kD-os-UFs">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="d2d-gi-uwH">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Efb-69-MAb">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Efb-69-MAb" id="eeV-Ce-kga">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="d2d-gi-uwH" firstAttribute="top" secondItem="Ucs-XR-uel" secondAttribute="bottom" id="2cF-3I-Ri5"/>
+                            <constraint firstItem="axp-5x-ZQl" firstAttribute="top" secondItem="d2d-gi-uwH" secondAttribute="bottom" id="BmU-B9-FSH"/>
+                            <constraint firstAttribute="trailing" secondItem="d2d-gi-uwH" secondAttribute="trailing" id="DRC-Xb-pWA"/>
+                            <constraint firstItem="d2d-gi-uwH" firstAttribute="leading" secondItem="8kD-os-UFs" secondAttribute="leading" id="LlM-Pa-017"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My TV Series" id="kqH-6W-tVO">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="3jW-Mq-5zV">
@@ -30,6 +52,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="d2d-gi-uwH" id="STu-JI-r5N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qpk-yA-G9t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

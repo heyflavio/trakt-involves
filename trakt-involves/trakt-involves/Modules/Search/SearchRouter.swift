@@ -34,8 +34,10 @@ class SearchRouter: SearchRouterProtocol {
         return navigationController!
     }
     
-    func presentShowInfoScreen() {
-        view?.navigationController?.pushViewController(ShowInfoRouter.assembleModule(), animated: true)
+    func presentShowInfoScreen(with searchViewData: SearchViewData) {
+        view?.navigationController?.pushViewController(ShowInfoRouter.assembleModule(with: searchViewData.tracktId,
+                                                                                     tvdb: searchViewData.tvdb,
+                                                                                     title: searchViewData.title), animated: true)
     }
     
     func dismissCurrentScreen() {
