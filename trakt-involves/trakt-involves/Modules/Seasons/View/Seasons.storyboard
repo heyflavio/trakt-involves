@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Episodes View Controller-->
+        <!--Seasons View Controller-->
         <scene sceneID="y07-28-Ul0">
             <objects>
-                <viewController storyboardIdentifier="EpisodesViewController" id="hJB-SH-uO4" customClass="EpisodesViewController" customModule="trakt_involves" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SeasonsViewController" id="hJB-SH-uO4" customClass="SeasonsViewController" customModule="trakt_involves" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eKM-MM-xCF"/>
                         <viewControllerLayoutGuide type="bottom" id="RcB-lg-iG7"/>

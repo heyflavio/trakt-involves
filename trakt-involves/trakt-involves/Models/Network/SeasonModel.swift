@@ -10,7 +10,9 @@ import Foundation
 import ObjectMapper
 
 class SeasonModel {
-    var show: ShowModel?
+    var number: Int?
+    var ids: IdModels?
+    var title: String?
     
     required convenience init?(map: Map) {
         self.init()
@@ -20,6 +22,8 @@ class SeasonModel {
 extension SeasonModel: Mappable {
     
     func mapping(map: Map) {
-        show <- map["show"]
+        number <- map["number"]
+        ids <- map["ids"]
+        title <- map["title"]
     }
 }

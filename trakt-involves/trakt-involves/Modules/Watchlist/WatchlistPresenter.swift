@@ -26,7 +26,7 @@ class WatchlistPresenter: WatchlistPresenterInputProtocol {
     }
     
     func didSelectRow(with watchlistViewData: WatchlistViewData) {
-        router?.presentEpisodesScreen(for: watchlistViewData.traktId!)
+        router?.presentSeasonsScreen(for: watchlistViewData.traktId!)
     }
 }
 

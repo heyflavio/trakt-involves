@@ -32,13 +32,9 @@ class MainRouter: MainRouterProtocol {
         let myTvSeriesViewController2 = WatchlistRouter.assembleModule()
         myTvSeriesViewController2.tabBarItem = UITabBarItem(title: "Watchlist", image: nil, selectedImage: nil)
         
-        let myTvSeriesViewController3 = WatchlistRouter.assembleModule()
-        myTvSeriesViewController3.tabBarItem = UITabBarItem(title: "Profile", image: nil, selectedImage: nil)
-        
         tabBarController.viewControllers = [
             myTvSeriesViewController,
-            myTvSeriesViewController2,
-            myTvSeriesViewController3]
+            myTvSeriesViewController2]
         
         return tabBarController
     }

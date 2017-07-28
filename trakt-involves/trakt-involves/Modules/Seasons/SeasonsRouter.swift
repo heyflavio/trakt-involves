@@ -1,5 +1,5 @@
 //
-//  EpisodesRouter.swift
+//  SeasonsRouter.swift
 //  trakt-involves
 //
 //  Created by iMac on 28/07/17.
@@ -8,17 +8,17 @@
 
 import UIKit
 
-class EpisodesRouter: EpisodesRouterProtocol {
+class SeasonsRouter: SeasonsRouterProtocol {
     weak var view: UIViewController?
     
-    static func assembleModule(with traktId: Int, and seasonNumber: Int) -> UIViewController {
-        guard let viewController = R.storyboard.episodes.episodesViewController() else {
+    static func assembleModule(with traktId: Int) -> UIViewController {
+        guard let viewController = R.storyboard.seasons.seasonsViewController() else {
             fatalError()
         }
         
-        let presenter = EpisodesPresenter()
-        let interactor = EpisodesInteractor()
-        let router = EpisodesRouter()
+        let presenter = SeasonsPresenter()
+        let interactor = SeasonsInteractor()
+        let router = SeasonsRouter()
         
         router.view = viewController
         
@@ -29,11 +29,15 @@ class EpisodesRouter: EpisodesRouterProtocol {
         presenter.router = router
     
         presenter.traktId = traktId
-        presenter.seasonNumber = seasonNumber
         
         interactor.interactorOutput = presenter
 
         return viewController
+    }
+    
+    
+    func presentEpisodesScreen(for traktId: Int, and seasonNumber: Int){
+        view?.navigationController?.pushViewController(EpisodesRouter.assembleModule(with: traktId, and: seasonNumber), animated: true)
     }
     
 }

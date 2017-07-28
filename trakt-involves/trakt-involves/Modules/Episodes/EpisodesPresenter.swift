@@ -12,8 +12,11 @@ class EpisodesPresenter: EpisodesPresenterInputProtocol {
     var interactor: EpisodesInteractorInputProtocol?
     var router: EpisodesRouterProtocol?
 
+    var traktId: Int?
+    var seasonNumber: Int?
+    
     func viewDidLoad() {
-        
+        interactor?.fetchAllEpisodes(for: traktId!, and: seasonNumber!)
     }
     
     func viewWillAppear() {
@@ -24,4 +27,7 @@ class EpisodesPresenter: EpisodesPresenterInputProtocol {
 
 extension EpisodesPresenter: EpisodesInteractorOutputProtocol {
     
+    func fetchedEpisodes(_ viewData: [EpisodeViewData]) {
+        presenterOutput?.presentEpisodes(viewData)
+    }
 }

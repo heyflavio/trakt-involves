@@ -74,7 +74,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 6 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 7 storyboards.
   struct storyboard {
     /// Storyboard `Episodes`.
     static let episodes = _R.storyboard.episodes()
@@ -84,6 +84,8 @@ struct R: Rswift.Validatable {
     static let login = _R.storyboard.login()
     /// Storyboard `Search`.
     static let search = _R.storyboard.search()
+    /// Storyboard `Seasons`.
+    static let seasons = _R.storyboard.seasons()
     /// Storyboard `ShowInfo`.
     static let showInfo = _R.storyboard.showInfo()
     /// Storyboard `Watchlist`.
@@ -107,6 +109,11 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Search", bundle: ...)`
     static func search(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.search)
+    }
+    
+    /// `UIStoryboard(name: "Seasons", bundle: ...)`
+    static func seasons(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.seasons)
     }
     
     /// `UIStoryboard(name: "ShowInfo", bundle: ...)`
@@ -175,6 +182,7 @@ struct _R: Rswift.Validatable {
     static func validate() throws {
       try watchlist.validate()
       try login.validate()
+      try seasons.validate()
       try search.validate()
       try episodes.validate()
       try showInfo.validate()
@@ -239,6 +247,22 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if _R.storyboard.search().searchViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'searchViewController' could not be loaded from storyboard 'Search' as 'SearchViewController'.") }
         if _R.storyboard.search().searchNavigationController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'searchNavigationController' could not be loaded from storyboard 'Search' as 'UIKit.UINavigationController'.") }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct seasons: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "Seasons"
+      let seasonsViewController = StoryboardViewControllerResource<SeasonsViewController>(identifier: "SeasonsViewController")
+      
+      func seasonsViewController(_: Void = ()) -> SeasonsViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: seasonsViewController)
+      }
+      
+      static func validate() throws {
+        if _R.storyboard.seasons().seasonsViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'seasonsViewController' could not be loaded from storyboard 'Seasons' as 'SeasonsViewController'.") }
       }
       
       fileprivate init() {}

@@ -1,5 +1,5 @@
 //
-//  EpisodesViewController.swift
+//  SeasonsViewController.swift
 //  trakt-involves
 //
 //  Created by iMac on 28/07/17.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-class EpisodesViewController: UIViewController {
+class SeasonsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var presenter: EpisodesPresenterInputProtocol?
+    var presenter: SeasonsPresenterInputProtocol?
     
-    var episodesViewData: [EpisodeViewData] = [] {
+    var seasonsViewData: [SeasonViewData] = [] {
         didSet {
             tableView.reloadData()
         }
@@ -40,34 +40,34 @@ class EpisodesViewController: UIViewController {
     }
 }
 
-extension EpisodesViewController: EpisodesPresenterOutputProtocol {
+extension SeasonsViewController: SeasonsPresenterOutputProtocol {
     
-    func presentEpisodes(_ viewData: [EpisodeViewData]) {
-        episodesViewData = viewData
+    func presentSeasons(_ viewData: [SeasonViewData]) {
+        seasonsViewData = viewData
     }
 }
 
-extension EpisodesViewController: UITableViewDelegate {
+extension SeasonsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70.0
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //presenter?.didSelectRow(with: episodesViewData[indexPath.row])
+        presenter?.didSelectRow(with: seasonsViewData[indexPath.row])
     }
 }
 
-extension EpisodesViewController: UITableViewDataSource {
+extension SeasonsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return episodesViewData.count
+        return seasonsViewData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as SearchTableViewCell
         cell.accessoryType = .disclosureIndicator
-        let item = episodesViewData[indexPath.row]
+        let item = seasonsViewData[indexPath.row]
         
         cell.titleLabel?.text = "\(item.number!)"
         cell.subtitleLabel?.text = item.title!

@@ -37,7 +37,7 @@ class WatchlistRouter: WatchlistRouterProtocol {
         view?.present(SearchRouter.assembleModule())
     }
     
-    func presentEpisodesScreen(for traktId: Int) {
-        
+    func presentSeasonsScreen(for traktId: Int) {
+        view?.navigationController?.pushViewController(SeasonsRouter.assembleModule(with: traktId), animated: true)
     }
 }

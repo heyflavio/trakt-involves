@@ -61,16 +61,28 @@ enum Endpoints {
             }
         }
         
-        enum Episode: Endpoint {
-            case getAllEpisodes(String)
-            case markAsWatched
-            case unmarkAsWatched
+        enum Season: Endpoint {
+            case getAllSeasons(Int)
             
             public var path: String {
                 switch self {
-                case .getAllEpisodes(let id): return "/shows/\(id)/seasons?extended=full"
-                case .markAsWatched: return "/sync/history"
-                case .unmarkAsWatched: return "/sync/history/remove"
+                case .getAllSeasons(let id): return "/shows/\(id)/seasons?extended=full"
+                }
+            }
+            
+            enum Episode: Endpoint {
+                case getAllEpisodes(Int, Int)
+                case getNextEpisode(Int)
+                case markAsWatched
+                case unmarkAsWatched
+                
+                public var path: String {
+                    switch self {
+                    case .getAllEpisodes(let id, let seasonNumber): return "/shows/\(id)/seasons/\(seasonNumber)"
+                    case .getNextEpisode(let id): return "/shows/\(id)/next_episode"
+                    case .markAsWatched: return "/sync/history"
+                    case .unmarkAsWatched: return "/sync/history/remove"
+                    }
                 }
             }
         }
