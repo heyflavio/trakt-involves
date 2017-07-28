@@ -47,8 +47,12 @@ protocol ShowInfoInteractorInputProtocol: class {
     
     func fetchImageUrl(for tvdbId: Int?)
     func fetchShowInfo(for traktId: Int)
-    func fetchEpisodeInfo(for traktId: Int, seasonNumber: Int, episodeNumber: Int)
     func addShowToWatchlist()
+    func removeShowFromWatchlist()
+    
+    func fetchEpisodeInfo(for traktId: Int, seasonNumber: Int, episodeNumber: Int)
+    func markEpisodeAsWatched()
+    func unmarkEpisodeAsWatched()
 }
 
 protocol ShowInfoInteractorOutputProtocol: class {

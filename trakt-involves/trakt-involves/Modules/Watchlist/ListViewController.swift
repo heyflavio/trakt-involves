@@ -1,5 +1,5 @@
 //
-//  WatchlistViewController.swift
+//  ListViewController.swift
 //  trakt-involves
 //
 //  Created by iMac on 26/07/17.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-class WatchlistViewController: UIViewController {
+class ListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var presenter: WatchlistPresenterInputProtocol?
+    var presenter: ListPresenterInputProtocol?
     
-    var watchlist: [WatchlistViewData] = [] {
+    var List: [ListViewData] = [] {
         didSet {
             tableView.reloadData()
         }
@@ -45,34 +45,34 @@ class WatchlistViewController: UIViewController {
     }
 }
 
-extension WatchlistViewController: WatchlistPresenterOutputProtocol {
+extension ListViewController: ListPresenterOutputProtocol {
     
-    func setWatchList(_ viewData: [WatchlistViewData]) {
-        watchlist = viewData
+    func setList(_ viewData: [ListViewData]) {
+        List = viewData
     }
 }
 
-extension WatchlistViewController: UITableViewDelegate {
+extension ListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70.0
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter?.didSelectRow(with: watchlist[indexPath.row])
+        presenter?.didSelectRow(with: List[indexPath.row])
     }
 }
 
-extension WatchlistViewController: UITableViewDataSource {
+extension ListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return watchlist.count
+        return List.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as SearchTableViewCell
         cell.accessoryType = .disclosureIndicator
-        let item = watchlist[indexPath.row]
+        let item = List[indexPath.row]
         
         cell.titleLabel?.text = item.title
         cell.subtitleLabel?.text = "\(item.year!)"

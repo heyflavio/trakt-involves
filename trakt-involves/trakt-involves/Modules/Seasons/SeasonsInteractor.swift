@@ -34,7 +34,16 @@ class SeasonsInteractor: SeasonsInteractorInputProtocol {
             }, onError: { error in
                 
             }).addDisposableTo(disposeBag)
+    }
+    
+    func fetchWatchedEpisodes(for id: Int) {
+        EpisodeAPI.getWatchedEpisodes(for: id)
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { watchedEpisodes in
 
+            }, onError: { error in
+                
+            }).addDisposableTo(disposeBag)
     }
 }
 

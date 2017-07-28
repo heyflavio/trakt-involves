@@ -12,7 +12,7 @@
         <!--My TV Series-->
         <scene sceneID="hNo-eV-uIt">
             <objects>
-                <viewController storyboardIdentifier="WatchlistViewController" title="My TV Series" id="PxA-6L-6Qs" customClass="WatchlistViewController" customModule="trakt_involves" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ListViewController" title="My TV Series" id="PxA-6L-6Qs" customClass="ListViewController" customModule="trakt_involves" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ucs-XR-uel"/>
                         <viewControllerLayoutGuide type="bottom" id="axp-5x-ZQl"/>
@@ -53,7 +53,7 @@
         <!--Navigation Controller-->
         <scene sceneID="QSH-RR-Sii">
             <objects>
-                <navigationController storyboardIdentifier="WatchlistNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="i8p-rl-1GN" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ListNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="i8p-rl-1GN" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" restorationIdentifier="MyTvSeriesNavigationController" barStyle="black" translucent="NO" id="8u8-bW-p7X">

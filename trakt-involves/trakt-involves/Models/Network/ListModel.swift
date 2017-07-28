@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class WatchlistModel {
+class ListModel {
     var show: ShowModel?
     
     required convenience init?(map: Map) {
@@ -17,7 +17,7 @@ class WatchlistModel {
     }
 }
 
-extension WatchlistModel: Mappable {
+extension ListModel: Mappable {
     
     func mapping(map: Map) {
         show <- map["show"]

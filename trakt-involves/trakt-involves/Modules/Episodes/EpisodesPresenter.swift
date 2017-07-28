@@ -12,7 +12,7 @@ class EpisodesPresenter: EpisodesPresenterInputProtocol {
     var interactor: EpisodesInteractorInputProtocol?
     var router: EpisodesRouterProtocol?
 
-    var watchlistItem: WatchlistViewData?
+    var watchlistItem: ListViewData?
     var seasonNumber: Int?
     
     func viewDidLoad() {

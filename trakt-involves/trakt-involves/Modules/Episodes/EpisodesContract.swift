@@ -14,7 +14,7 @@ protocol EpisodesPresenterInputProtocol: class {
     var interactor: EpisodesInteractorInputProtocol? { get set }
     var router: EpisodesRouterProtocol? { get set }
     
-    var watchlistItem: WatchlistViewData? { get set }
+    var watchlistItem: ListViewData? { get set }
     var seasonNumber: Int? { get set }
     
     func viewDidLoad()
@@ -43,7 +43,7 @@ protocol EpisodesInteractorOutputProtocol: class {
 
 protocol EpisodesRouterProtocol: class {
     weak var view: UIViewController? { get set }
-    static func assembleModule(with watchlistItem: WatchlistViewData, and seasonNumber: Int) -> UIViewController
+    static func assembleModule(with watchlistItem: ListViewData, and seasonNumber: Int) -> UIViewController
     
-    func presentShowInfoScreen(with watchlistItem: WatchlistViewData, episodeViewData: EpisodeViewData)
+    func presentShowInfoScreen(with watchlistItem: ListViewData, episodeViewData: EpisodeViewData)
 }

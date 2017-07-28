@@ -47,6 +47,7 @@ enum Endpoints {
     
     enum Show: Endpoint {
         case get(Int)
+        case getWatched
         case getWatchlist
         case addToWatchlist
         case removeFromWatchlist
@@ -54,6 +55,7 @@ enum Endpoints {
         public var path: String {
             switch self {
             case .get(let id): return "/shows/\(id)?extended=full"
+            case .getWatched: return "/sync/watched/shows"
             case .getWatchlist: return "/sync/watchlist/shows"
             case .addToWatchlist: return "/sync/watchlist"
             case .removeFromWatchlist: return "/sync/watchlist/remove"
@@ -74,6 +76,7 @@ enum Endpoints {
                 case get(Int, Int,Int)
                 case getAllEpisodes(Int, Int)
                 case getNextEpisode(Int)
+                case getWatchedEpisodes(Int)
                 case markAsWatched
                 case unmarkAsWatched
                 
@@ -82,6 +85,7 @@ enum Endpoints {
                     case .get(let id, let seasonNumber, let episodeNumber): return "/shows/\(id)/seasons/\(seasonNumber)/episodes/\(episodeNumber)?extended=full"
                     case .getAllEpisodes(let id, let seasonNumber): return "/shows/\(id)/seasons/\(seasonNumber)"
                     case .getNextEpisode(let id): return "/shows/\(id)/next_episode"
+                    case .getWatchedEpisodes(let id): return "/sync/history/episodes/\(id)"
                     case .markAsWatched: return "/sync/history"
                     case .unmarkAsWatched: return "/sync/history/remove"
                     }

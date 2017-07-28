@@ -43,7 +43,7 @@ class ShowInfoPresenter: ShowInfoPresenterInputProtocol {
         if context == . show {
             interactor?.addShowToWatchlist()
         } else {
-            
+            interactor?.markEpisodeAsWatched()
         }
     }
     

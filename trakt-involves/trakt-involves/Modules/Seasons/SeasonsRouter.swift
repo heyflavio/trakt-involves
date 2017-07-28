@@ -11,7 +11,7 @@ import UIKit
 class SeasonsRouter: SeasonsRouterProtocol {
     weak var view: UIViewController?
     
-    static func assembleModule(with watchlistItem: WatchlistViewData) -> UIViewController {
+    static func assembleModule(with watchlistItem: ListViewData) -> UIViewController {
         guard let viewController = R.storyboard.seasons.seasonsViewController() else {
             fatalError()
         }
@@ -35,7 +35,7 @@ class SeasonsRouter: SeasonsRouterProtocol {
         return viewController
     }
     
-    func presentEpisodesScreen(for watchlistItem: WatchlistViewData, and seasonNumber: Int) {
+    func presentEpisodesScreen(for watchlistItem: ListViewData, and seasonNumber: Int) {
         view?.navigationController?.pushViewController(EpisodesRouter.assembleModule(with: watchlistItem,
                                                                                      and: seasonNumber), animated: true)
     }

@@ -56,8 +56,8 @@ struct EpisodeAPI {
                 .log()
                 .responseArray { (response: DataResponse<[EpisodeModel]>) in
                     switch response.result {
-                    case .success(let episode):
-                        observer.onNext(episode)
+                    case .success(let episodes):
+                        observer.onNext(episodes)
                         observer.onCompleted()
                     case .failure(let error):
                         observer.onError(error)
@@ -97,23 +97,50 @@ struct EpisodeAPI {
         }
     }
     
-    static func markAsWatched(_ show: ShowModel) -> Observable<Any>  {
+    static func getWatchedEpisodes(for id: Int) -> Observable<[EpisodeModel]>   {
         
-        return toggleWatched(true, show: show)
+        return Observable<[EpisodeModel]>.create { observer -> Disposable in
+            
+            let urlRequest = URLRequest.getURLRequest(with: URL(string: Endpoints.Show.Season.Episode.getWatchedEpisodes(id).url())!,
+                                                      andMethod: .get)
+            
+            let request = Alamofire
+                .request(urlRequest)
+                .validate()
+                .log()
+                .responseArray { (response: DataResponse<[EpisodeModel]>) in
+                    switch response.result {
+                    case .success(let episodes):
+                        observer.onNext(episodes)
+                        observer.onCompleted()
+                    case .failure(let error):
+                        observer.onError(error)
+                    }
+            }
+            
+            return Disposables.create(with: {
+                request.cancel()
+            })
+        }
     }
     
-    static func unmarkAsWatched(_ show: ShowModel) -> Observable<Any>  {
+    static func markAsWatched(_ episode: EpisodeModel) -> Observable<Any>  {
         
-        return toggleWatched(false, show: show)
+        return toggleWatched(true, episode: episode)
     }
     
-    fileprivate static func toggleWatched(_ watched: Bool, show: ShowModel) -> Observable<Any>  {
+    static func unmarkAsWatched(_ episode: EpisodeModel) -> Observable<Any>  {
+        
+        return toggleWatched(false, episode: episode)
+    }
+    
+    fileprivate static func toggleWatched(_ watched: Bool, episode: EpisodeModel) -> Observable<Any>  {
         return Observable<Any>.create { observer -> Disposable in
             
             let url = watched ? URL(string: Endpoints.Show.Season.Episode.markAsWatched.url())! : URL(string: Endpoints.Show.Season.Episode.unmarkAsWatched.url())!
             
             let urlRequest = URLRequest.getURLRequest(with: url,
-                                                      body: ["episodes": [show.toJSON()]],
+                                                      body: ["episodes": [episode.toJSON()]],
                                                       andMethod: .post)
             
             let request = Alamofire

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct WatchlistViewData {
+struct ListViewData {
     var title: String?
     var year: Int?
     var traktId: Int?

@@ -80,6 +80,8 @@ struct R: Rswift.Validatable {
     static let episodes = _R.storyboard.episodes()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
+    /// Storyboard `List`.
+    static let list = _R.storyboard.list()
     /// Storyboard `Login`.
     static let login = _R.storyboard.login()
     /// Storyboard `Search`.
@@ -88,8 +90,6 @@ struct R: Rswift.Validatable {
     static let seasons = _R.storyboard.seasons()
     /// Storyboard `ShowInfo`.
     static let showInfo = _R.storyboard.showInfo()
-    /// Storyboard `Watchlist`.
-    static let watchlist = _R.storyboard.watchlist()
     
     /// `UIStoryboard(name: "Episodes", bundle: ...)`
     static func episodes(_: Void = ()) -> UIKit.UIStoryboard {
@@ -99,6 +99,11 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
+    }
+    
+    /// `UIStoryboard(name: "List", bundle: ...)`
+    static func list(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.list)
     }
     
     /// `UIStoryboard(name: "Login", bundle: ...)`
@@ -119,11 +124,6 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "ShowInfo", bundle: ...)`
     static func showInfo(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.showInfo)
-    }
-    
-    /// `UIStoryboard(name: "Watchlist", bundle: ...)`
-    static func watchlist(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.watchlist)
     }
     
     fileprivate init() {}
@@ -180,11 +180,11 @@ struct _R: Rswift.Validatable {
   
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
-      try watchlist.validate()
       try login.validate()
       try seasons.validate()
       try search.validate()
       try episodes.validate()
+      try list.validate()
       try showInfo.validate()
     }
     
@@ -209,6 +209,28 @@ struct _R: Rswift.Validatable {
       
       let bundle = R.hostingBundle
       let name = "LaunchScreen"
+      
+      fileprivate init() {}
+    }
+    
+    struct list: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let listNavigationController = StoryboardViewControllerResource<UIKit.UINavigationController>(identifier: "ListNavigationController")
+      let listViewController = StoryboardViewControllerResource<ListViewController>(identifier: "ListViewController")
+      let name = "List"
+      
+      func listNavigationController(_: Void = ()) -> UIKit.UINavigationController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: listNavigationController)
+      }
+      
+      func listViewController(_: Void = ()) -> ListViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: listViewController)
+      }
+      
+      static func validate() throws {
+        if _R.storyboard.list().listViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'listViewController' could not be loaded from storyboard 'List' as 'ListViewController'.") }
+        if _R.storyboard.list().listNavigationController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'listNavigationController' could not be loaded from storyboard 'List' as 'UIKit.UINavigationController'.") }
+      }
       
       fileprivate init() {}
     }
@@ -279,28 +301,6 @@ struct _R: Rswift.Validatable {
       
       static func validate() throws {
         if _R.storyboard.showInfo().showInfoViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'showInfoViewController' could not be loaded from storyboard 'ShowInfo' as 'ShowInfoViewController'.") }
-      }
-      
-      fileprivate init() {}
-    }
-    
-    struct watchlist: Rswift.StoryboardResourceType, Rswift.Validatable {
-      let bundle = R.hostingBundle
-      let name = "Watchlist"
-      let watchlistNavigationController = StoryboardViewControllerResource<UIKit.UINavigationController>(identifier: "WatchlistNavigationController")
-      let watchlistViewController = StoryboardViewControllerResource<WatchlistViewController>(identifier: "WatchlistViewController")
-      
-      func watchlistNavigationController(_: Void = ()) -> UIKit.UINavigationController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: watchlistNavigationController)
-      }
-      
-      func watchlistViewController(_: Void = ()) -> WatchlistViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: watchlistViewController)
-      }
-      
-      static func validate() throws {
-        if _R.storyboard.watchlist().watchlistViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'watchlistViewController' could not be loaded from storyboard 'Watchlist' as 'WatchlistViewController'.") }
-        if _R.storyboard.watchlist().watchlistNavigationController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'watchlistNavigationController' could not be loaded from storyboard 'Watchlist' as 'UIKit.UINavigationController'.") }
       }
       
       fileprivate init() {}

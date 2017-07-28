@@ -14,7 +14,7 @@ protocol SeasonsPresenterInputProtocol: class {
     var interactor: SeasonsInteractorInputProtocol? { get set }
     var router: SeasonsRouterProtocol? { get set }
     
-    var watchlistItem: WatchlistViewData? { get set }
+    var watchlistItem: ListViewData? { get set }
     
     func viewDidLoad()
     func viewWillAppear()
@@ -35,6 +35,7 @@ protocol SeasonsInteractorInputProtocol: class {
     
     func fetchAllSeasons(for id: Int)
     func fetchNextEpisode(for id: Int)
+    func fetchWatchedEpisodes(for id: Int)
 }
 
 protocol SeasonsInteractorOutputProtocol: class {
@@ -46,7 +47,7 @@ protocol SeasonsInteractorOutputProtocol: class {
 
 protocol SeasonsRouterProtocol: class {
     weak var view: UIViewController? { get set }
-    static func assembleModule(with watchlistItem: WatchlistViewData) -> UIViewController
+    static func assembleModule(with watchlistItem: ListViewData) -> UIViewController
     
-    func presentEpisodesScreen(for watchlistItem: WatchlistViewData, and seasonNumber: Int)
+    func presentEpisodesScreen(for watchlistItem: ListViewData, and seasonNumber: Int)
 }

@@ -12,12 +12,13 @@ class SeasonsPresenter: SeasonsPresenterInputProtocol {
     var interactor: SeasonsInteractorInputProtocol?
     var router: SeasonsRouterProtocol?
 
-    var watchlistItem: WatchlistViewData?
+    var watchlistItem: ListViewData?
     
     func viewDidLoad() {
         presenterOutput?.setNavigationTitle(watchlistItem!.title ?? "")
         interactor?.fetchAllSeasons(for: watchlistItem!.traktId!)
         interactor?.fetchNextEpisode(for: watchlistItem!.traktId!)
+        interactor?.fetchWatchedEpisodes(for: watchlistItem!.traktId!)
     }
     
     func viewWillAppear() {

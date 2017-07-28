@@ -26,11 +26,11 @@ class MainRouter: MainRouterProtocol {
         
         interactor.interactorOutput = presenter
         
-        let myTvSeriesViewController = WatchlistRouter.assembleModule()
-        myTvSeriesViewController.tabBarItem = UITabBarItem(title: "Upcoming", image: nil, selectedImage: nil)
+        let myTvSeriesViewController = ListRouter.assembleModule(with: .watchlist)
+        myTvSeriesViewController.tabBarItem = UITabBarItem(title: "Watchlist", image: nil, selectedImage: nil)
         
-        let myTvSeriesViewController2 = WatchlistRouter.assembleModule()
-        myTvSeriesViewController2.tabBarItem = UITabBarItem(title: "Watchlist", image: nil, selectedImage: nil)
+        let myTvSeriesViewController2 = ListRouter.assembleModule(with: .watched)
+        myTvSeriesViewController2.tabBarItem = UITabBarItem(title: "Watching", image: nil, selectedImage: nil)
         
         tabBarController.viewControllers = [
             myTvSeriesViewController,

@@ -38,6 +38,24 @@ class ShowInfoInteractor: ShowInfoInteractorInputProtocol {
                 
             }).addDisposableTo(disposeBag)
     }
+
+    func addShowToWatchlist() {
+        ShowAPI.addToWatchlist(showModel!)
+            .subscribe(onNext: { response in
+
+            }, onError: {  error in
+                
+            }).addDisposableTo(disposeBag)
+    }
+    
+    func removeShowFromWatchlist() {
+        ShowAPI.removeFromWatchlist(showModel!)
+            .subscribe(onNext: { response in
+                
+            }, onError: {  error in
+                
+            }).addDisposableTo(disposeBag)
+    }
     
     func fetchEpisodeInfo(for traktId: Int, seasonNumber: Int, episodeNumber: Int) {
         EpisodeAPI.getEpisode(for: traktId, seasonNumber: seasonNumber, and: episodeNumber)
@@ -49,16 +67,20 @@ class ShowInfoInteractor: ShowInfoInteractorInputProtocol {
                 
             }).addDisposableTo(disposeBag)
     }
-
-    func addShowToWatchlist() {
-        ShowAPI.addToWatchlist(showModel!)
+    
+    func markEpisodeAsWatched() {
+        EpisodeAPI.markAsWatched(episodeModel!)
             .subscribe(onNext: { response in
-
-            }, onError: {  error in
                 
             }).addDisposableTo(disposeBag)
     }
     
+    func unmarkEpisodeAsWatched() {
+        EpisodeAPI.unmarkAsWatched(episodeModel!)
+            .subscribe(onNext: { response in
+                
+            }).addDisposableTo(disposeBag)
+    }
 }
 
 

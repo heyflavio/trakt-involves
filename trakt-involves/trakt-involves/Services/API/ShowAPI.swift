@@ -97,9 +97,9 @@ struct ShowAPI {
         }
     }
     
-    static func fetchWatchlist() -> Observable<[WatchlistModel]>  {
+    static func fetchWatchlist() -> Observable<[ListModel]>  {
         
-        return Observable<[WatchlistModel]>.create { observer -> Disposable in
+        return Observable<[ListModel]>.create { observer -> Disposable in
             
             let urlRequest = URLRequest.getURLRequest(with: URL(string: Endpoints.Show.getWatchlist.url())!,
                                                       andMethod: .get)
@@ -108,10 +108,37 @@ struct ShowAPI {
                 .request(urlRequest)
                 .validate()
                 .log()
-                .responseArray { (response: DataResponse<[WatchlistModel]>) in
+                .responseArray { (response: DataResponse<[ListModel]>) in
                     switch response.result {
                     case .success(let imageModel):
                         observer.onNext(imageModel)
+                        observer.onCompleted()
+                    case .failure(let error):
+                        observer.onError(error)
+                    }
+            }
+            
+            return Disposables.create(with: {
+                request.cancel()
+            })
+        }
+    }
+    
+    static func fetchWatchedShows() -> Observable<[ListModel]>   {
+        
+        return Observable<[ListModel]>.create { observer -> Disposable in
+            
+            let urlRequest = URLRequest.getURLRequest(with: URL(string: Endpoints.Show.getWatched.url())!,
+                                                      andMethod: .get)
+            
+            let request = Alamofire
+                .request(urlRequest)
+                .validate()
+                .log()
+                .responseArray { (response: DataResponse<[ListModel]>) in
+                    switch response.result {
+                    case .success(let episodes):
+                        observer.onNext(episodes)
                         observer.onCompleted()
                     case .failure(let error):
                         observer.onError(error)
