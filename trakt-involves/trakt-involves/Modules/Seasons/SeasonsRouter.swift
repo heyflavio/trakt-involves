@@ -40,4 +40,7 @@ class SeasonsRouter: SeasonsRouterProtocol {
                                                                                      and: seasonNumber), animated: true)
     }
     
+    func dismissCurrentScreen() {
+        view?.navigationController?.popViewController(animated: true)
+    }
 }

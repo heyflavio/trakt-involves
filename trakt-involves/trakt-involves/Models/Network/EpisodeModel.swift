@@ -15,6 +15,7 @@ class EpisodeModel {
     var ids: IdModels?
     var title: String?
     var overview: String?
+    var firstAired: Date?
     
     required convenience init?(map: Map) {
         self.init()
@@ -29,5 +30,6 @@ extension EpisodeModel: Mappable {
         ids <- map["ids"]
         title <- map["title"]
         overview <- map["overview"]
+        firstAired <- (map["first_aired"], DateTransformer())
     }
 }

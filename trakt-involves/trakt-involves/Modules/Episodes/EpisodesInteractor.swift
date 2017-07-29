@@ -35,7 +35,8 @@ extension EpisodesInteractor {
                                   season: $0.season,
                                   tracktId: $0.ids!.trakt!,
                                   tvdb: $0.ids?.tvdb,
-                                  overview: $0.overview)
+                                  overview: $0.overview,
+                                  firstAired: $0.firstAired)
         }
     }
     

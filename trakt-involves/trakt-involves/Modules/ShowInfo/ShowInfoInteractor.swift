@@ -23,9 +23,14 @@ class ShowInfoInteractor: ShowInfoInteractorInputProtocol {
             return
         }
         
-        self.imageUrl(for: id, completion: { url in
-            self.interactorOutput?.fetchedImageUrl(url!)
-        })
+        ImageAPI.image(for: id)
+            .subscribeOn(ConcurrentDispatchQueueScheduler(queue: DispatchQueue.global(qos: .background)))
+            .subscribe(onNext: { imageResults in
+                
+                self.interactorOutput?.fetchedImageUrl((imageResults.clearlogo![0].url!))
+            }, onError: {  error in
+                
+            }).addDisposableTo(disposeBag)
     }
     
     func fetchShowInfo(for traktId: Int) {
@@ -86,23 +91,12 @@ class ShowInfoInteractor: ShowInfoInteractorInputProtocol {
 
 extension ShowInfoInteractor {
     
-    fileprivate func imageUrl(for tvdbId: Int, completion: @escaping (String?) -> ()) {
-        
-        ImageAPI.image(for: tvdbId)
-            .subscribeOn(ConcurrentDispatchQueueScheduler(queue: DispatchQueue.global(qos: .background)))
-            .subscribe(onNext: { imageResults in
-                
-                completion(imageResults.clearlogo?[0].url)
-            }, onError: {  error in
-                
-            }).addDisposableTo(disposeBag)
-    }
-    
     fileprivate func convertShowModelToViewData(showModel: ShowModel) -> ShowInfoViewData {
         return ShowInfoViewData(title: showModel.title,
                                 overview: showModel.overview,
                                 year: showModel.year,
-                                network: showModel.network)
+                                network: showModel.network,
+                                airedEpisodes: showModel.airedEpisodes)
     }
     
     fileprivate func convertEpisodeModelToViewData(episodeModel: EpisodeModel) -> EpisodeViewData {
@@ -111,7 +105,8 @@ extension ShowInfoInteractor {
                                season: episodeModel.season,
                                tracktId: episodeModel.ids!.trakt!,
                                tvdb: episodeModel.ids?.tvdb,
-                               overview: episodeModel.overview)
+                               overview: episodeModel.overview,
+                               firstAired: episodeModel.firstAired)
     }
     
 }

@@ -15,13 +15,15 @@ struct EpisodeViewData {
     var tracktId: Int?
     var tvdb: Int?
     var overview: String?
+    var firstAired: String?
     
-    init(title: String? = "", number: Int?, season: Int?, tracktId: Int, tvdb: Int?, overview: String?) {
+    init(title: String? = "", number: Int?, season: Int?, tracktId: Int, tvdb: Int?, overview: String?, firstAired: Date?) {
         self.title = title
         self.number = number
         self.season = season
         self.tracktId = tracktId
         self.tvdb = tvdb
         self.overview = overview
+        self.firstAired = firstAired?.formatted()
     }
 }

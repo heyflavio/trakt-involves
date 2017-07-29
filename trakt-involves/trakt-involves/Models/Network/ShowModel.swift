@@ -15,7 +15,8 @@ class ShowModel {
     var ids: IdModels?
     var overview: String?
     var network: String?
-
+    var airedEpisodes: Int?
+    
     required convenience init?(map: Map) {
         self.init()
     }
@@ -29,5 +30,6 @@ extension ShowModel: Mappable {
         ids <- map["ids"]
         overview <- map["overview"]
         network <- map["network"]
+        airedEpisodes <- map["aired_episodes"]
     }
 }

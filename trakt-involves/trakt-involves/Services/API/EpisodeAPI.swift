@@ -108,7 +108,7 @@ struct EpisodeAPI {
                 .request(urlRequest)
                 .validate()
                 .log()
-                .responseArray { (response: DataResponse<[EpisodeModel]>) in
+                .responseArray(keyPath: "episode") { (response: DataResponse<[EpisodeModel]>) in
                     switch response.result {
                     case .success(let episodes):
                         observer.onNext(episodes)

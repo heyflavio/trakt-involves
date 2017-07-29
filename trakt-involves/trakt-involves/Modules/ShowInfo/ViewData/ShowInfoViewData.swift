@@ -13,4 +13,5 @@ struct ShowInfoViewData {
     var overview: String?
     var year: Int?
     var network: String?
+    var airedEpisodes: Int?
 }

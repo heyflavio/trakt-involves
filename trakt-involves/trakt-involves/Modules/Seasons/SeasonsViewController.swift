@@ -10,7 +10,11 @@ import UIKit
 
 class SeasonsViewController: UIViewController {
     
+    @IBOutlet weak var showImageView: UIImageView!
+    @IBOutlet weak var showTitleLabel: UILabel!
+    @IBOutlet weak var nextEpisodeTitleLabel: UILabel!
     @IBOutlet weak var nextEpisodeInfoLabel: UILabel!
+    @IBOutlet weak var percentageWatchedLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     var presenter: SeasonsPresenterInputProtocol?
@@ -28,31 +32,44 @@ class SeasonsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        navigationController?.setNavigationBarHidden(true, animated: false)
         presenter?.viewWillAppear()
     }
 
-    
     private func setupView() {
         tableView.register(SearchTableViewCell.self)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
     }
+    
+    @IBAction func didPressBackButton(_ sender: UIButton) {
+        presenter?.didPressBackButton()
+    }
 }
 
 extension SeasonsViewController: SeasonsPresenterOutputProtocol {
     
     func setNavigationTitle(_ title: String) {
-        self.title = title
+        showTitleLabel.text = title
     }
     
+    func setupImageView(with url: String) {
+        if let url = URL(string: url) {
+            showImageView.kf.setImage(with: url)
+        }
+    }
     func presentSeasons(_ viewData: [SeasonViewData]) {
         seasonsViewData = viewData
     }
     
     func presentNextEpisode(_ viewData: EpisodeViewData) {
+        nextEpisodeTitleLabel.text = "Next episode (\(viewData.firstAired ?? "Date unknown")):"
         nextEpisodeInfoLabel.text = viewData.title ?? "There's no next episodes"
+    }
+    
+    func setPercentageWatched(_ percentage: String) {
+        percentageWatchedLabel.text = percentage
     }
 }
 

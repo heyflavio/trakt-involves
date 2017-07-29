@@ -84,8 +84,8 @@ enum Endpoints {
                     switch self {
                     case .get(let id, let seasonNumber, let episodeNumber): return "/shows/\(id)/seasons/\(seasonNumber)/episodes/\(episodeNumber)?extended=full"
                     case .getAllEpisodes(let id, let seasonNumber): return "/shows/\(id)/seasons/\(seasonNumber)"
-                    case .getNextEpisode(let id): return "/shows/\(id)/next_episode"
-                    case .getWatchedEpisodes(let id): return "/sync/history/episodes/\(id)"
+                    case .getNextEpisode(let id): return "/shows/\(id)/next_episode?extended=full"
+                    case .getWatchedEpisodes(let id): return "/sync/history/shows/\(id)"
                     case .markAsWatched: return "/sync/history"
                     case .unmarkAsWatched: return "/sync/history/remove"
                     }
