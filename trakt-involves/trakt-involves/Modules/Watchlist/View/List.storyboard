@@ -34,7 +34,7 @@
                             <constraint firstItem="d2d-gi-uwH" firstAttribute="leading" secondItem="8kD-os-UFs" secondAttribute="leading" id="LlM-Pa-017"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="My TV Series" id="kqH-6W-tVO">
+                    <navigationItem key="navigationItem" title="Involves Trakt" id="kqH-6W-tVO">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="3jW-Mq-5zV">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
