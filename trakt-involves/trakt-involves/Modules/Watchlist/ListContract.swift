@@ -9,16 +9,12 @@
 import Foundation
 import UIKit
 
-enum ListContext {
-    case watchlist, watched
-}
-
 protocol ListPresenterInputProtocol: class {
     weak var presenterOutput: ListPresenterOutputProtocol? { get set }
     var interactor: ListInteractorInputProtocol? { get set }
     var router: ListRouterProtocol? { get set }
     
-    var context: ListContext? { get set }
+    var context: ShowContext? { get set }
     
     func viewDidLoad()
     func viewWillAppear()
@@ -48,7 +44,7 @@ protocol ListInteractorOutputProtocol: class {
 
 protocol ListRouterProtocol: class {
     weak var view: UIViewController? { get set }
-    static func assembleModule(with context: ListContext) -> UIViewController
+    static func assembleModule(with context: ShowContext) -> UIViewController
     
     func presentSearchScreen()
     func presentSeasonsScreen(for ListItem: ListViewData)

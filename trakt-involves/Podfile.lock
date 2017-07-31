@@ -13,8 +13,16 @@ PODS:
   - R.swift (3.3.0):
     - R.swift.Library (~> 3.0.2)
   - R.swift.Library (3.0.2)
+  - Realm (2.9.0):
+    - Realm/Headers (= 2.9.0)
+  - Realm/Headers (2.9.0)
+  - RealmSwift (2.9.0):
+    - Realm (= 2.9.0)
   - RxCocoa (3.6.0):
     - RxSwift (~> 3.6)
+  - RxRealm (0.6.0):
+    - RealmSwift (~> 2.5)
+    - RxSwift (~> 3.2)
   - RxSwift (3.6.0)
 
 DEPENDENCIES:
@@ -27,7 +35,9 @@ DEPENDENCIES:
   - PKHUD
   - Quick
   - R.swift
+  - RealmSwift
   - RxCocoa
+  - RxRealm
   - RxSwift
 
 SPEC CHECKSUMS:
@@ -41,9 +51,12 @@ SPEC CHECKSUMS:
   Quick: dafc587e21eed9f4cab3249b9f9015b0b7a7f71d
   R.swift: bde9704d50ff36820f49e266bc88ef545e1e9b36
   R.swift.Library: fbdec16c9802ad104fc1ba53415dc190e6ec5c73
+  Realm: f14ab1673502559cb16592ddb8f383c474c13e05
+  RealmSwift: 16ad2c187042c4934f49750375582fe508627dcb
   RxCocoa: cb865569239ebf1b1434056e5c8859d99dff103a
+  RxRealm: 323de579b50b5e0f4a3e087d5925021f976ffaf1
   RxSwift: a0925c7fb11fbe60055285f6f2062241aa37a175
 
-PODFILE CHECKSUM: 792a8c971eedd4afe15e128f24d9489b7912bf05
+PODFILE CHECKSUM: 8447e349205d7d0bbd8ced904d04cfdae8ae23d8
 
 COCOAPODS: 1.2.1

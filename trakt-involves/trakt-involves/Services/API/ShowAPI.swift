@@ -97,9 +97,9 @@ struct ShowAPI {
         }
     }
     
-    static func fetchWatchlist() -> Observable<[ListModel]>  {
+    static func fetchWatchlist() -> Observable<[ShowModel]>  {
         
-        return Observable<[ListModel]>.create { observer -> Disposable in
+        return Observable<[ShowModel]>.create { observer -> Disposable in
             
             let urlRequest = URLRequest.getURLRequest(with: URL(string: Endpoints.Show.getWatchlist.url())!,
                                                       andMethod: .get)
@@ -108,10 +108,10 @@ struct ShowAPI {
                 .request(urlRequest)
                 .validate()
                 .log()
-                .responseArray { (response: DataResponse<[ListModel]>) in
+                .responseArray(keyPath: "show") { (response: DataResponse<[ShowModel]>) in
                     switch response.result {
-                    case .success(let imageModel):
-                        observer.onNext(imageModel)
+                    case .success(let shows):
+                        observer.onNext(shows)
                         observer.onCompleted()
                     case .failure(let error):
                         observer.onError(error)
@@ -124,9 +124,9 @@ struct ShowAPI {
         }
     }
     
-    static func fetchWatchedShows() -> Observable<[ListModel]>   {
+    static func fetchWatchedShows() -> Observable<[ShowModel]>   {
         
-        return Observable<[ListModel]>.create { observer -> Disposable in
+        return Observable<[ShowModel]>.create { observer -> Disposable in
             
             let urlRequest = URLRequest.getURLRequest(with: URL(string: Endpoints.Show.getWatched.url())!,
                                                       andMethod: .get)
@@ -135,10 +135,10 @@ struct ShowAPI {
                 .request(urlRequest)
                 .validate()
                 .log()
-                .responseArray { (response: DataResponse<[ListModel]>) in
+                .responseArray(keyPath: "show") { (response: DataResponse<[ShowModel]>) in
                     switch response.result {
-                    case .success(let episodes):
-                        observer.onNext(episodes)
+                    case .success(let shows):
+                        observer.onNext(shows)
                         observer.onCompleted()
                     case .failure(let error):
                         observer.onError(error)

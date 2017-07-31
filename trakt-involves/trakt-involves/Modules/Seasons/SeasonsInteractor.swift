@@ -56,7 +56,7 @@ class SeasonsInteractor: SeasonsInteractorInputProtocol {
     func fetchAiredEpisodesCount(for traktId: Int) {
         ShowAPI.showInfo(for: traktId)
             .subscribeOn(MainScheduler.instance)
-            .map({ $0.airedEpisodes ?? 0 })
+            .map({ $0.airedEpisodes })
             .subscribe(onNext: { airedEpisodes in
                 self.interactorOutput?.fetchedAiredEpisodesCount(airedEpisodes)
             }, onError: {  error in
@@ -86,10 +86,11 @@ extension SeasonsInteractor {
     }
     
     fileprivate func convertEpisodeModelToViewData(episodeModel: EpisodeModel) -> EpisodeViewData {
+        
         return EpisodeViewData(title: episodeModel.title,
                                 number: episodeModel.number,
                                 season: episodeModel.season,
-                                tracktId: episodeModel.ids!.trakt!,
+                                tracktId: episodeModel.ids!.trakt,
                                 tvdb: episodeModel.ids?.tvdb,
                                 overview: episodeModel.overview,
                                 firstAired: episodeModel.firstAired)

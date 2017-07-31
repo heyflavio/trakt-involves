@@ -12,7 +12,7 @@ class ListPresenter: ListPresenterInputProtocol {
     var interactor: ListInteractorInputProtocol?
     var router: ListRouterProtocol?
 
-    var context: ListContext?
+    var context: ShowContext?
     
     func viewDidLoad() {
         

@@ -17,7 +17,7 @@ class ListInteractor: ListInteractorInputProtocol {
     func fetchList() {
         ShowAPI.fetchWatchlist()
             .subscribeOn(MainScheduler.instance)
-            .map(convertListModelsToViewData)
+            .map(convertWatchlistShowModelsToViewData)
             .subscribe(onNext: { viewData in
                 self.interactorOutput?.fetchedList(viewData)
             }, onError: { error in
@@ -28,7 +28,7 @@ class ListInteractor: ListInteractorInputProtocol {
     func fetchWatched() {
         ShowAPI.fetchWatchedShows()
             .subscribeOn(MainScheduler.instance)
-            .map(convertListModelsToViewData)
+            .map(convertWatchedShowModelsToViewData)
             .subscribe(onNext: { viewData in
                 self.interactorOutput?.fetchedList(viewData)
             }, onError: { error in
@@ -39,13 +39,23 @@ class ListInteractor: ListInteractorInputProtocol {
 
 extension ListInteractor {
     
-    fileprivate func convertListModelsToViewData(searchModels: [ListModel]) -> [ListViewData] {
-        return searchModels.map {
-            return ListViewData(title: $0.show!.title,
-                                     year: $0.show!.year,
-                                     traktId: $0.show?.ids?.trakt,
-                                     tvdb: $0.show?.ids?.tvdb)
-        }
+    fileprivate func convertWatchlistShowModelsToViewData(models: [ShowModel]) -> [ListViewData] {
+        return convertShowModelsToViewData(searchModels: models, context: .watchlist)
+    }
+    
+    fileprivate func convertWatchedShowModelsToViewData(models: [ShowModel]) -> [ListViewData] {
+        return convertShowModelsToViewData(searchModels: models, context: .watched)
     }
 
+    private func convertShowModelsToViewData(searchModels: [ShowModel], context: ShowContext) -> [ListViewData] {
+        return searchModels.map {
+            
+            RealmManager.saveShow($0, context: context)
+            
+            return ListViewData(title: $0.title,
+                                year: $0.year,
+                                traktId: $0.ids?.trakt,
+                                tvdb: $0.ids?.tvdb)
+        }
+    }
 }

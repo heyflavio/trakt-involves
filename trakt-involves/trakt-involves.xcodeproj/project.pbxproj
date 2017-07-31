@@ -46,7 +46,6 @@
 		8837EC461F2A841D00D6CEDC /* DescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837EC451F2A841D00D6CEDC /* DescriptionTableViewCell.swift */; };
 		8837EC481F2A871800D6CEDC /* ShowAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837EC471F2A871800D6CEDC /* ShowAPI.swift */; };
 		8837EC4B1F2A8B1B00D6CEDC /* ShowInfoViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837EC4A1F2A8B1A00D6CEDC /* ShowInfoViewData.swift */; };
-		8837EC4D1F2AE1A000D6CEDC /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837EC4C1F2AE1A000D6CEDC /* ListModel.swift */; };
 		8837EC4F1F2AE25100D6CEDC /* Date+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837EC4E1F2AE25100D6CEDC /* Date+Additions.swift */; };
 		8837EC511F2AE2AD00D6CEDC /* DateFormats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837EC501F2AE2AD00D6CEDC /* DateFormats.swift */; };
 		8837EC541F2AE61900D6CEDC /* ListViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837EC531F2AE61900D6CEDC /* ListViewData.swift */; };
@@ -93,6 +92,9 @@
 		883E142C1F29883D00EDB1E7 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E14271F29883D00EDB1E7 /* LoginRouter.swift */; };
 		883E142D1F29883D00EDB1E7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E14281F29883D00EDB1E7 /* LoginViewController.swift */; };
 		88CE87011F2C4B9A00DC576E /* DateTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CE87001F2C4B9A00DC576E /* DateTransformer.swift */; };
+		B533C30E1F2E23D8002E04CF /* RealmObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533C30D1F2E23D8002E04CF /* RealmObject.swift */; };
+		B533C3131F2E4865002E04CF /* ShowContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533C3121F2E4865002E04CF /* ShowContext.swift */; };
+		B533C3151F2E4BA3002E04CF /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533C3141F2E4BA3002E04CF /* RealmManager.swift */; };
 		B6C6133B0873A7C470958499 /* Pods_trakt_involvesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 687886927EF946ADAF6DE8FC /* Pods_trakt_involvesTests.framework */; };
 		E90FFB0DEEC0168D4FB59CE2 /* Pods_trakt_involves.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3796057FC8C8B94ED0A189E /* Pods_trakt_involves.framework */; };
 /* End PBXBuildFile section */
@@ -151,7 +153,6 @@
 		8837EC451F2A841D00D6CEDC /* DescriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DescriptionTableViewCell.swift; path = ShowInfo/View/Cell/DescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		8837EC471F2A871800D6CEDC /* ShowAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowAPI.swift; sourceTree = "<group>"; };
 		8837EC4A1F2A8B1A00D6CEDC /* ShowInfoViewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowInfoViewData.swift; path = ShowInfo/ViewData/ShowInfoViewData.swift; sourceTree = "<group>"; };
-		8837EC4C1F2AE1A000D6CEDC /* ListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListModel.swift; path = Models/Network/ListModel.swift; sourceTree = "<group>"; };
 		8837EC4E1F2AE25100D6CEDC /* Date+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Additions.swift"; sourceTree = "<group>"; };
 		8837EC501F2AE2AD00D6CEDC /* DateFormats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormats.swift; sourceTree = "<group>"; };
 		8837EC531F2AE61900D6CEDC /* ListViewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListViewData.swift; path = ViewData/ListViewData.swift; sourceTree = "<group>"; };
@@ -205,6 +206,9 @@
 		88CE87001F2C4B9A00DC576E /* DateTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateTransformer.swift; path = Transformers/DateTransformer.swift; sourceTree = "<group>"; };
 		B3796057FC8C8B94ED0A189E /* Pods_trakt_involves.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_trakt_involves.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B50B222126AD33C89E9AF560 /* Pods-trakt-involvesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trakt-involvesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-trakt-involvesTests/Pods-trakt-involvesTests.release.xcconfig"; sourceTree = "<group>"; };
+		B533C30D1F2E23D8002E04CF /* RealmObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmObject.swift; sourceTree = "<group>"; };
+		B533C3121F2E4865002E04CF /* ShowContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowContext.swift; sourceTree = "<group>"; };
+		B533C3141F2E4BA3002E04CF /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmManager.swift; path = "trakt-involves/Managers/RealmManager.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -445,6 +449,7 @@
 			isa = PBXGroup;
 			children = (
 				8837EC501F2AE2AD00D6CEDC /* DateFormats.swift */,
+				B533C3121F2E4865002E04CF /* ShowContext.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -483,6 +488,7 @@
 				8837EC2A1F2A595100D6CEDC /* NibLoadableView.swift */,
 				8837EC2B1F2A595100D6CEDC /* ReusableView.swift */,
 				883E13C11F2928DA00EDB1E7 /* ViewProtocols.swift */,
+				B533C30D1F2E23D8002E04CF /* RealmObject.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -532,6 +538,7 @@
 			isa = PBXGroup;
 			children = (
 				883E13E61F29400E00EDB1E7 /* AuthenticationManager.swift */,
+				B533C3141F2E4BA3002E04CF /* RealmManager.swift */,
 			);
 			name = Managers;
 			path = Modules;
@@ -596,24 +603,15 @@
 		883E140C1F297C1B00EDB1E7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				883E140D1F297CBE00EDB1E7 /* Network */,
-			);
-			name = Models;
-			sourceTree = "<group>";
-		};
-		883E140D1F297CBE00EDB1E7 /* Network */ = {
-			isa = PBXGroup;
-			children = (
 				883E140E1F297E3600EDB1E7 /* AuthenticationModel.swift */,
 				8837EC1B1F2A48AD00D6CEDC /* SearchModel.swift */,
 				8837EC1D1F2A494400D6CEDC /* ShowModel.swift */,
 				8837EC1F1F2A4A1400D6CEDC /* IdModels.swift */,
 				8837EC231F2A540900D6CEDC /* ImageModel.swift */,
-				8837EC4C1F2AE1A000D6CEDC /* ListModel.swift */,
 				8837EC6C1F2AF1DD00D6CEDC /* EpisodeModel.swift */,
 				882891781F2B00BC0048777A /* SeasonModel.swift */,
 			);
-			name = Network;
+			name = Models;
 			sourceTree = "<group>";
 		};
 		883E14171F29835A00EDB1E7 /* Login */ = {
@@ -880,6 +878,8 @@
 				883E13E31F293CA100EDB1E7 /* MainRouter.swift in Sources */,
 				8837EC291F2A590000D6CEDC /* UITableViewCell+Register.swift in Sources */,
 				882891661F2AFDC70048777A /* SeasonAPI.swift in Sources */,
+				B533C3131F2E4865002E04CF /* ShowContext.swift in Sources */,
+				B533C30E1F2E23D8002E04CF /* RealmObject.swift in Sources */,
 				883E13D71F2938DC00EDB1E7 /* RootRouter.swift in Sources */,
 				883E13F21F2941D500EDB1E7 /* API.swift in Sources */,
 				883E13CB1F2928DB00EDB1E7 /* URLRequest+Additions.swift in Sources */,
@@ -928,9 +928,9 @@
 				883E14091F29506F00EDB1E7 /* AuthenticationAPI.swift in Sources */,
 				883E142C1F29883D00EDB1E7 /* LoginRouter.swift in Sources */,
 				883E13F41F2941D500EDB1E7 /* Endpoint.swift in Sources */,
-				8837EC4D1F2AE1A000D6CEDC /* ListModel.swift in Sources */,
 				8837EC2D1F2A595100D6CEDC /* ReusableView.swift in Sources */,
 				8837EC241F2A540900D6CEDC /* ImageModel.swift in Sources */,
+				B533C3151F2E4BA3002E04CF /* RealmManager.swift in Sources */,
 				8837EC4F1F2AE25100D6CEDC /* Date+Additions.swift in Sources */,
 				883E13F51F2941D500EDB1E7 /* Endpoints.swift in Sources */,
 				8837EC201F2A4A1400D6CEDC /* IdModels.swift in Sources */,

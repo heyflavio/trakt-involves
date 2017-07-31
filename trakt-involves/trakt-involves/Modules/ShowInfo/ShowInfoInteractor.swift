@@ -103,7 +103,7 @@ extension ShowInfoInteractor {
         return EpisodeViewData(title: episodeModel.title,
                                number: episodeModel.number,
                                season: episodeModel.season,
-                               tracktId: episodeModel.ids!.trakt!,
+                               tracktId: episodeModel.ids!.trakt,
                                tvdb: episodeModel.ids?.tvdb,
                                overview: episodeModel.overview,
                                firstAired: episodeModel.firstAired)

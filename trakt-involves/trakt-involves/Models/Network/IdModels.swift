@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 class IdModels {
-    var trakt: Int?
+    var trakt: Int = 0
     var slug: String?
     var imdb: String?
     var tvdb: Int?

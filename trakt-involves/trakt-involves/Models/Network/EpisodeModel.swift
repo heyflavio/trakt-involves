@@ -8,17 +8,30 @@
 
 import Foundation
 import ObjectMapper
+import RealmSwift
 
-class EpisodeModel {
-    var season: Int?
-    var number: Int?
+class EpisodeModel: Object, RealmObject {
+    
+    dynamic var id = 0
+    dynamic var season = 0
+    dynamic var number = 0
+    dynamic var title: String?
+    dynamic var overview: String?
+    dynamic var firstAired: Date?
+    dynamic var show: ShowModel?
     var ids: IdModels?
-    var title: String?
-    var overview: String?
-    var firstAired: Date?
+    
     
     required convenience init?(map: Map) {
         self.init()
+    }
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+    
+    override static func ignoredProperties() -> [String] {
+        return ["ids"]
     }
 }
 

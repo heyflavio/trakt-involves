@@ -20,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         setupRootModule(in: window)
         
+        let _ = RealmManager.realm
+        
         return true
     }
 

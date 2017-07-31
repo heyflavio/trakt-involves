@@ -11,7 +11,7 @@ import UIKit
 class ListRouter: ListRouterProtocol {
     weak var view: UIViewController?
     
-    static func assembleModule(with context: ListContext) -> UIViewController {
+    static func assembleModule(with context: ShowContext) -> UIViewController {
         
         let navigationController = R.storyboard.list.listNavigationController()
         let viewController = navigationController?.visibleViewController as! ListViewController
