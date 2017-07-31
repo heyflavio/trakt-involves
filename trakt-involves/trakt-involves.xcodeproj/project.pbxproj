@@ -62,7 +62,6 @@
 		883E13C81F2928DB00EDB1E7 /* UIApplication+TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13BA1F2928DA00EDB1E7 /* UIApplication+TopViewController.swift */; };
 		883E13CA1F2928DB00EDB1E7 /* UIViewController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13BC1F2928DA00EDB1E7 /* UIViewController+Additions.swift */; };
 		883E13CB1F2928DB00EDB1E7 /* URLRequest+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13BD1F2928DA00EDB1E7 /* URLRequest+Additions.swift */; };
-		883E13CD1F2928DB00EDB1E7 /* ViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13C11F2928DA00EDB1E7 /* ViewProtocols.swift */; };
 		883E13CE1F2928DB00EDB1E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 883E13C31F2928DA00EDB1E7 /* Assets.xcassets */; };
 		883E13CF1F2928DB00EDB1E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 883E13C41F2928DA00EDB1E7 /* LaunchScreen.storyboard */; };
 		883E13D51F2938DC00EDB1E7 /* RootContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13D21F2938DC00EDB1E7 /* RootContract.swift */; };
@@ -172,7 +171,6 @@
 		883E13BA1F2928DA00EDB1E7 /* UIApplication+TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+TopViewController.swift"; sourceTree = "<group>"; };
 		883E13BC1F2928DA00EDB1E7 /* UIViewController+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Additions.swift"; sourceTree = "<group>"; };
 		883E13BD1F2928DA00EDB1E7 /* URLRequest+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLRequest+Additions.swift"; sourceTree = "<group>"; };
-		883E13C11F2928DA00EDB1E7 /* ViewProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewProtocols.swift; sourceTree = "<group>"; };
 		883E13C31F2928DA00EDB1E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		883E13C51F2928DA00EDB1E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		883E13C61F2928DA00EDB1E7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -496,7 +494,6 @@
 			children = (
 				8837EC2A1F2A595100D6CEDC /* NibLoadableView.swift */,
 				8837EC2B1F2A595100D6CEDC /* ReusableView.swift */,
-				883E13C11F2928DA00EDB1E7 /* ViewProtocols.swift */,
 				B533C30D1F2E23D8002E04CF /* RealmObject.swift */,
 			);
 			path = Protocols;
@@ -917,7 +914,6 @@
 				883E13C81F2928DB00EDB1E7 /* UIApplication+TopViewController.swift in Sources */,
 				883E14291F29883D00EDB1E7 /* LoginContract.swift in Sources */,
 				883E142B1F29883D00EDB1E7 /* LoginPresenter.swift in Sources */,
-				883E13CD1F2928DB00EDB1E7 /* ViewProtocols.swift in Sources */,
 				882891751F2AFFE60048777A /* SeasonsViewController.swift in Sources */,
 				883E142D1F29883D00EDB1E7 /* LoginViewController.swift in Sources */,
 				883E13D61F2938DC00EDB1E7 /* RootPresenter.swift in Sources */,
