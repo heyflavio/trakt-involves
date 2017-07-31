@@ -8,6 +8,7 @@
 
 import Foundation
 import RealmSwift
+import RxRealm
 
 class RealmManager {
     
@@ -21,19 +22,57 @@ class RealmManager {
 extension RealmManager {
     
     static func saveShow(_ show: ShowModel, context: ShowContext) {
-        show.id = show.ids!.trakt
+        
+        if let _ = RealmManager.getShow(for: show.id) {
+            return
+        }
+        
+        let id = show.ids!.trakt
+        let show = ShowModel.init(value: show)
+        
+        show.id = id
         show.context = context
         show.save(with: show.id)
+    }
+    
+    static func deleteShow(_ show: ShowModel) {
+        show.delete()
     }
     
     static func getShow(for id: Int) -> ShowModel? {
         return realm.object(ofType: ShowModel.self, forPrimaryKey: id)
     }
     
-    static func saveEpisode(_ episode: EpisodeModel, showId: Int) {
-        episode.id = episode.ids!.trakt
-        episode.show = RealmManager.getShow(for: showId)
+    static func getShows(for context: ShowContext) -> [ShowModel]? {
+        return realm.objects(ShowModel.self).filter("showContext == %i", context.rawValue).toArray()
+    }
+    
+    static func saveEpisode(_ episode: EpisodeModel, showId: Int? = nil, watched: Bool? = nil) {
+        
+        let id = episode.ids!.trakt
+        let episode = EpisodeModel.init(value: episode)
+        episode.id = id
+        
+        if let dbEpisode = RealmManager.getEpisode(for: id) {
+            episode.watched = watched ?? dbEpisode.watched
+            episode.show = dbEpisode.show
+        } else {
+            episode.show = RealmManager.getShow(for: showId!)
+        }
+        
         episode.save(with: episode.id)
+    }
+    
+    static func getEpisode(for id: Int) -> EpisodeModel? {
+        return realm.object(ofType: EpisodeModel.self, forPrimaryKey: id)
+    }
+    
+    static func markEpisodeAsWatched(_ episode: EpisodeModel) {
+        saveEpisode(episode, watched: true)
+    }
+    
+    static func unmarkEpisodeAsWatched(_ episode: EpisodeModel) {
+        saveEpisode(episode, watched: false)
     }
     
 }

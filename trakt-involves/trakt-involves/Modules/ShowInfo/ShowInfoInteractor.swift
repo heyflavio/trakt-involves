@@ -56,12 +56,18 @@ class ShowInfoInteractor: ShowInfoInteractorInputProtocol {
     func removeShowFromWatchlist() {
         ShowAPI.removeFromWatchlist(showModel!)
             .subscribe(onNext: { response in
-                
+                self.showModel?.delete()
             }, onError: {  error in
                 
             }).addDisposableTo(disposeBag)
     }
     
+    func fetchWatchedState(for id: Int) {
+        let episode = RealmManager.getEpisode(for: id)
+        if let watched = episode?.watched {
+            interactorOutput?.fetchedWatchedState(watched)
+        }
+    }
     func fetchEpisodeInfo(for traktId: Int, seasonNumber: Int, episodeNumber: Int) {
         EpisodeAPI.getEpisode(for: traktId, seasonNumber: seasonNumber, and: episodeNumber)
             .subscribeOn(MainScheduler.instance)
@@ -75,15 +81,17 @@ class ShowInfoInteractor: ShowInfoInteractorInputProtocol {
     
     func markEpisodeAsWatched() {
         EpisodeAPI.markAsWatched(episodeModel!)
-            .subscribe(onNext: { response in
-                
+            .subscribe(onCompleted: {
+                RealmManager.markEpisodeAsWatched(self.episodeModel!)
+                self.interactorOutput?.markedEpisodeAsWatched()
             }).addDisposableTo(disposeBag)
     }
     
     func unmarkEpisodeAsWatched() {
         EpisodeAPI.unmarkAsWatched(episodeModel!)
-            .subscribe(onNext: { response in
-                
+            .subscribe(onCompleted: { 
+                RealmManager.unmarkEpisodeAsWatched(self.episodeModel!)
+                self.interactorOutput?.unmarkedEpisodeAsWatched()
             }).addDisposableTo(disposeBag)
     }
 }

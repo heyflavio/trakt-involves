@@ -34,7 +34,7 @@ class EpisodesViewController: UIViewController {
 
     
     private func setupView() {
-        tableView.register(SearchTableViewCell.self)
+        tableView.register(ShowTableViewCell.self)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
@@ -66,12 +66,12 @@ extension EpisodesViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as SearchTableViewCell
+        let cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as ShowTableViewCell
         cell.accessoryType = .disclosureIndicator
         let item = episodesViewData[indexPath.row]
         
         cell.titleLabel?.text = "\(item.number!)"
-        cell.subtitleLabel?.text = item.title ?? ""
+        cell.subtitleLabel?.text = item.title
         
         return cell
     }

@@ -48,17 +48,17 @@ struct R: Rswift.Validatable {
   struct nib {
     /// Nib `DescriptionTableViewCell`.
     static let descriptionTableViewCell = _R.nib._DescriptionTableViewCell()
-    /// Nib `SearchTableViewCell`.
-    static let searchTableViewCell = _R.nib._SearchTableViewCell()
+    /// Nib `ShowTableViewCell`.
+    static let showTableViewCell = _R.nib._ShowTableViewCell()
     
     /// `UINib(name: "DescriptionTableViewCell", in: bundle)`
     static func descriptionTableViewCell(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.descriptionTableViewCell)
     }
     
-    /// `UINib(name: "SearchTableViewCell", in: bundle)`
-    static func searchTableViewCell(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.searchTableViewCell)
+    /// `UINib(name: "ShowTableViewCell", in: bundle)`
+    static func showTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.showTableViewCell)
     }
     
     fileprivate init() {}
@@ -164,12 +164,12 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct _SearchTableViewCell: Rswift.NibResourceType {
+    struct _ShowTableViewCell: Rswift.NibResourceType {
       let bundle = R.hostingBundle
-      let name = "SearchTableViewCell"
+      let name = "ShowTableViewCell"
       
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> SearchTableViewCell? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SearchTableViewCell
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> ShowTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ShowTableViewCell
       }
       
       fileprivate init() {}

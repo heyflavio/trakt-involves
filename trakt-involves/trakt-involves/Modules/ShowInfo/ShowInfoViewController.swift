@@ -79,6 +79,10 @@ extension ShowInfoViewController: ShowInfoPresenterOutputProtocol {
         overview = episodeInfo?.overview
         tableView.reloadData()
     }
+    
+    func toggleWatchedButton(_ title: String) {
+        self.watchButton.setTitle(title, for: .normal)
+    }
 }
 
 

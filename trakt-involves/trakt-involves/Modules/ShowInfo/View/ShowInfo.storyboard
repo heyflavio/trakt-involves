@@ -29,17 +29,17 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="dMV-oD-V8v">
-                                <rect key="frame" x="16" y="160.5" width="220" height="29"/>
+                                <rect key="frame" x="16" y="160.5" width="210" height="29"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cw5-2h-pzX">
-                                <rect key="frame" x="252" y="160" width="115" height="30"/>
+                                <rect key="frame" x="242" y="160" width="125" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="9z4-1E-y7F"/>
-                                    <constraint firstAttribute="width" constant="115" id="N2R-x0-wFy"/>
+                                    <constraint firstAttribute="width" constant="125" id="N2R-x0-wFy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                 <state key="normal" title="Add to Watchlist">

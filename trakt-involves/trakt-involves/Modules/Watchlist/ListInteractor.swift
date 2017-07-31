@@ -15,6 +15,9 @@ class ListInteractor: ListInteractorInputProtocol {
     fileprivate var disposeBag = DisposeBag()
     
     func fetchList() {
+        
+        self.interactorOutput?.fetchedList(RealmManager.getShows(for: .watchlist).map(convertWatchlistShowModelsToViewData)!)
+        
         ShowAPI.fetchWatchlist()
             .subscribeOn(MainScheduler.instance)
             .map(convertWatchlistShowModelsToViewData)
@@ -26,6 +29,9 @@ class ListInteractor: ListInteractorInputProtocol {
     }
     
     func fetchWatched() {
+        
+        self.interactorOutput?.fetchedList(RealmManager.getShows(for: .watched).map(convertWatchlistShowModelsToViewData)!)
+        
         ShowAPI.fetchWatchedShows()
             .subscribeOn(MainScheduler.instance)
             .map(convertWatchedShowModelsToViewData)
@@ -40,21 +46,21 @@ class ListInteractor: ListInteractorInputProtocol {
 extension ListInteractor {
     
     fileprivate func convertWatchlistShowModelsToViewData(models: [ShowModel]) -> [ListViewData] {
-        return convertShowModelsToViewData(searchModels: models, context: .watchlist)
+        return convertShowModelsToViewData(showModels: models, context: .watchlist)
     }
     
     fileprivate func convertWatchedShowModelsToViewData(models: [ShowModel]) -> [ListViewData] {
-        return convertShowModelsToViewData(searchModels: models, context: .watched)
+        return convertShowModelsToViewData(showModels: models, context: .watched)
     }
 
-    private func convertShowModelsToViewData(searchModels: [ShowModel], context: ShowContext) -> [ListViewData] {
-        return searchModels.map {
+    private func convertShowModelsToViewData(showModels: [ShowModel], context: ShowContext) -> [ListViewData] {
+        return showModels.map {
             
             RealmManager.saveShow($0, context: context)
             
             return ListViewData(title: $0.title,
                                 year: $0.year,
-                                traktId: $0.ids?.trakt,
+                                traktId: $0.ids?.trakt ?? $0.id,
                                 tvdb: $0.ids?.tvdb)
         }
     }

@@ -20,6 +20,11 @@ class ShowInfoPresenter: ShowInfoPresenterInputProtocol {
     
     var seasonNumber: Int?
     var episodeNumber: Int?
+    var watched = false {
+        didSet {
+            presenterOutput?.toggleWatchedButton(watched ? "Mark as unwatched" : "Mark as watched")
+        }
+    }
     
     func viewDidLoad() {
         presenterOutput?.setupView(with: context!, title: title)
@@ -42,6 +47,8 @@ class ShowInfoPresenter: ShowInfoPresenterInputProtocol {
     func didPressAddToWatchlistButton() {
         if context == . show {
             interactor?.addShowToWatchlist()
+        } else if watched {
+            interactor?.unmarkEpisodeAsWatched() 
         } else {
             interactor?.markEpisodeAsWatched()
         }
@@ -64,5 +71,18 @@ extension ShowInfoPresenter: ShowInfoInteractorOutputProtocol {
     
     func fetchedEpisodeInfo(_ episodeInfo: EpisodeViewData) {
         presenterOutput?.setupView(with: episodeInfo)
+        interactor?.fetchWatchedState(for: episodeInfo.tracktId!)
+    }
+    
+    func fetchedWatchedState(_ watched: Bool) {
+        self.watched = watched
+    }
+    
+    func markedEpisodeAsWatched() {
+        watched = true
+    }
+    
+    func unmarkedEpisodeAsWatched() {
+        watched = false
     }
 }

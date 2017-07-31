@@ -41,7 +41,7 @@ class SearchViewController: UIViewController {
     }
     
     private func setupView() {
-        tableView.register(SearchTableViewCell.self)
+        tableView.register(ShowTableViewCell.self)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
@@ -123,7 +123,7 @@ extension SearchViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as SearchTableViewCell
+        let cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as ShowTableViewCell
         cell.accessoryType = .disclosureIndicator
         let searchResult = searchResults[indexPath.row]
         

@@ -16,9 +16,9 @@ import RxCocoa
 
 struct SearchAPI {
     
-    static func search(with query: String) -> Observable<[SearchModel]>  {
+    static func search(with query: String) -> Observable<[ShowModel]>  {
         
-        return Observable<[SearchModel]>.create { observer -> Disposable in
+        return Observable<[ShowModel]>.create { observer -> Disposable in
             
             let urlRequest = URLRequest.getURLRequest(with: URL(string: Endpoints.Search.query(query.replacingOccurrences(of: " ", with: "%20")).url())!,
                                                       andMethod: .get)
@@ -27,7 +27,7 @@ struct SearchAPI {
                 .request(urlRequest)
                 .validate()
                 .log()
-                .responseArray { (response: DataResponse<[SearchModel]>) in
+                .responseArray(keyPath: "show") { (response: DataResponse<[ShowModel]>) in
                     switch response.result {
                     case .success(let searchResponse):
                         observer.onNext(searchResponse)

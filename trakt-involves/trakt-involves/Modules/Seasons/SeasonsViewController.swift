@@ -37,7 +37,7 @@ class SeasonsViewController: UIViewController {
     }
 
     private func setupView() {
-        tableView.register(SearchTableViewCell.self)
+        tableView.register(ShowTableViewCell.self)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
@@ -64,8 +64,8 @@ extension SeasonsViewController: SeasonsPresenterOutputProtocol {
     }
     
     func presentNextEpisode(_ viewData: EpisodeViewData) {
-        nextEpisodeTitleLabel.text = "Next episode (\(viewData.firstAired ?? "Date unknown")):"
-        nextEpisodeInfoLabel.text = viewData.title ?? "There's no next episodes"
+        nextEpisodeTitleLabel.text = "Next episode (\(viewData.firstAired)):"
+        nextEpisodeInfoLabel.text = viewData.title
     }
     
     func setPercentageWatched(_ percentage: String) {
@@ -91,7 +91,7 @@ extension SeasonsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as SearchTableViewCell
+        let cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as ShowTableViewCell
         cell.accessoryType = .disclosureIndicator
         let item = seasonsViewData[indexPath.row]
         

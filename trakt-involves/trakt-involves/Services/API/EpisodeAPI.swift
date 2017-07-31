@@ -139,6 +139,7 @@ struct EpisodeAPI {
             
             let url = watched ? URL(string: Endpoints.Show.Season.Episode.markAsWatched.url())! : URL(string: Endpoints.Show.Season.Episode.unmarkAsWatched.url())!
             
+            let episode = EpisodeModel.init(value: episode)
             let urlRequest = URLRequest.getURLRequest(with: url,
                                                       body: ["episodes": [episode.toJSON()]],
                                                       andMethod: .post)

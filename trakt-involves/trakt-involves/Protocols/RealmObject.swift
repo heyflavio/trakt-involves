@@ -7,13 +7,15 @@
 //
 
 import Foundation
+import ObjectMapper
 import RealmSwift
 
 protocol RealmObject {
     func save(with id: Int)
+    func delete()
 }
 
-extension RealmObject where Self: Object {
+extension RealmObject where Self: Object, Self: Mappable {
     
     func save(with id: Int) {
         let realm = try! Realm()
@@ -23,9 +25,25 @@ extension RealmObject where Self: Object {
             .filter("id == %@", id)
             .count
    
+        var values = self.toJSON()
+        let valuesToRemove = values.keys.filter { values[$0]! is NSNull }
+        valuesToRemove.forEach { values.removeValue(forKey: $0) }
+        
         try! realm.write {
-            realm.add(self, update: count > 0)
+            if count > 0 {
+                realm.create(Self.self, value: values, update: true)
+            } else {
+                realm.add(self, update: false)
+            }
         }
 
+    }
+    
+    func delete() {
+        let realm = try! Realm()
+        
+        try! realm.write {
+            realm.delete(self)
+        }
     }
 }

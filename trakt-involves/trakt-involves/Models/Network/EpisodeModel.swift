@@ -19,6 +19,7 @@ class EpisodeModel: Object, RealmObject {
     dynamic var overview: String?
     dynamic var firstAired: Date?
     dynamic var show: ShowModel?
+    dynamic var watched = false
     var ids: IdModels?
     
     
@@ -31,18 +32,20 @@ class EpisodeModel: Object, RealmObject {
     }
     
     override static func ignoredProperties() -> [String] {
-        return ["ids"]
+        return ["ids", "firstAired"]
     }
 }
 
 extension EpisodeModel: Mappable {
     
     func mapping(map: Map) {
+        id <- map["id"]
         season <- map["season"]
         number <- map["number"]
         ids <- map["ids"]
         title <- map["title"]
         overview <- map["overview"]
         firstAired <- (map["first_aired"], DateTransformer())
+        watched <- map["watched"]
     }
 }

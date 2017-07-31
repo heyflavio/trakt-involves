@@ -18,17 +18,36 @@ struct AuthenticationAPI {
     
     static func getToken(from code: String) -> Observable<AuthenticationModel>  {
         
+        let body = ["code": code,
+                    "client_id": API.clientId,
+                    "client_secret": API.clientSecret,
+                    "redirect_uri": API.redirectURI,
+                    "grant_type": "authorization_code"]
+        
+        let urlRequest = URLRequest.getURLRequest(with: URL(string: Endpoints.Authentication.getToken.url())!,
+                                                  body: body,
+                                                  andMethod: .post)
+        
+        return requestToken(for: urlRequest)
+    }
+    
+    static func refreshToken(_ token: String) -> Observable<AuthenticationModel>  {
+        
+        let body = ["refresh_token": token,
+                    "client_id": API.clientId,
+                    "client_secret": API.clientSecret,
+                    "redirect_uri": API.redirectURI,
+                    "grant_type": "refresh_token"]
+        
+        let urlRequest = URLRequest.getURLRequest(with: URL(string: Endpoints.Authentication.getToken.url())!,
+                                                  body: body,
+                                                  andMethod: .post)
+        
+        return requestToken(for: urlRequest)
+    }
+    
+    private static func requestToken(for urlRequest: URLRequest)  -> Observable<AuthenticationModel> {
         return Observable<AuthenticationModel>.create { observer -> Disposable in
-            
-            let body = ["code": code,
-                        "client_id": API.clientId,
-                        "client_secret": API.clientSecret,
-                        "redirect_uri": API.redirectURI,
-                        "grant_type": "authorization_code"]
-            
-            let urlRequest = URLRequest.getURLRequest(with: URL(string: Endpoints.Authentication.getToken.url())!,
-                                                      body: body,
-                                                      andMethod: .post)
             
             let request = Alamofire
                 .request(urlRequest)

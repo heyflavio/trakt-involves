@@ -19,7 +19,7 @@ class SearchInteractor: SearchInteractorInputProtocol {
         
         SearchAPI.search(with: query)
             .subscribeOn(ConcurrentDispatchQueueScheduler(queue: DispatchQueue.global(qos: .background)))
-            .map(convertSearchModelsToViewData)
+            .map(convertShowModelsToViewData)
             .subscribe(onNext: { searchResults in
                 
                 self.interactorOutput?.searchedResults(searchResults)
@@ -33,12 +33,12 @@ class SearchInteractor: SearchInteractorInputProtocol {
 
 extension SearchInteractor {
     
-    fileprivate func convertSearchModelsToViewData(searchModels: [SearchModel]) -> [SearchViewData] {
-        return searchModels.map {
-            return SearchViewData(title: $0.show!.title,
-                                  year: $0.show!.year,
-                                  traktId: $0.show!.ids!.trakt,
-                                  tvdb: $0.show!.ids!.tvdb)
+    fileprivate func convertShowModelsToViewData(showModels: [ShowModel]) -> [SearchViewData] {
+        return showModels.map {
+            return SearchViewData(title: $0.title,
+                                  year: $0.year,
+                                  traktId: $0.ids!.trakt,
+                                  tvdb: $0.ids!.tvdb)
         }
     }
     

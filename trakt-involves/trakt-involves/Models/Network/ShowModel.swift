@@ -40,13 +40,14 @@ class ShowModel: Object, RealmObject {
     }
     
     override static func ignoredProperties() -> [String] {
-        return ["ids", "context"]
+        return ["ids", "overview", "network", "airedEpisodes", "context"]
     }
 }
 
 extension ShowModel: Mappable {
     
     func mapping(map: Map) {
+        id <- map["id"]
         title <- map["title"]
         year <- map["year"]
         ids <- map["ids"]

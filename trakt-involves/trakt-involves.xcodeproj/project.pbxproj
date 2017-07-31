@@ -25,7 +25,6 @@
 		8837EC171F2A430200D6CEDC /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837EC121F2A430200D6CEDC /* SearchRouter.swift */; };
 		8837EC181F2A430200D6CEDC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837EC131F2A430200D6CEDC /* SearchViewController.swift */; };
 		8837EC1A1F2A471D00D6CEDC /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837EC191F2A471D00D6CEDC /* UIColor+Additions.swift */; };
-		8837EC1C1F2A48AD00D6CEDC /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837EC1B1F2A48AD00D6CEDC /* SearchModel.swift */; };
 		8837EC1E1F2A494400D6CEDC /* ShowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837EC1D1F2A494400D6CEDC /* ShowModel.swift */; };
 		8837EC201F2A4A1400D6CEDC /* IdModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837EC1F1F2A4A1400D6CEDC /* IdModels.swift */; };
 		8837EC221F2A52C200D6CEDC /* ImageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837EC211F2A52C200D6CEDC /* ImageAPI.swift */; };
@@ -34,8 +33,8 @@
 		8837EC291F2A590000D6CEDC /* UITableViewCell+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837EC281F2A590000D6CEDC /* UITableViewCell+Register.swift */; };
 		8837EC2C1F2A595100D6CEDC /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837EC2A1F2A595100D6CEDC /* NibLoadableView.swift */; };
 		8837EC2D1F2A595100D6CEDC /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837EC2B1F2A595100D6CEDC /* ReusableView.swift */; };
-		8837EC301F2A6A3900D6CEDC /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8837EC2F1F2A6A3900D6CEDC /* SearchTableViewCell.xib */; };
-		8837EC321F2A6A4600D6CEDC /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837EC311F2A6A4600D6CEDC /* SearchTableViewCell.swift */; };
+		8837EC301F2A6A3900D6CEDC /* ShowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8837EC2F1F2A6A3900D6CEDC /* ShowTableViewCell.xib */; };
+		8837EC321F2A6A4600D6CEDC /* ShowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837EC311F2A6A4600D6CEDC /* ShowTableViewCell.swift */; };
 		8837EC391F2A737800D6CEDC /* ShowInfoContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837EC341F2A737800D6CEDC /* ShowInfoContract.swift */; };
 		8837EC3A1F2A737800D6CEDC /* ShowInfoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837EC351F2A737800D6CEDC /* ShowInfoInteractor.swift */; };
 		8837EC3B1F2A737800D6CEDC /* ShowInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837EC361F2A737800D6CEDC /* ShowInfoPresenter.swift */; };
@@ -132,7 +131,6 @@
 		8837EC121F2A430200D6CEDC /* SearchRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchRouter.swift; path = Search/SearchRouter.swift; sourceTree = "<group>"; };
 		8837EC131F2A430200D6CEDC /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = Search/SearchViewController.swift; sourceTree = "<group>"; };
 		8837EC191F2A471D00D6CEDC /* UIColor+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
-		8837EC1B1F2A48AD00D6CEDC /* SearchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchModel.swift; path = Models/Network/SearchModel.swift; sourceTree = "<group>"; };
 		8837EC1D1F2A494400D6CEDC /* ShowModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowModel.swift; path = Models/Network/ShowModel.swift; sourceTree = "<group>"; };
 		8837EC1F1F2A4A1400D6CEDC /* IdModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IdModels.swift; path = Models/Network/IdModels.swift; sourceTree = "<group>"; };
 		8837EC211F2A52C200D6CEDC /* ImageAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageAPI.swift; sourceTree = "<group>"; };
@@ -141,8 +139,8 @@
 		8837EC281F2A590000D6CEDC /* UITableViewCell+Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Register.swift"; sourceTree = "<group>"; };
 		8837EC2A1F2A595100D6CEDC /* NibLoadableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
 		8837EC2B1F2A595100D6CEDC /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
-		8837EC2F1F2A6A3900D6CEDC /* SearchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SearchTableViewCell.xib; path = Search/View/Cell/SearchTableViewCell.xib; sourceTree = "<group>"; };
-		8837EC311F2A6A4600D6CEDC /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchTableViewCell.swift; path = Search/View/Cell/SearchTableViewCell.swift; sourceTree = "<group>"; };
+		8837EC2F1F2A6A3900D6CEDC /* ShowTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShowTableViewCell.xib; path = Search/View/Cell/ShowTableViewCell.xib; sourceTree = "<group>"; };
+		8837EC311F2A6A4600D6CEDC /* ShowTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowTableViewCell.swift; path = Search/View/Cell/ShowTableViewCell.swift; sourceTree = "<group>"; };
 		8837EC341F2A737800D6CEDC /* ShowInfoContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowInfoContract.swift; path = ShowInfo/ShowInfoContract.swift; sourceTree = "<group>"; };
 		8837EC351F2A737800D6CEDC /* ShowInfoInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowInfoInteractor.swift; path = ShowInfo/ShowInfoInteractor.swift; sourceTree = "<group>"; };
 		8837EC361F2A737800D6CEDC /* ShowInfoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowInfoPresenter.swift; path = ShowInfo/ShowInfoPresenter.swift; sourceTree = "<group>"; };
@@ -324,8 +322,8 @@
 		8837EC2E1F2A6A1F00D6CEDC /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				8837EC2F1F2A6A3900D6CEDC /* SearchTableViewCell.xib */,
-				8837EC311F2A6A4600D6CEDC /* SearchTableViewCell.swift */,
+				8837EC2F1F2A6A3900D6CEDC /* ShowTableViewCell.xib */,
+				8837EC311F2A6A4600D6CEDC /* ShowTableViewCell.swift */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -604,7 +602,6 @@
 			isa = PBXGroup;
 			children = (
 				883E140E1F297E3600EDB1E7 /* AuthenticationModel.swift */,
-				8837EC1B1F2A48AD00D6CEDC /* SearchModel.swift */,
 				8837EC1D1F2A494400D6CEDC /* ShowModel.swift */,
 				8837EC1F1F2A4A1400D6CEDC /* IdModels.swift */,
 				8837EC231F2A540900D6CEDC /* ImageModel.swift */,
@@ -741,7 +738,7 @@
 				883E13CF1F2928DB00EDB1E7 /* LaunchScreen.storyboard in Resources */,
 				883E14031F294B9D00EDB1E7 /* List.storyboard in Resources */,
 				8837EC0E1F2A42ED00D6CEDC /* Search.storyboard in Resources */,
-				8837EC301F2A6A3900D6CEDC /* SearchTableViewCell.xib in Resources */,
+				8837EC301F2A6A3900D6CEDC /* ShowTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -890,7 +887,6 @@
 				882891771F2AFFE60048777A /* SeasonViewData.swift in Sources */,
 				883E13FF1F294A3700EDB1E7 /* ListRouter.swift in Sources */,
 				883E13E11F293CA100EDB1E7 /* MainInteractor.swift in Sources */,
-				8837EC1C1F2A48AD00D6CEDC /* SearchModel.swift in Sources */,
 				8837EC161F2A430200D6CEDC /* SearchPresenter.swift in Sources */,
 				883E13D51F2938DC00EDB1E7 /* RootContract.swift in Sources */,
 				8837EC541F2AE61900D6CEDC /* ListViewData.swift in Sources */,
@@ -919,7 +915,7 @@
 				8837EC3C1F2A737800D6CEDC /* ShowInfoRouter.swift in Sources */,
 				882891741F2AFFE60048777A /* SeasonsRouter.swift in Sources */,
 				8837EC601F2AEF4000D6CEDC /* EpisodesContract.swift in Sources */,
-				8837EC321F2A6A4600D6CEDC /* SearchTableViewCell.swift in Sources */,
+				8837EC321F2A6A4600D6CEDC /* ShowTableViewCell.swift in Sources */,
 				8837EC611F2AEF4000D6CEDC /* EpisodesInteractor.swift in Sources */,
 				8837EC171F2A430200D6CEDC /* SearchRouter.swift in Sources */,
 				883E13E21F293CA100EDB1E7 /* MainPresenter.swift in Sources */,

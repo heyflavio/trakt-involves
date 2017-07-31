@@ -40,6 +40,7 @@ protocol ShowInfoPresenterOutputProtocol: class {
     func setupImageView(with url: String)
     func setupView(with showInfo: ShowInfoViewData?)
     func setupView(with episodeInfo: EpisodeViewData?)
+    func toggleWatchedButton(_ text: String)
 }
 
 protocol ShowInfoInteractorInputProtocol: class {
@@ -49,8 +50,9 @@ protocol ShowInfoInteractorInputProtocol: class {
     func fetchShowInfo(for traktId: Int)
     func addShowToWatchlist()
     func removeShowFromWatchlist()
-    
+
     func fetchEpisodeInfo(for traktId: Int, seasonNumber: Int, episodeNumber: Int)
+    func fetchWatchedState(for traktId: Int)
     func markEpisodeAsWatched()
     func unmarkEpisodeAsWatched()
 }
@@ -61,6 +63,9 @@ protocol ShowInfoInteractorOutputProtocol: class {
     func fetchedImageUrl(_ url: String)
     func fetchedShowInfo(_ showInfo: ShowInfoViewData)
     func fetchedEpisodeInfo(_ episodeInfo: EpisodeViewData)
+    func fetchedWatchedState(_ watched: Bool)
+    func markedEpisodeAsWatched()
+    func unmarkedEpisodeAsWatched()
 }
 
 protocol ShowInfoRouterProtocol: class {
