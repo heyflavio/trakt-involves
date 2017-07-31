@@ -12,7 +12,7 @@ O projeto abrange todos os requisitos solicitados para considerar-se um aplicati
 Além dos requisitos essenciais, foram implementados também:
 * Possibilidade de buscar séries;
 * Adicionar uma série na watchlist;
-* Armazenamento local de séries sendo assistidas e da watchlist, e seus respectivos episódios
+* Armazenamento local de séries sendo assistidas e da watchlist, e seus respectivos episódios.
 
 ### Como executar o projeto:
 * Após clonar o repositório para sua máquina local, certifique-se que tenha [CocoaPods](https://cocoapods.org) instalado;
@@ -20,7 +20,8 @@ Além dos requisitos essenciais, foram implementados também:
 ```
 pod install
 ```
-* Abra o arquivo **trakt-involves.xcworkspace**, utilizando a IDE *Xcode*.
+* Abra o arquivo **trakt-involves.xcworkspace**, utilizando a IDE *Xcode*;
+* Com o *Xcode* aberto, pressione os botões **Command + R** para executar o projeto.
 
 ### Como executar testes:
 * No *Xcode*, abra a aba *Test navigator* e execute os testes **trakt-involvesTests**.
