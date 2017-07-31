@@ -35,10 +35,6 @@ extension RealmManager {
         show.save(with: show.id)
     }
     
-    static func deleteShow(_ show: ShowModel) {
-        show.delete()
-    }
-    
     static func getShow(for id: Int) -> ShowModel? {
         return realm.object(ofType: ShowModel.self, forPrimaryKey: id)
     }
@@ -46,6 +42,10 @@ extension RealmManager {
     static func getShows(for context: ShowContext) -> [ShowModel]? {
         return realm.objects(ShowModel.self).filter("showContext == %i", context.rawValue).toArray()
     }
+
+}
+
+extension RealmManager {
     
     static func saveEpisode(_ episode: EpisodeModel, showId: Int? = nil, watched: Bool? = nil) {
         

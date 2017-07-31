@@ -40,7 +40,7 @@ protocol ShowInfoPresenterOutputProtocol: class {
     func setupImageView(with url: String)
     func setupView(with showInfo: ShowInfoViewData?)
     func setupView(with episodeInfo: EpisodeViewData?)
-    func toggleWatchedButton(_ text: String)
+    func setWatchedButtonText(_ text: String)
 }
 
 protocol ShowInfoInteractorInputProtocol: class {
@@ -62,6 +62,7 @@ protocol ShowInfoInteractorOutputProtocol: class {
     
     func fetchedImageUrl(_ url: String)
     func fetchedShowInfo(_ showInfo: ShowInfoViewData)
+    func addedShowToWatchlist()
     func fetchedEpisodeInfo(_ episodeInfo: EpisodeViewData)
     func fetchedWatchedState(_ watched: Bool)
     func markedEpisodeAsWatched()
@@ -78,4 +79,5 @@ protocol ShowInfoRouterProtocol: class {
                                episodeNumber: Int?) -> UIViewController
     
     func dismissCurrentScreen()
+    func dismissNavigationController()
 }

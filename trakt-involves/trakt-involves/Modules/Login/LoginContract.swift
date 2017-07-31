@@ -10,15 +10,9 @@ import Foundation
 import UIKit
 
 protocol LoginPresenterInputProtocol: class {
-    weak var presenterOutput: LoginPresenterOutputProtocol? { get set }
     var router: LoginRouterProtocol? { get set }
     
     func didPressLoginButton()
-}
-
-protocol LoginPresenterOutputProtocol: class {
-    var presenter: LoginPresenterInputProtocol? { get set }
-    
 }
 
 protocol LoginRouterProtocol: class {

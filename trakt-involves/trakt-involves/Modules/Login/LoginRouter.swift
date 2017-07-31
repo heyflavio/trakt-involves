@@ -24,7 +24,6 @@ class LoginRouter: LoginRouterProtocol {
         
         viewController.presenter = presenter
         
-        presenter.presenterOutput = viewController
         presenter.router = router
 
         return viewController

@@ -1,0 +1,22 @@
+/* 
+  Strings.strings
+  trakt-involves
+
+  Created by iMac on 31/07/17.
+  Copyright © 2017 Flavio Kruger Bittencourt. All rights reserved.
+*/
+
+"watchlist" = "Watchlist";
+"watching" = "Watching";
+
+"already.in.watchlist" = "Already in watchlist";
+"already.being.watched" = "Already being watched";
+
+"next.episode.description" = "Next episode (%@):";
+
+"mark.as.watched" = "Mark as watched";
+"mark.as.unwatched" = "Mark as unwatched";
+
+"add.to.watchlist" = "Add to watchlist";
+
+"search.shows" = "Search shows";

@@ -27,10 +27,10 @@ class MainRouter: MainRouterProtocol {
         interactor.interactorOutput = presenter
         
         let watchlistViewController = ListRouter.assembleModule(with: .watchlist)
-        watchlistViewController.tabBarItem = UITabBarItem(title: "Watchlist", image: nil, selectedImage: nil)
+        watchlistViewController.tabBarItem = UITabBarItem(title: R.string.strings.watchlist(), image: #imageLiteral(resourceName: "watchlistIcon"), selectedImage: nil)
         
         let watchedViewController = ListRouter.assembleModule(with: .watched)
-        watchedViewController.tabBarItem = UITabBarItem(title: "Watching", image: nil, selectedImage: nil)
+        watchedViewController.tabBarItem = UITabBarItem(title: R.string.strings.watching(), image: #imageLiteral(resourceName: "watchingIcon"), selectedImage: nil)
         
         tabBarController.viewControllers = [
             watchlistViewController,

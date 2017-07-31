@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8818E4B11F2F98060063ABDD /* ListInteractorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8818E4AF1F2F98060063ABDD /* ListInteractorSpec.swift */; };
 		8818E4B21F2F98060063ABDD /* ListPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8818E4B01F2F98060063ABDD /* ListPresenterSpec.swift */; };
+		8818E4B51F2FA2410063ABDD /* Strings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8818E4B41F2FA2410063ABDD /* Strings.strings */; };
 		882891641F2AF7490048777A /* EpisodeViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882891631F2AF7490048777A /* EpisodeViewData.swift */; };
 		882891661F2AFDC70048777A /* SeasonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882891651F2AFDC70048777A /* SeasonAPI.swift */; };
 		882891711F2AFFE60048777A /* SeasonsContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882891681F2AFFE60048777A /* SeasonsContract.swift */; };
@@ -115,6 +116,7 @@
 		77DA78CA39210FEA18142E57 /* Pods-trakt-involves.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trakt-involves.debug.xcconfig"; path = "Pods/Target Support Files/Pods-trakt-involves/Pods-trakt-involves.debug.xcconfig"; sourceTree = "<group>"; };
 		8818E4AF1F2F98060063ABDD /* ListInteractorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListInteractorSpec.swift; path = List/ListInteractorSpec.swift; sourceTree = "<group>"; };
 		8818E4B01F2F98060063ABDD /* ListPresenterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListPresenterSpec.swift; path = List/ListPresenterSpec.swift; sourceTree = "<group>"; };
+		8818E4B41F2FA2410063ABDD /* Strings.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Strings.strings; sourceTree = "<group>"; };
 		882891631F2AF7490048777A /* EpisodeViewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EpisodeViewData.swift; path = Episodes/ViewData/EpisodeViewData.swift; sourceTree = "<group>"; };
 		882891651F2AFDC70048777A /* SeasonAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeasonAPI.swift; sourceTree = "<group>"; };
 		882891681F2AFFE60048777A /* SeasonsContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeasonsContract.swift; sourceTree = "<group>"; };
@@ -514,6 +516,7 @@
 		883E13C71F2928DB00EDB1E7 /* Localization */ = {
 			isa = PBXGroup;
 			children = (
+				8818E4B41F2FA2410063ABDD /* Strings.strings */,
 			);
 			path = Localization;
 			sourceTree = "<group>";
@@ -737,6 +740,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8818E4B51F2FA2410063ABDD /* Strings.strings in Resources */,
 				883E14191F29838800EDB1E7 /* Login.storyboard in Resources */,
 				883E13CE1F2928DB00EDB1E7 /* Assets.xcassets in Resources */,
 				8837EC671F2AEF5F00D6CEDC /* Episodes.storyboard in Resources */,

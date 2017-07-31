@@ -19,11 +19,6 @@ class LoginViewController: UIViewController {
 
 }
 
-extension LoginViewController: LoginPresenterOutputProtocol {
-    
-}
-
-
 extension LoginViewController: SFSafariViewControllerDelegate {
     
 }

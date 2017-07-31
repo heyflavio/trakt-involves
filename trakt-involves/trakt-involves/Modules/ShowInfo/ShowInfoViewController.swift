@@ -56,11 +56,12 @@ extension ShowInfoViewController: ShowInfoPresenterOutputProtocol {
     func setupView(with context: InfoContext, title: String?) {
         if context == .episode {
             navigationController?.setNavigationBarHidden(true, animated: false)
-            watchButton.setTitle("Mark as Watched", for: .normal)
+            watchButton.setTitle(R.string.strings.markAsWatched(), for: .normal)
         } else {
-            watchButton.setTitle("Add to Watchlist", for: .normal)
+            watchButton.setTitle(R.string.strings.addToWatchlist(), for: .normal)
         }
         showTitleLabel.text = title
+        self.watchButton.isEnabled = false
     }
     
     func setupImageView(with url: String) {
@@ -72,15 +73,18 @@ extension ShowInfoViewController: ShowInfoPresenterOutputProtocol {
     func setupView(with showInfo: ShowInfoViewData?) {
         overview = showInfo?.overview
         info = "\(showInfo!.year!), \(showInfo!.network!)"
+        self.watchButton.setTitle(showInfo?.watchingState, for: .normal)
+        self.watchButton.isEnabled = showInfo!.watchingEnabled!
         tableView.reloadData()
     }
     
     func setupView(with episodeInfo: EpisodeViewData?) {
         overview = episodeInfo?.overview
+        self.watchButton.isEnabled = true
         tableView.reloadData()
     }
     
-    func toggleWatchedButton(_ title: String) {
+    func setWatchedButtonText(_ title: String) {
         self.watchButton.setTitle(title, for: .normal)
     }
 }

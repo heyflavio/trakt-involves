@@ -70,7 +70,7 @@ extension EpisodesViewController: UITableViewDataSource {
         cell.accessoryType = .disclosureIndicator
         let item = episodesViewData[indexPath.row]
         
-        cell.titleLabel?.text = "\(item.number!)"
+        cell.titleLabel?.text = String(item.number!)
         cell.subtitleLabel?.text = item.title
         
         return cell

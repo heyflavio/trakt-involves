@@ -49,5 +49,8 @@ class ShowInfoRouter: ShowInfoRouterProtocol {
     func dismissCurrentScreen() {
         view?.navigationController?.popViewController(animated: true)
     }
+    func dismissNavigationController() {
+        view?.navigationController?.dismiss(animated: true, completion: nil)
+    }
     
 }

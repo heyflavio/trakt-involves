@@ -75,7 +75,7 @@ extension ListViewController: UITableViewDataSource {
         let item = List[indexPath.row]
         
         cell.titleLabel?.text = item.title
-        cell.subtitleLabel?.text = "\(item.year!)"
+        cell.subtitleLabel?.text = String(item.year!)
         
         return cell
     }

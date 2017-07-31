@@ -50,7 +50,7 @@ class SearchViewController: UIViewController {
     
     private func setupSearchController() {
         let textFieldInsideSearchBar = searchController.searchBar.value(forKey: "searchField") as? UITextField
-        textFieldInsideSearchBar?.placeholder = "Search shows"
+        textFieldInsideSearchBar?.placeholder = R.string.strings.searchShows()
         searchController.delegate = self
         searchController.searchBar.delegate = self
         searchController.searchBar.barTintColor = .involvesRed

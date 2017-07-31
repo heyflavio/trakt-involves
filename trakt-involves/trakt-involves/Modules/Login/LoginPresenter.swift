@@ -7,8 +7,7 @@
 //
 
 class LoginPresenter: LoginPresenterInputProtocol {
-
-    weak var presenterOutput: LoginPresenterOutputProtocol?
+    
     var router: LoginRouterProtocol?
     
     func didPressLoginButton() {

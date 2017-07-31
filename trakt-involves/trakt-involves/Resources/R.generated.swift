@@ -31,14 +31,28 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 1 images.
+  /// This `R.image` struct is generated, and contains static references to 3 images.
   struct image {
     /// Image `involvesIcon`.
     static let involvesIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "involvesIcon")
+    /// Image `watchingIcon`.
+    static let watchingIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "watchingIcon")
+    /// Image `watchlistIcon`.
+    static let watchlistIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "watchlistIcon")
     
     /// `UIImage(named: "involvesIcon", bundle: ..., traitCollection: ...)`
     static func involvesIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.involvesIcon, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "watchingIcon", bundle: ..., traitCollection: ...)`
+    static func watchingIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.watchingIcon, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "watchlistIcon", bundle: ..., traitCollection: ...)`
+    static func watchlistIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.watchlistIcon, compatibleWith: traitCollection)
     }
     
     fileprivate init() {}
@@ -129,8 +143,77 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.string` struct is generated, and contains static references to 0 localization tables.
+  /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
+    /// This `R.string.strings` struct is generated, and contains static references to 9 localization keys.
+    struct strings {
+      /// Value: Add to watchlist
+      static let addToWatchlist = Rswift.StringResource(key: "add.to.watchlist", tableName: "Strings", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Already being watched
+      static let alreadyBeingWatched = Rswift.StringResource(key: "already.being.watched", tableName: "Strings", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Already in watchlist
+      static let alreadyInWatchlist = Rswift.StringResource(key: "already.in.watchlist", tableName: "Strings", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Mark as unwatched
+      static let markAsUnwatched = Rswift.StringResource(key: "mark.as.unwatched", tableName: "Strings", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Mark as watched
+      static let markAsWatched = Rswift.StringResource(key: "mark.as.watched", tableName: "Strings", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Next episode (%@):
+      static let nextEpisodeDescription = Rswift.StringResource(key: "next.episode.description", tableName: "Strings", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Search shows
+      static let searchShows = Rswift.StringResource(key: "search.shows", tableName: "Strings", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Watching
+      static let watching = Rswift.StringResource(key: "watching", tableName: "Strings", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Watchlist
+      static let watchlist = Rswift.StringResource(key: "watchlist", tableName: "Strings", bundle: R.hostingBundle, locales: [], comment: nil)
+      
+      /// Value: Add to watchlist
+      static func addToWatchlist(_: Void = ()) -> String {
+        return NSLocalizedString("add.to.watchlist", tableName: "Strings", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: Already being watched
+      static func alreadyBeingWatched(_: Void = ()) -> String {
+        return NSLocalizedString("already.being.watched", tableName: "Strings", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: Already in watchlist
+      static func alreadyInWatchlist(_: Void = ()) -> String {
+        return NSLocalizedString("already.in.watchlist", tableName: "Strings", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: Mark as unwatched
+      static func markAsUnwatched(_: Void = ()) -> String {
+        return NSLocalizedString("mark.as.unwatched", tableName: "Strings", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: Mark as watched
+      static func markAsWatched(_: Void = ()) -> String {
+        return NSLocalizedString("mark.as.watched", tableName: "Strings", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: Next episode (%@):
+      static func nextEpisodeDescription(_ value1: String) -> String {
+        return String(format: NSLocalizedString("next.episode.description", tableName: "Strings", bundle: R.hostingBundle, comment: ""), locale: R.applicationLocale, value1)
+      }
+      
+      /// Value: Search shows
+      static func searchShows(_: Void = ()) -> String {
+        return NSLocalizedString("search.shows", tableName: "Strings", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: Watching
+      static func watching(_: Void = ()) -> String {
+        return NSLocalizedString("watching", tableName: "Strings", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// Value: Watchlist
+      static func watchlist(_: Void = ()) -> String {
+        return NSLocalizedString("watchlist", tableName: "Strings", bundle: R.hostingBundle, comment: "")
+      }
+      
+      fileprivate init() {}
+    }
+    
     fileprivate init() {}
   }
   

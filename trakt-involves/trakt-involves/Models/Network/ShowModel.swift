@@ -54,5 +54,6 @@ extension ShowModel: Mappable {
         overview <- map["overview"]
         network <- map["network"]
         airedEpisodes <- map["aired_episodes"]
+        showContext <- map["showContext"]
     }
 }

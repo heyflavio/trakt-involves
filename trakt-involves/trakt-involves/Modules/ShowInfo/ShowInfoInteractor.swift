@@ -28,8 +28,6 @@ class ShowInfoInteractor: ShowInfoInteractorInputProtocol {
             .subscribe(onNext: { imageResults in
                 
                 self.interactorOutput?.fetchedImageUrl((imageResults.clearlogo![0].url!))
-            }, onError: {  error in
-                
             }).addDisposableTo(disposeBag)
     }
     
@@ -39,17 +37,17 @@ class ShowInfoInteractor: ShowInfoInteractorInputProtocol {
             .subscribe(onNext: { showModel in
                 self.showModel = showModel
                 self.interactorOutput?.fetchedShowInfo(self.convertShowModelToViewData(showModel: showModel))
-            }, onError: {  error in
-                
             }).addDisposableTo(disposeBag)
     }
 
     func addShowToWatchlist() {
+        if let _ = RealmManager.getShow(for: showModel!.id) {
+            return
+        }
+        
         ShowAPI.addToWatchlist(showModel!)
-            .subscribe(onNext: { response in
-
-            }, onError: {  error in
-                
+            .subscribe(onCompleted: {
+                self.interactorOutput?.addedShowToWatchlist()
             }).addDisposableTo(disposeBag)
     }
     
@@ -57,8 +55,6 @@ class ShowInfoInteractor: ShowInfoInteractorInputProtocol {
         ShowAPI.removeFromWatchlist(showModel!)
             .subscribe(onNext: { response in
                 self.showModel?.delete()
-            }, onError: {  error in
-                
             }).addDisposableTo(disposeBag)
     }
     
@@ -74,8 +70,6 @@ class ShowInfoInteractor: ShowInfoInteractorInputProtocol {
             .subscribe(onNext: { episodeModel in
                 self.episodeModel = episodeModel
                 self.interactorOutput?.fetchedEpisodeInfo(self.convertEpisodeModelToViewData(episodeModel: episodeModel))
-            }, onError: {  error in
-                
             }).addDisposableTo(disposeBag)
     }
     
@@ -100,11 +94,25 @@ class ShowInfoInteractor: ShowInfoInteractorInputProtocol {
 extension ShowInfoInteractor {
     
     fileprivate func convertShowModelToViewData(showModel: ShowModel) -> ShowInfoViewData {
+
+        var watchingState = R.string.strings.addToWatchlist()
+        var watchingEnabled = true
+        if let dbShow = RealmManager.getShow(for: showModel.ids!.trakt) {
+            watchingEnabled = false
+            if dbShow.context == .watched {
+                watchingState = R.string.strings.alreadyBeingWatched()
+            } else {
+                watchingState = R.string.strings.alreadyInWatchlist()
+            }
+        }
+        
         return ShowInfoViewData(title: showModel.title,
                                 overview: showModel.overview,
                                 year: showModel.year,
                                 network: showModel.network,
-                                airedEpisodes: showModel.airedEpisodes)
+                                airedEpisodes: showModel.airedEpisodes,
+                                watchingState: watchingState,
+                                watchingEnabled: watchingEnabled)
     }
     
     fileprivate func convertEpisodeModelToViewData(episodeModel: EpisodeModel) -> EpisodeViewData {

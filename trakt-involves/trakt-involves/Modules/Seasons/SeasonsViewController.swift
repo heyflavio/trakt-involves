@@ -64,7 +64,7 @@ extension SeasonsViewController: SeasonsPresenterOutputProtocol {
     }
     
     func presentNextEpisode(_ viewData: EpisodeViewData) {
-        nextEpisodeTitleLabel.text = "Next episode (\(viewData.firstAired)):"
+        nextEpisodeTitleLabel.text = R.string.strings.nextEpisodeDescription(viewData.firstAired)
         nextEpisodeInfoLabel.text = viewData.title
     }
     
@@ -95,7 +95,7 @@ extension SeasonsViewController: UITableViewDataSource {
         cell.accessoryType = .disclosureIndicator
         let item = seasonsViewData[indexPath.row]
         
-        cell.titleLabel?.text = "\(item.number!)"
+        cell.titleLabel?.text = String(item.number!)
         cell.subtitleLabel?.text = item.title ?? ""
         
         return cell
