@@ -79,6 +79,26 @@ extension AuthenticationManager {
         return true
     }
     
+    static func checkAccessTokenExpirationDate() {
+        guard let expiratonDate = accessTokenExpirationDate, expiratonDate < Date() else {
+            return
+        }
+        
+        AuthenticationAPI.refreshToken(AuthenticationManager.accessToken!)
+            .subscribeOn(MainScheduler.instance)
+            .subscribe( onNext: { authentication in
+                AuthenticationManager.accessToken = authentication.accessToken
+                AuthenticationManager.refreshToken = authentication.refreshToken
+                AuthenticationManager.accessTokenExpirationDate = Date(timeIntervalSinceNow: TimeInterval(authentication.expiresIn!))
+                
+                self.replaceViewControllerToMain()
+                
+            }, onError: { error in
+                
+            }).addDisposableTo(disposeBag)
+    }
+    
+    
     static fileprivate func replaceViewControllerToMain() {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         appDelegate.replaceViewControllerFromRoot(MainRouter.assembleModule())

@@ -22,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let _ = RealmManager.realm
         
+        AuthenticationManager.checkAccessTokenExpirationDate()
+        
         return true
     }
 
