@@ -14,18 +14,14 @@ class ListPresenter: ListPresenterInputProtocol {
 
     var context: ShowContext?
     
-    func viewDidLoad() {
-        
-    }
-    
     func viewWillAppear() {
+        interactor?.fetchStoredData(for: context!)
         if context == .watchlist {
             interactor?.fetchList()
         } else {
             interactor?.fetchWatched()
         }
     }
-    
     
     func didPressSearchButton() {
         router?.presentSearchScreen()

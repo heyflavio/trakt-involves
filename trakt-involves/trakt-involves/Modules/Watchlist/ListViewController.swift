@@ -23,7 +23,6 @@ class ListViewController: UIViewController {
         super.viewDidLoad()
         
         setupView()
-        presenter?.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {

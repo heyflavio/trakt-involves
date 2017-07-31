@@ -21,4 +21,8 @@ extension Endpoint {
         }
         return "\(API.baseUrl(authContext))\(path)"
     }
+    
+    public var pathDropLastSlash: String {
+        return String(path.characters.dropLast(1))
+    }
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8818E4B11F2F98060063ABDD /* ListInteractorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8818E4AF1F2F98060063ABDD /* ListInteractorSpec.swift */; };
+		8818E4B21F2F98060063ABDD /* ListPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8818E4B01F2F98060063ABDD /* ListPresenterSpec.swift */; };
 		882891641F2AF7490048777A /* EpisodeViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882891631F2AF7490048777A /* EpisodeViewData.swift */; };
 		882891661F2AFDC70048777A /* SeasonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882891651F2AFDC70048777A /* SeasonAPI.swift */; };
 		882891711F2AFFE60048777A /* SeasonsContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882891681F2AFFE60048777A /* SeasonsContract.swift */; };
@@ -57,7 +59,6 @@
 		8837EC691F2AEF8F00D6CEDC /* EpisodeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837EC681F2AEF8F00D6CEDC /* EpisodeAPI.swift */; };
 		8837EC6D1F2AF1DD00D6CEDC /* EpisodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837EC6C1F2AF1DD00D6CEDC /* EpisodeModel.swift */; };
 		883E13971F29214300EDB1E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13961F29214300EDB1E7 /* AppDelegate.swift */; };
-		883E13AC1F29214300EDB1E7 /* trakt_involvesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13AB1F29214300EDB1E7 /* trakt_involvesTests.swift */; };
 		883E13C81F2928DB00EDB1E7 /* UIApplication+TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13BA1F2928DA00EDB1E7 /* UIApplication+TopViewController.swift */; };
 		883E13CA1F2928DB00EDB1E7 /* UIViewController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13BC1F2928DA00EDB1E7 /* UIViewController+Additions.swift */; };
 		883E13CB1F2928DB00EDB1E7 /* URLRequest+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E13BD1F2928DA00EDB1E7 /* URLRequest+Additions.swift */; };
@@ -113,6 +114,8 @@
 		687886927EF946ADAF6DE8FC /* Pods_trakt_involvesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_trakt_involvesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E43836C82B332CF069CF107 /* Pods-trakt-involvesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trakt-involvesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-trakt-involvesTests/Pods-trakt-involvesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		77DA78CA39210FEA18142E57 /* Pods-trakt-involves.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trakt-involves.debug.xcconfig"; path = "Pods/Target Support Files/Pods-trakt-involves/Pods-trakt-involves.debug.xcconfig"; sourceTree = "<group>"; };
+		8818E4AF1F2F98060063ABDD /* ListInteractorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListInteractorSpec.swift; path = List/ListInteractorSpec.swift; sourceTree = "<group>"; };
+		8818E4B01F2F98060063ABDD /* ListPresenterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListPresenterSpec.swift; path = List/ListPresenterSpec.swift; sourceTree = "<group>"; };
 		882891631F2AF7490048777A /* EpisodeViewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EpisodeViewData.swift; path = Episodes/ViewData/EpisodeViewData.swift; sourceTree = "<group>"; };
 		882891651F2AFDC70048777A /* SeasonAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeasonAPI.swift; sourceTree = "<group>"; };
 		882891681F2AFFE60048777A /* SeasonsContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeasonsContract.swift; sourceTree = "<group>"; };
@@ -165,7 +168,6 @@
 		883E13931F29214300EDB1E7 /* trakt-involves.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "trakt-involves.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		883E13961F29214300EDB1E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		883E13A71F29214300EDB1E7 /* trakt-involvesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "trakt-involvesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		883E13AB1F29214300EDB1E7 /* trakt_involvesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = trakt_involvesTests.swift; sourceTree = "<group>"; };
 		883E13AD1F29214300EDB1E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		883E13BA1F2928DA00EDB1E7 /* UIApplication+TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+TopViewController.swift"; sourceTree = "<group>"; };
 		883E13BC1F2928DA00EDB1E7 /* UIViewController+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Additions.swift"; sourceTree = "<group>"; };
@@ -248,6 +250,15 @@
 				B50B222126AD33C89E9AF560 /* Pods-trakt-involvesTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		8818E4B31F2F980A0063ABDD /* List */ = {
+			isa = PBXGroup;
+			children = (
+				8818E4AF1F2F98060063ABDD /* ListInteractorSpec.swift */,
+				8818E4B01F2F98060063ABDD /* ListPresenterSpec.swift */,
+			);
+			name = List;
 			sourceTree = "<group>";
 		};
 		882891621F2AF7300048777A /* ViewData */ = {
@@ -437,8 +448,8 @@
 		883E13AA1F29214300EDB1E7 /* trakt-involvesTests */ = {
 			isa = PBXGroup;
 			children = (
-				883E13AB1F29214300EDB1E7 /* trakt_involvesTests.swift */,
 				883E13AD1F29214300EDB1E7 /* Info.plist */,
+				8818E4B31F2F980A0063ABDD /* List */,
 			);
 			path = "trakt-involvesTests";
 			sourceTree = "<group>";
@@ -946,7 +957,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				883E13AC1F29214300EDB1E7 /* trakt_involvesTests.swift in Sources */,
+				8818E4B11F2F98060063ABDD /* ListInteractorSpec.swift in Sources */,
+				8818E4B21F2F98060063ABDD /* ListPresenterSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,7 +16,6 @@ protocol ListPresenterInputProtocol: class {
     
     var context: ShowContext? { get set }
     
-    func viewDidLoad()
     func viewWillAppear()
     
     func didPressSearchButton()
@@ -32,6 +31,7 @@ protocol ListPresenterOutputProtocol: class {
 protocol ListInteractorInputProtocol: class {
     weak var interactorOutput: ListInteractorOutputProtocol? { get set }
     
+    func fetchStoredData(for context: ShowContext)
     func fetchList()
     func fetchWatched()
 }

@@ -14,10 +14,11 @@ class ListInteractor: ListInteractorInputProtocol {
     
     fileprivate var disposeBag = DisposeBag()
     
+    func fetchStoredData(for context: ShowContext){
+        self.interactorOutput?.fetchedList(RealmManager.getShows(for: context).map(convertWatchlistShowModelsToViewData)!)
+    }
+    
     func fetchList() {
-        
-        self.interactorOutput?.fetchedList(RealmManager.getShows(for: .watchlist).map(convertWatchlistShowModelsToViewData)!)
-        
         ShowAPI.fetchWatchlist()
             .subscribeOn(MainScheduler.instance)
             .map(convertWatchlistShowModelsToViewData)
@@ -29,9 +30,6 @@ class ListInteractor: ListInteractorInputProtocol {
     }
     
     func fetchWatched() {
-        
-        self.interactorOutput?.fetchedList(RealmManager.getShows(for: .watched).map(convertWatchlistShowModelsToViewData)!)
-        
         ShowAPI.fetchWatchedShows()
             .subscribeOn(MainScheduler.instance)
             .map(convertWatchedShowModelsToViewData)
